@@ -14,3 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 //route hiển thị view electronic store
 Route::get('/','Frontend\IndexController@index');
+
+
+Route::prefix('admin')->group(function() {
+    // Gom nhóm các route cho phần admin
+
+    Route::get('/', 'Backend\DashboardController@index');
+
+});

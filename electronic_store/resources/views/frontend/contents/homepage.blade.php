@@ -1,4 +1,4 @@
-@extends('frontend.layout.main')
+@extends('frontend.layouts.main')
 @section('title','Trang Chủ')
 @section('content')
 <!-- banner -->
@@ -1175,10 +1175,6 @@
 </div>
 <!-- //top-brands -->
 
-<script src="{{asset('/electronic_store')}}/js/jquery.countdown.js"></script>
-<script src="{{asset('/electronic_store')}}/js/script.js"></script>
-<script src="{{asset('/electronic_store')}}/js/jquery.magnific-popup.js" type="text/javascript"></script>
-<script type="text/javascript" src="{{asset('/electronic_store')}}/js/jquery.flexisel.js"></script>
 <script type="text/javascript">
     //slide js
     $(window).load(function() {
@@ -1217,9 +1213,7 @@
         removalDelay: 300,
         mainClass: 'my-mfp-zoom-in'
     });
-</script>
-<script src="{{asset('/electronic_store')}}/js/jquery.wmuSlider.js"></script>
-<script>
+    //
     $('.example1').wmuSlider();
 </script>
 

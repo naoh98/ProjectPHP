@@ -47,16 +47,6 @@
                                 </div>
                             </div>
                         </div>
-                        <script src="{{asset('/electronic_store')}}/js/easyResponsiveTabs.js" type="text/javascript"></script>
-                        <script type="text/javascript">
-                            $(document).ready(function () {
-                                $('#horizontalTab').easyResponsiveTabs({
-                                    type: 'default', //Types: default, vertical, accordion
-                                    width: 'auto', //auto or any width like 600px
-                                    fit: true   // 100% fit in a container
-                                });
-                            });
-                        </script>
                         <div id="OR" class="hidden-xs">OR</div>
                     </div>
                     <div class="col-md-4 modal_body_right modal_body_right1">
@@ -111,3 +101,12 @@
 </div>
 <!-- end header -->
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true   // 100% fit in a container
+        });
+    });
+</script>
