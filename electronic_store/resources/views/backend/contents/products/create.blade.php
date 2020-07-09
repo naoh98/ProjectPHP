@@ -1,9 +1,9 @@
 @extends("backend.layouts.main")
-@section("title","Thêm sách")
+@section("title","Thêm sản phẩm")
 @section("content")
     <div class="container-fluid">
         <div class="row">
-            <h1>Thêm Sách</h1>
+            <h1>Thêm Sản Phẩm</h1>
             <div class="col-md-12">
                 <a href="{{url('/admin/product')}}" class="btn btn-info">Quay về</a>
             </div>
@@ -11,20 +11,20 @@
                 <form name="up_pro" action="{{url("/admin/product/create")}}"  method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label>Tên Sách</label>
-                        <input type="text" value="" name="book_title" class="form-control">
+                        <label>Tên Sản Phẩm</label>
+                        <input type="text" value="" name="product_title" class="form-control">
                     </div>
-                    @error('book_title')
+                    @error('product_title')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
                         <label>Ảnh Bìa</label>
-                        <input type="file" value="" name="book_main_image" class="form-control">
+                        <input type="file" value="" name="product_main_image" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Album Ảnh</label>
                         <div class="group_imgs">
-                            <input type="file" id="clone_images" value="" name="book_images[]" class="form-control">
+                            <input type="file" id="clone_images" value="" name="product_images[]" class="form-control">
                         </div>
                         <div class="text-center">
                             <button class="btn btn-success add_images" type="button">Thêm</button>
@@ -32,37 +32,44 @@
                     </div>
                     <div class="form-group">
                         <label>Giới Thiệu</label>
-                        <input type="text" value="" name="book_desc" class="form-control">
+                        <input type="text" value="" name="product_desc" class="form-control">
                     </div>
-                    @error('book_desc')
+                    @error('product_desc')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Tác Giả</label>
-                        <input type="text" value="" name="book_author" class="form-control">
+                        <label>Hãng Sản Xuất</label>
+                        <input type="text" value="" name="product_manufacturer" class="form-control">
                     </div>
-                    @error('book_author')
+                    @error('product_manufacturer')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="form-group">
+                        <label>Số Lượng</label>
+                        <input type="text" value="" name="product_quantity" class="form-control">
+                    </div>
+                    @error('product_quantity')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
                         <label>Giá Nhập</label>
-                        <input type="text" value="" name="book_price_core" class="form-control">
+                        <input type="text" value="" name="product_price_core" class="form-control">
                     </div>
-                    @error('book_price_core')
+                    @error('product_price_core')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
                         <label>Thuế</label>
-                        <input type="text" value="" name="book_tax" class="form-control">
+                        <input type="text" value="" name="product_tax" class="form-control">
                     </div>
-                    @error('book_tax')
+                    @error('product_tax')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
                     <div class="form-group">
                         <label>Thể Loại</label>
                         <div>
-                            <select name="book_type">
+                            <select name="product_type">
                                 <?php viewcreate($category); ?>
                             </select>
                         </div>
