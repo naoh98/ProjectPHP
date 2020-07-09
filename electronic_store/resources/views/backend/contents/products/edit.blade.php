@@ -1,46 +1,46 @@
 @extends("backend.layouts.main")
-@section("title","Sửa sách")
+@section("title","Sửa Sản Phẩm")
 @section("content")
     <div class="container-fluid">
         <div class="row">
-            <h1>Sửa Sách</h1>
+            <h1>Sửa Sản Phẩm</h1>
             <div class="col-md-12">
                 <a href="{{url('/admin/product')}}" class="btn btn-info">Quay về</a>
             </div>
             <div class="col-md-12">
-                <form name="up_pro" action="{{url("/admin/product/edit/$product->book_id")}}"  method="post" enctype="multipart/form-data">
+                <form name="up_pro" action="{{url("/admin/product/edit/$product->product_id")}}"  method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
                         <label>ID: </label>
-                        <span>{{$product->book_id}}</span>
+                        <span>{{$product->product_id}}</span>
                     </div>
                     <div class="form-group">
-                        <label>Tên Sách</label>
-                        <input type="text" value="{{$product->book_title}}" name="book_title" class="form-control">
+                        <label>Tên Sản Phẩm</label>
+                        <input type="text" value="{{$product->product_title}}" name="product_title" class="form-control">
                     </div>
-                    @error('book_title')
+                    @error('product_title')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
                         <label>Ảnh Bìa</label>
-                        <input type="file" value="{{$product->book_main_image}}" name="book_main_image" class="form-control">
+                        <input type="file" value="{{$product->product_main_image}}" name="product_main_image" class="form-control">
                     </div>
                     <div class="text-center">
-                        <?php if($product->book_main_image){ ?>
-                        <img src="{{asset('storage/files/' .basename($product->book_main_image))}}" alt="" width="500px" height="350px">
+                        <?php if($product->product_main_image){ ?>
+                        <img src="{{asset('storage/files/' .basename($product->product_main_image))}}" alt="" width="500px" height="350px">
                         <?php } ?>
                     </div>
                     <div class="form-group">
                         <label>Album Ảnh</label>
                         <div class="group_imgs">
-                            <input type="file" id="clone_images" value="{{$product->book_images}}" name="book_images[]" class="form-control">
+                            <input type="file" id="clone_images" value="{{$product->product_images}}" name="product_images[]" class="form-control">
                         </div>
                         <div class="text-center">
                             <button class="btn btn-success add_images" type="button">Thêm</button>
                         </div>
                         <div class="text-center">
                             <?php
-                            $data = json_decode($product->book_images);
+                            $data = json_decode($product->product_images);
                             //dump($data);
                             if(is_array($data)){
                             foreach($data as $image){ ?>
@@ -51,37 +51,44 @@
                     </div>
                     <div class="form-group">
                         <label>Giới Thiệu</label>
-                        <input type="text" value="{{$product->book_desc}}" name="book_desc" class="form-control">
+                        <input type="text" value="{{$product->product_desc}}" name="product_desc" class="form-control">
                     </div>
-                    @error('book_desc')
+                    @error('product_desc')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Tác Giả</label>
-                        <input type="text" value="{{$product->book_author}}" name="book_author" class="form-control">
+                        <label>Hãng Sản Xuất</label>
+                        <input type="text" value="{{$product->product_manufacturer}}" name="product_manufacturer" class="form-control">
                     </div>
-                    @error('book_author')
+                    @error('product_manufacturer')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    <div class="form-group">
+                        <label>Số Lượng</label>
+                        <input type="text" value="{{$product->product_quantity}}" name="product_quantity" class="form-control">
+                    </div>
+                    @error('product_quantity')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
                         <label>Giá Nhập</label>
-                        <input type="text" value="{{$product->book_price_core}}" name="book_price_core" class="form-control">
+                        <input type="text" value="{{$product->product_price_core}}" name="product_price_core" class="form-control">
                     </div>
-                    @error('book_price_core')
+                    @error('product_price_core')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
                         <label>Thuế</label>
-                        <input type="text" value="{{$product->book_tax}}" name="book_tax" class="form-control">
+                        <input type="text" value="{{$product->product_tax}}" name="product_tax" class="form-control">
                     </div>
-                    @error('book_tax')
+                    @error('product_tax')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
                     <div class="form-group">
                         <label>Thể Loại</label>
                         <div>
-                            <select name="book_type">
+                            <select name="product_type">
                                 <?php viewedit($category,$product); ?>
                             </select>
                         </div>
@@ -105,7 +112,7 @@
     foreach ($categories as $key => $manage){
     if ($manage->parent_id==$parent_id){
     ?>
-    <option value="{{$manage->category_id}}" {{($manage->category_id == $products->book_type) ? "disabled" : ""}}><?php echo $char.$manage->category_name.' ['.$manage->category_id.']'; ?></option>
+    <option value="{{$manage->category_id}}" {{($manage->category_id == $products->product_type) ? "disabled" : ""}}><?php echo $char.$manage->category_name.' ['.$manage->category_id.']'; ?></option>
     <?php
     unset($categories[$key]);
     viewedit($categories,$products,$manage->category_id,$manage->category_name.' ['.$manage->category_id.']'.' > ');
