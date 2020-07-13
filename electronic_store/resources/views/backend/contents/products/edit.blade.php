@@ -30,7 +30,7 @@
                     </div>
                     <div class="text-center">
                         <?php if($product->product_main_image){ ?>
-                        <img src="{{asset('storage/files/' .basename($product->product_main_image))}}" alt="" width="500px" height="350px">
+                            <img src="{{asset('storage/files/' .basename($product->product_main_image))}}" alt="" width="500px" height="350px">
                         <?php } ?>
                     </div>
                     @error('product_main_image')
@@ -57,7 +57,8 @@
                         <div class="text-center">
                             <?php
                             $data = json_decode($product->product_images);
-                            //dump($data);
+
+
                             if(is_array($data)){
                             foreach($data as $image){ ?>
                             <img src="{{asset('storage/files/' .basename($image))}}" alt="" width="500px" height="350px">
@@ -134,7 +135,7 @@
     <option value="{{$manage->category_id}}" {{($manage->category_id == $products->product_type) ? "disabled" : ""}}><?php echo $char.$manage->category_name.' ['.$manage->category_id.']'; ?></option>
     <?php
     unset($categories[$key]);
-    viewedit($categories,$products,$manage->category_id,$manage->category_name.' ['.$manage->category_id.']'.' > ');
+     viewedit($categories,$products,$manage->category_id,$manage->category_name.' ['.$manage->category_id.']'.' > ');
     }
     }
     }
