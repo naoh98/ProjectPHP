@@ -39,9 +39,9 @@
                             </select>
                         </div>
                     </div>
-                    @if(session('status'))
+                    @if(session('error'))
                         <div class="alert alert-danger">
-                            {{session('status')}}
+                            {{session('error')}}
                         </div>
                     @endif
                     <button type="submit" class="btn btn-danger">Sửa</button>
