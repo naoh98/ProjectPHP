@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @extends("backend.layouts.main")
 @section("title","Thêm sản phẩm")
 @section("content")
@@ -18,16 +19,27 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Ảnh Bìa</label>
-                        <input type="file" value="" name="product_main_image" class="form-control">
+                        <label style="display: block;">Ảnh Bìa</label>
+                        <label class="custom_img">
+                            <input type="file" value="" name="product_main_image">
+                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                        </label>
                     </div>
                     <div class="form-group">
-                        <label>Album Ảnh</label>
+                        <label style="display: block;">Album Ảnh
+                            <span style="margin-left: 10px;">
+                                <button class="btn btn-success add_images" type="button"  style="border-radius: 50%; padding: 10px;">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </span>
+                        </label>
                         <div class="group_imgs">
-                            <input type="file" id="clone_images" value="" name="product_images[]" class="form-control">
+                            <label class="custom_img" id="clone_images">
+                                <input type="file" value="" name="product_images[]">
+                                <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                            </label>
                         </div>
-                        <div class="text-center">
-                            <button class="btn btn-success add_images" type="button">Thêm</button>
+                        <div>
                         </div>
                     </div>
                     <div class="form-group">

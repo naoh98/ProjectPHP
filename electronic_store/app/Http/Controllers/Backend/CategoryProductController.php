@@ -11,7 +11,7 @@ class CategoryProductController extends Controller
 {
     //hiển thị trang quản lý thể loại
     public function index() {
-        $category = CategoryProductModel::all();
+        $category = DB::table('category')->get();
         /*echo "<pre>";
         print_r($category);
         echo "</pre>";*/
@@ -40,26 +40,17 @@ class CategoryProductController extends Controller
         ];
         $this->validate($request,$validate_cat,$error_messages);
 
+        $cr_arr=[];
         if ($request->hasFile('category_image')) {
             $file_name = $request->category_image->getClientOriginalName();
             $path = $request->category_image->storeAs('public/files', $file_name);
-            $arr = [
-                'category_name' => $request->category_name,
-                'category_image' => $path,
-                'parent_id' => $request->parent_id
-            ];
-            DB::table('category')->insert($arr);
+            $cr_arr['category_image'] = $path;
         }
-        else{
-            $arr = [
-                'category_name' => $request->category_name,
-                'category_image' => "",
-                'parent_id' => $request->parent_id
-            ];
-            DB::table('category')->insert($arr);
-        }
+        $cr_arr['category_name'] = $request->category_name;
+        $cr_arr['parent_id'] = $request->parent_id;
+        DB::table('category')->insert($cr_arr);
 
-        return redirect('/admin/product_category')->with('status','Thêm danh mục thành công');
+        return redirect('/admin/product_category')->with('success','Thêm danh mục thành công');
     }
 
 
@@ -71,7 +62,6 @@ class CategoryProductController extends Controller
         $data_all["category_all"] = $category_all;
 
         //trả về 1 bản ghi cần chỉnh sửa
-
         $category_1 = DB::table('category')->where('category_id',$category_id)->first();
         $data_1 = [];
         $data_1["category_1"] = $category_1;
@@ -108,38 +98,21 @@ class CategoryProductController extends Controller
         $test = $this->cat($arr,$category_id);
         //dump($test);die;
         if (in_array($request->parent_id,$arr)){
-            return redirect('/admin/product_category/edit/'.$category_id)->with('status','Danh mục cha không thể làm con của danh mục con trong chính nó !');
+            return redirect('/admin/product_category/edit/'.$category_id)->with('error','Danh mục cha không thể làm con của danh mục con trong chính nó !');
         }
         else{
+            $ed_arr=[];
             if ($request->hasFile('category_image')) {
                 $file_name1 = $request->category_image->getClientOriginalName();
                 $path1 = $request->category_image->storeAs('public/files', $file_name1);
-                $arr = [
-                    'category_name' => $request->category_name,
-                    'category_image' => $path1,
-                    'parent_id' => $request->parent_id
-                ];
-                DB::table('category')->where('category_id', $category_id)->update($arr);
+                $ed_arr['category_image'] = $path1;
             }
-            else{
-                $arr = [
-                    'category_name' => $request->category_name,
-                    'parent_id' => $request->parent_id
-                ];
-                DB::table('category')->where('category_id', $category_id)->update($arr);
-            }
+            $ed_arr['category_name'] = $request->category_name;
+            $ed_arr['parent_id'] = $request->parent_id;
+            DB::table('category')->where('category_id', $category_id)->update($ed_arr);
         }
 
-        return redirect('/admin/product_category')->with('status','Sửa danh mục thành công');
-    }
-
-    //hiển thị xóa
-    public function delpage($category_id){
-
-        $category1 = DB::table('category')->where('category_id',$category_id)->first();
-        $data = [];
-        $data["category"] = $category1;
-        return view("backend.contents.productcategories.delete",$data);
+        return redirect('/admin/product_category')->with('success','Sửa danh mục thành công');
     }
 
     //code xóa
@@ -147,11 +120,11 @@ class CategoryProductController extends Controller
         $array = [];
         $this->cat($array,$category_id);
         if (!empty($array)){
-            return redirect('/admin/product_category/delete/'.$category_id)->with('status', 'Danh mục này hiện vẫn còn danh mục con. Chưa thể xóa');
+            return redirect('/admin/product_category')->with('error', 'Danh mục này hiện vẫn còn danh mục con. Chưa thể xóa');
         }else{
             $products = DB::table('product')->where('product_type',$category_id)->get();
             if($products->isNotEmpty()){
-                return redirect('/admin/product_category/delete/'.$category_id)->with('status', 'Danh mục này hiện vẫn còn sản phẩm. Chưa thể xóa');
+                return redirect('/admin/product_category')->with('error', 'Danh mục này hiện vẫn còn sản phẩm. Chưa thể xóa');
             }else{
                 DB::table('category')->where('category_id',$category_id)->delete();
             }
@@ -165,7 +138,7 @@ class CategoryProductController extends Controller
         //$this->delete($id);
         //}
 
-        return redirect('/admin/product_category')->with('status', 'Xóa danh mục thành công');
+        return redirect('/admin/product_category')->with('success', 'Xóa danh mục thành công');
 
         //Xóa phần tử cha thì phần tử con sẽ lên làm phần tử cha
         /*$data = DB::table('category')->where('category_id',$category_id)->first();

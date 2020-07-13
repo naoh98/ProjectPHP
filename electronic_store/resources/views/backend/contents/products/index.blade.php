@@ -6,9 +6,9 @@
         <div>
             <a href="{{url("/admin/product/create")}}" class="btn btn-success">Thêm Sản Phẩm</a>
         </div>
-        @if(session('status'))
+        @if(session('success'))
             <div class="alert alert-success">
-                {{session('status')}}
+                {{session('success')}}
             </div>
         @endif
         <br>
@@ -41,8 +41,16 @@
                        <td>{{$products->product_tax}}</td>
                        <td>{{$products->product_price_sell}}</td>
                        <td>
-                           <a href="{{url("/admin/product/edit/$products->product_id")}}" class="btn btn-warning">Sửa</a>
-                           <a href="{{url("/admin/product/delete/$products->product_id")}}" class="btn btn-danger">Xóa</a>
+                           <a href="{{url("/admin/product/edit/$products->product_id")}}" class="btn btn-warning" style="width: 43px;">
+                               <i class="fas fa-edit"></i>
+                           </a>
+                           <form class="del_pro" action="{{url("/admin/product/delete/$products->product_id")}}" method="post">
+                               @method('delete')
+                               @csrf
+                               <button class="btn btn-danger" style="width: 43px" type="submit">
+                                   <i class="fa fa-trash"></i>
+                               </button>
+                           </form>
                        </td>
                    </tr>
             <?php }

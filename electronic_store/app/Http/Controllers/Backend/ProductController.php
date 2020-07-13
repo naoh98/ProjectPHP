@@ -19,20 +19,10 @@ class ProductController extends Controller
         return view("backend.contents.products.index",['product'=>$product]);
     }
 
-    //hiển thị xóa
-    public function delpage($product_id){
-        $product1 = DB::table('product')->where('product_id',$product_id)->first();
-
-        //Lấy ra 1 bản ghi trong bảng category có category_id = product_type của bảng product
-        $detail = DB::table('category')->where('category_id',$product1->product_type)->first();
-
-        return view("backend.contents.products.delete",['product'=>$product1,'catdetail'=>$detail]);
-    }
-
     //code xóa
     public function delete($product_id){
         DB::table('product')->where('product_id',$product_id)->delete();
-        return redirect('/admin/product')->with('status', 'Xóa sản phẩm thành công');
+        return redirect('/admin/product')->with('success', 'Xóa sản phẩm thành công');
     }
 
     //hiển thị trang edit
@@ -52,10 +42,19 @@ class ProductController extends Controller
     public function edit(Request $request,$product_id){
 
         $validate_pro =[
-            'product_title' => 'required'
+            'product_title' => 'required',
+            'product_desc' => 'required',
+            'product_main_image' => 'required',
+            'product_images' => 'required',
+            'product_manufacturer' => 'required',
+            'product_quantity' => 'required|numeric',
+            'product_type' => 'required|numeric',
+            'product_price_core' => 'required|numeric',
+            'product_tax' => 'required|numeric'
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống'
+            'required' => ':attribute không được để trống',
+            'numeric' => ':attribute phải là số'
         ];
         $this->validate($request,$validate_pro,$error_messages);
         $arr=[];
@@ -82,7 +81,7 @@ class ProductController extends Controller
         $arr['product_type'] = $request->product_type;
         DB::table('product')->where('product_id', $product_id)->update($arr);
 
-        return redirect('/admin/product')->with('status','Sửa sản phẩm thành công');
+        return redirect('/admin/product')->with('success','Sửa sản phẩm thành công');
     }
 
     //hiển thị trang thêm thể loại
@@ -95,10 +94,20 @@ class ProductController extends Controller
     //code thêm thể loại
     public function create(Request $request){
         $validate_pro =[
-            'product_title' => 'required'
+            'product_title' => 'required|unique:product,product_title',
+            'product_desc' => 'required',
+            'product_main_image' => 'required',
+            'product_images' => 'required',
+            'product_manufacturer' => 'required',
+            'product_quantity' => 'required|numeric',
+            'product_type' => 'required|numeric',
+            'product_price_core' => 'required|numeric',
+            'product_tax' => 'required|numeric'
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống'
+            'required' => ':attribute không được để trống',
+            'numeric' => ':attribute phải là số',
+            'unique' => ':attribute đã tồn tại'
         ];
         $this->validate($request,$validate_pro,$error_messages);
         $arr=[];
@@ -125,7 +134,7 @@ class ProductController extends Controller
         $arr['product_type'] = $request->product_type;
         DB::table('product')->insert($arr);
 
-        return redirect('/admin/product')->with('status','Thêm sản phẩm thành công');
+        return redirect('/admin/product')->with('success','Thêm sản phẩm thành công');
     }
 
 }
