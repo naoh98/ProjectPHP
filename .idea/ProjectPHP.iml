@@ -26,6 +26,7 @@
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/laravel/ui" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/mockery/mockery" />

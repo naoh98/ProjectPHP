@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba546dcf-ec0e-4fca-9989-59f4e76ba0f3" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/electronic_store/caidat.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/delete.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/routes/web.php" afterDir="false" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +25,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/header.blade.php">
+        <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_131155_create_product_table.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1887">
               <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
             </state>
@@ -48,33 +57,53 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+=======
+            <state relative-caret-position="272">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php">
+        <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/CategoryProductController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="17">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
+=======
+            <state relative-caret-position="190">
+              <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+              <folding>
+                <element signature="e#48#84#0#PHP" expanded="true" />
+              </folding>
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="890">
+              <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/electronic_store/public/electronic_store/css/main.css">
+        <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="15" selection-start-column="1" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="731">
               <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+=======
+            <state relative-caret-position="1904">
+              <caret line="127" column="71" selection-start-line="127" selection-start-column="71" selection-end-line="127" selection-end-column="71" />
+              <folding>
+                <element signature="e#48#84#0#PHP" expanded="true" />
+              </folding>
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
             </state>
           </provider>
         </entry>
@@ -82,8 +111,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electronic_store/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="374">
               <caret line="22" selection-start-line="22" selection-end-line="22" />
+=======
+            <state relative-caret-position="306">
+              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
             </state>
           </provider>
         </entry>
@@ -117,7 +151,18 @@
       <find>hs_bottom</find>
       <find>script</find>
       <find>scr</find>
+      <find>status</find>
+      <find>book</find>
+      <find>sách</find>
+      <find>author</find>
     </findStrings>
+    <replaceStrings>
+      <replace>sản phẩm</replace>
+      <replace>Sản phẩm</replace>
+      <replace>product</replace>
+      <replace>Sản Phẩm</replace>
+      <replace>manufacturer</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,10 +191,28 @@
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/header.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/electronic_store/routes/web.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/electronic_store/caidat.txt" />
         <option value="$PROJECT_DIR$/electronic_store/.env" />
+=======
+        <option value="$PROJECT_DIR$/electronic_store/.env" />
+        <option value="$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_123157_create_product_table.php" />
+        <option value="$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_125110_create_phone_table.php" />
+        <option value="$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_131155_create_product_table.php" />
+        <option value="$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_131718_create_product_attribute_table.php" />
+        <option value="$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_132325_create_attribute_table.php" />
+        <option value="$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_132645_create_category_table.php" />
+        <option value="$PROJECT_DIR$/electronic_store/app/Models/CategoryProductModel.php" />
+        <option value="$PROJECT_DIR$/electronic_store/app/Models/ProductModel.php" />
+        <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/ProductController.php" />
+        <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/CategoryProductController.php" />
+        <option value="$PROJECT_DIR$/electronic_store/routes/web.php" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/edit.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/create.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/index.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/delete.blade.php" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
       </list>
     </option>
   </component>
@@ -337,6 +400,26 @@
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -353,15 +436,6 @@
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
@@ -392,6 +466,26 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="contents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="contents" type="462c0819:PsiDirectoryNode" />
+              <item name="productcategories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="contents" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
@@ -482,11 +576,16 @@
       <workItem from="1594131782535" duration="7262000" />
       <workItem from="1594173313670" duration="11055000" />
       <workItem from="1594219736817" duration="5305000" />
+<<<<<<< HEAD
       <workItem from="1594305512089" duration="1742000" />
+=======
+      <workItem from="1594297116889" duration="8155000" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="25364000" />
   </component>
   <component name="ToolWindowManager">
@@ -494,6 +593,14 @@
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19364598" />
+=======
+    <option name="totallyTimeSpent" value="31777000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1932886" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -506,7 +613,11 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32786885" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30496454" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -671,13 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/layouts/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -692,10 +796,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
           <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+=======
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
         </state>
       </provider>
     </entry>
@@ -713,8 +824,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="374">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
@@ -724,6 +836,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+=======
+        <state relative-caret-position="623">
+          <caret line="1215" column="6" selection-start-line="1215" selection-start-column="6" selection-end-line="1215" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_123157_create_product_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" selection-start-line="16" selection-end-line="26" selection-end-column="49" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
         </state>
       </provider>
     </entry>
@@ -748,10 +878,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php">
+    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_125110_create_phone_table.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="259">
           <caret line="1121" column="51" lean-forward="true" selection-start-line="1121" selection-start-column="51" selection-end-line="1121" selection-end-column="51" />
+=======
+        <state relative-caret-position="289">
+          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_132325_create_attribute_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_131718_create_product_attribute_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_132645_create_category_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/CategoryProductModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/ProductModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_131155_create_product_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="127" column="71" selection-start-line="127" selection-start-column="71" selection-end-line="127" selection-end-column="71" />
+          <folding>
+            <element signature="e#48#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/productcategories/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/delete.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="93" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/CategoryProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+          <folding>
+            <element signature="e#48#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="890">
+          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
         </state>
       </provider>
     </entry>

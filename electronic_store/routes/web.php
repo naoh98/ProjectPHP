@@ -13,13 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //route hiển thị view electronic store
-Route::get('/','Frontend\IndexController@index');
+Route::get('/','Frontend\IndexController@index')->name('homepage');
 
 
 Route::prefix('admin')->group(function() {
     // Gom nhóm các route cho phần admin
 
-    Route::get('/', 'Backend\DashboardController@index');
+    //Route đăng nhập, đăng ký cho admin
+
+
+    Route::get('/', 'Backend\DashboardController@index')->name('admin.dashboard');
+
+    // View đăng nhập thành công
+
+    Route::get('/dashboard', 'Backend\DashboardController@index')->name('admin.dashboard');
+
+    Route::get('/register', 'Backend\DashboardController@register');
+    Route::get('/login', 'Backend\DashboardController@login');
+
+
+    Route::post('/register', 'Backend\DashboardController@registerAdmin');
+    Route::post('/login', 'Backend\DashboardController@loginAdmin');
+    Route::post('/logout', 'Backend\DashboardController@logout');
+
+
     //route hiển thị category
     Route::get('/product_category', 'Backend\CategoryProductController@index');
     Route::get('/product_category/create', 'Backend\CategoryProductController@createpage');
@@ -40,3 +57,8 @@ Route::prefix('admin')->group(function() {
     Route::post('/product/edit/{product_id}', 'Backend\ProductController@edit');
     Route::post('/product/delete/{product_id}', 'Backend\ProductController@delete');
 });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
