@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba546dcf-ec0e-4fca-9989-59f4e76ba0f3" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/CategoryProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/CategoryProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
@@ -10,10 +11,17 @@
       <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/productcategories/delete.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/productcategories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/productcategories/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/productcategories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/productcategories/index.blade.php" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/electronic_store/caidat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
       <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/delete.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electronic_store/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/routes/web.php" afterDir="false" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +55,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="850">
               <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="62" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="1887">
+              <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="1121" column="51" lean-forward="true" selection-start-line="1121" selection-start-column="51" selection-end-line="1121" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/electronic_store/caidat.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/electronic_store/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+=======
+            <state relative-caret-position="272">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
             </state>
           </provider>
         </entry>
@@ -56,11 +101,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1819">
               <caret line="109" column="46" selection-start-line="109" selection-start-column="46" selection-end-line="109" selection-end-column="46" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="17">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+=======
+            <state relative-caret-position="190">
+              <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
               <folding>
                 <element signature="e#48#84#0#PHP" expanded="true" />
               </folding>
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
             </state>
           </provider>
         </entry>
@@ -77,11 +132,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electronic_store/public/sbadmin2/js/sb-admin-2.min.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="119">
               <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="731">
+              <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+=======
+            <state relative-caret-position="1904">
+              <caret line="127" column="71" selection-start-line="127" selection-start-column="71" selection-end-line="127" selection-end-column="71" />
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
             </state>
           </provider>
         </entry>
@@ -89,8 +154,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electronic_store/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="612">
               <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="374">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+=======
+            <state relative-caret-position="306">
+              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
             </state>
           </provider>
         </entry>
@@ -164,6 +239,10 @@
         <option value="$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/header.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/electronic_store/caidat.txt" />
+        <option value="$PROJECT_DIR$/electronic_store/.env" />
+=======
         <option value="$PROJECT_DIR$/electronic_store/.env" />
         <option value="$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_123157_create_product_table.php" />
         <option value="$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_125110_create_phone_table.php" />
@@ -180,12 +259,17 @@
         <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/CategoryProductController.php" />
         <option value="$PROJECT_DIR$/electronic_store/routes/web.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/index.blade.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/productcategories/index.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/ProductController.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/public/sbadmin2/js/sb-admin-2.min.js" />
         <option value="$PROJECT_DIR$/electronic_store/public/sbadmin2/css/sb-admin-2.min.css" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/create.blade.php" />
+=======
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/products/delete.blade.php" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
       </list>
     </option>
   </component>
@@ -599,22 +683,47 @@
       <workItem from="1594131782535" duration="7262000" />
       <workItem from="1594173313670" duration="11055000" />
       <workItem from="1594219736817" duration="5305000" />
+<<<<<<< HEAD
+      <workItem from="1594305512089" duration="1742000" />
+=======
       <workItem from="1594297116889" duration="8155000" />
+<<<<<<< HEAD
       <workItem from="1594308473598" duration="939000" />
       <workItem from="1594361637993" duration="111000" />
       <workItem from="1594536012219" duration="22671000" />
       <workItem from="1594612837336" duration="11437000" />
       <workItem from="1594632459764" duration="1935000" />
+=======
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="68870000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="25364000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19364598" />
+=======
+    <option name="totallyTimeSpent" value="31777000" />
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18389262" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1932886" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -627,7 +736,15 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29219857" />
+=======
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32786885" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30496454" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -760,10 +877,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+=======
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
         </state>
       </provider>
     </entry>
@@ -783,6 +907,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+=======
         <state relative-caret-position="623">
           <caret line="1215" column="6" selection-start-line="1215" selection-start-column="6" selection-end-line="1215" selection-end-column="6" />
         </state>
@@ -795,8 +930,51 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_123157_create_product_table.php" />
     <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_125110_create_phone_table.php" />
+=======
+    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_123157_create_product_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" selection-start-line="16" selection-end-line="26" selection-end-column="49" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/caidat.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_125110_create_phone_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="259">
+          <caret line="1121" column="51" lean-forward="true" selection-start-line="1121" selection-start-column="51" selection-end-line="1121" selection-end-column="51" />
+=======
+        <state relative-caret-position="289">
+          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
     <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_07_09_132325_create_attribute_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -929,6 +1107,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/public/sbadmin2/css/sb-admin-2.min.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="3230">
           <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
         </state>
@@ -948,6 +1127,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+=======
+        <state relative-caret-position="890">
+          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+>>>>>>> 1c123c02744887fa460417013acb7761f9b5f0bc
+>>>>>>> f65477c0a2f17587ca80bbd841746994a746c9e4
         </state>
       </provider>
     </entry>

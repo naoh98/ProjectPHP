@@ -1,4 +1,5 @@
 <!-- log/reg tab -->
+
 <div class="modal fade" id="myModal88" tabindex="-1" role="dialog" aria-labelledby="myModal88"
      aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -102,6 +103,9 @@
 <!-- end header -->
 
 <script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal88').modal('show');
+    });
     $(document).ready(function () {
         $('#horizontalTab').easyResponsiveTabs({
             type: 'default', //Types: default, vertical, accordion
@@ -109,4 +113,8 @@
             fit: true   // 100% fit in a container
         });
     });
+
+
+
+
 </script>
