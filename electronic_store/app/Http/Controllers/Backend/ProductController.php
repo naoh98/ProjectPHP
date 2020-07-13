@@ -14,7 +14,7 @@ class ProductController extends Controller
         $product = DB::table('product')
             ->join('category', 'product.product_type', '=', 'category.category_id')
             ->select('product.*','category.category_id','category.category_name')
-            ->paginate(10);
+            ->paginate(4);
 
         return view("backend.contents.products.index",['product'=>$product]);
     }
@@ -113,7 +113,7 @@ class ProductController extends Controller
                 $path2 = $mul_file->storeAs('public/files',$file_name2);
                 $data2[] = $path2;
                 $arr['product_images'] = json_encode($data2);
-            }
+        }
         }
         $arr['product_title'] = $request->product_title;
         $arr['product_desc'] = $request->product_desc;

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,11 +31,11 @@ Route::prefix('admin')->group(function() {
 
     Route::get('/register', 'Backend\DashboardController@register');
     Route::get('/login', 'Backend\DashboardController@login');
-
+    Route::get('/logout', 'Backend\DashboardController@logout');
 
     Route::post('/register', 'Backend\DashboardController@registerAdmin');
     Route::post('/login', 'Backend\DashboardController@loginAdmin');
-    Route::post('/logout', 'Backend\DashboardController@logout');
+
 
 
     //route hiển thị category
