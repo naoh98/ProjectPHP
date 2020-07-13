@@ -91,7 +91,7 @@ class ProductController extends Controller
         return view("backend.contents.products.create",['category'=>$category]);
     }
 
-    //code thêm thể loại
+    //code thêm san pham
     public function create(Request $request){
         $validate_pro =[
             'product_title' => 'required|unique:product,product_title',

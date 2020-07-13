@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 @extends("backend.layouts.main")
 @section("title","Thêm sản phẩm")
 @section("content")
@@ -25,10 +25,13 @@
                             <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
                         </label>
                     </div>
+                    @error('product_main_image')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
                         <label style="display: block;">Album Ảnh
                             <span style="margin-left: 10px;">
-                                <button class="btn btn-success add_images" type="button"  style="border-radius: 50%; padding: 10px;">
+                                <button class="btn btn-success add_images" type="button"  style="border-radius: 50%;">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </span>
@@ -42,6 +45,9 @@
                         <div>
                         </div>
                     </div>
+                    @error('product_images')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
                         <label>Giới Thiệu</label>
                         <input type="text" value="" name="product_desc" class="form-control">
@@ -86,11 +92,7 @@
                             </select>
                         </div>
                     </div>
-                    @if(session('status'))
-                        <div class="alert alert-danger">
-                            {{session('status')}}
-                        </div>
-                    @endif
+
                     <button type="submit" class="btn btn-danger">Thêm</button>
                 </form>
             </div>

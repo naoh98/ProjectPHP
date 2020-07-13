@@ -22,21 +22,37 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Ảnh Bìa</label>
-                        <input type="file" value="{{$product->product_main_image}}" name="product_main_image" class="form-control">
+                        <label style="display: block;">Ảnh Bìa</label>
+                        <label class="custom_img">
+                            <input type="file" value="{{$product->product_main_image}}" name="product_main_image">
+                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                        </label>
                     </div>
                     <div class="text-center">
                         <?php if($product->product_main_image){ ?>
                         <img src="{{asset('storage/files/' .basename($product->product_main_image))}}" alt="" width="500px" height="350px">
                         <?php } ?>
                     </div>
+                    @error('product_main_image')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
-                        <label>Album Ảnh</label>
-                        <div class="group_imgs">
-                            <input type="file" id="clone_images" value="{{$product->product_images}}" name="product_images[]" class="form-control">
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-success add_images" type="button">Thêm</button>
+                        <div class="form-group">
+                            <label style="display: block;">Album Ảnh
+                                <span style="margin-left: 10px;">
+                                <button class="btn btn-success add_images" type="button"  style="border-radius: 50%;">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </span>
+                            </label>
+                            <div class="group_imgs">
+                                <label class="custom_img" id="clone_images">
+                                    <input type="file" value="" name="product_images[]">
+                                    <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                                </label>
+                            </div>
+                            <div>
+                            </div>
                         </div>
                         <div class="text-center">
                             <?php
@@ -49,6 +65,9 @@
                             } ?>
                         </div>
                     </div>
+                    @error('product_images')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
                         <label>Giới Thiệu</label>
                         <input type="text" value="{{$product->product_desc}}" name="product_desc" class="form-control">
