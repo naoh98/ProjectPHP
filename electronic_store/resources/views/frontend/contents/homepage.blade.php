@@ -24,25 +24,38 @@
         <div class="col-md-7 wthree_banner_bottom_right">
             <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">Mobiles</a></li>
-                    <li role="presentation"><a href="#audio" role="tab" id="audio-tab" data-toggle="tab" aria-controls="audio">Audio</a></li>
-                    <li role="presentation"><a href="#video" role="tab" id="video-tab" data-toggle="tab" aria-controls="video">Computer</a></li>
-                    <li role="presentation"><a href="#tv" role="tab" id="tv-tab" data-toggle="tab" aria-controls="tv">Household</a></li>
-                    <li role="presentation"><a href="#kitchen" role="tab" id="kitchen-tab" data-toggle="tab" aria-controls="kitchen">Kitchen</a></li>
+                    <?php $i=0;
+                    foreach($min_cat as $li){
+                        if($i==0){ ?>
+                        <li role="presentation" class="active"><a href="#{{$li->category_id}}" id="" role="tab" data-toggle="tab" aria-controls="">{{$li->category_name}}</a></li>
+                    <?php
+                    }else{ ?>
+                        <li role="presentation" ><a href="#{{$li->category_id}}" id="" role="tab" data-toggle="tab" aria-controls="">{{$li->category_name}}</a></li>
+
+                    <?php  }
+                    $i++;
+                    }
+                    ?>
                 </ul>
                 <div id="myTabContent" class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+                    <?php $i1=0; $count_pro=0;
+                    foreach($min_cat as $value){
+                        if ($i1==0){?>
+                    <div role="tabpanel" class="tab-pane fade active in" id="{{$value->category_id}}" aria-labelledby="">
                         <div class="agile_ecommerce_tabs">
+                 <?php $count_pro=1;
+                       foreach($product as $value2){
+                                if($value->category_id==$value2->product_type){
+                                  if ($count_pro<=3){  ?>
                             <div class="col-md-4 agile_ecommerce_tab_left">
                                 <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/3.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/4.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/5.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/6.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/7.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/3.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/4.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/5.jpg" alt=" " class="img-responsive" />
+                                    <?php
+                                    $data = json_decode($value2->product_images);
+                                    if(is_array($data)){
+                                    foreach($data as $image){ ?>
+                                    <img src="{{asset('storage/files/' .basename($image))}}" alt="" class="img-responsive" >
+                                    <?php }
+                                    } ?>
                                     <div class="w3_hs_bottom">
                                         <ul>
                                             <li>
@@ -51,9 +64,10 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <h5><a href="">Mobile Phone1</a></h5>
+                                <h5><a href="single.html">{{$value2->product_title}}</a></h5>
                                 <div class="simpleCart_shelfItem">
-                                    <p><span>$380</span> <i class="item_price">$350</i></p>
+                                    <?php $price= number_format($value2->product_price_sell ,0,',','.'); ?>
+                                    <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
                                     <form action="#" method="post">
                                         <input type="hidden" name="cmd" value="_cart" />
                                         <input type="hidden" name="add" value="1" />
@@ -63,449 +77,60 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/4.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/5.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/6.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/7.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/3.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/4.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/5.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/6.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Mobile Phone2</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$330</span> <i class="item_price">$302</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Mobile Phone2" />
-                                        <input type="hidden" name="amount" value="302.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/7.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/6.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/4.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/3.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/5.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/7.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/4.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/6.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Mobile Phone3</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$250</span> <i class="item_price">$245</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Mobile Phone3" />
-                                        <input type="hidden" name="amount" value="245.00"/>
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
+                <?php }
+                $count_pro++;
+                }
+                }?>
                             <div class="clearfix"> </div>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="audio" aria-labelledby="audio-tab">
-                        <div class="agile_ecommerce_tabs">
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/10.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/10.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
+                        <?php }else{ ?>
+                    <div role="tabpanel" class="tab-pane fade" id="{{$value->category_id}}" aria-labelledby="">
+                            <div class="agile_ecommerce_tabs">
+                                <?php $count_pro=1;
+                                foreach($product as $value2){
+                                if($value->category_id==$value2->product_type){
+                                if ($count_pro<=3){   ?>
+                                <div class="col-md-4 agile_ecommerce_tab_left">
+                                    <div class="hs-wrapper">
+                                        <?php
+                                        $data = json_decode($value2->product_images);
+                                        if(is_array($data)){
+                                        foreach($data as $image){ ?>
+                                        <img src="{{asset('storage/files/' .basename($image))}}" alt="" class="img-responsive" >
+                                        <?php }
+                                        } ?>
+                                        <div class="w3_hs_bottom">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h5><a href="single.html">{{$value2->product_title}}</a></h5>
+                                    <div class="simpleCart_shelfItem">
+                                        <?php $price= number_format($value2->product_price_sell ,0,',','.'); ?>
+                                        <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
+                                        <form action="#" method="post">
+                                            <input type="hidden" name="cmd" value="_cart" />
+                                            <input type="hidden" name="add" value="1" />
+                                            <input type="hidden" name="w3ls_item" value="Mobile Phone1" />
+                                            <input type="hidden" name="amount" value="350.00" />
+                                            <button type="submit" class="w3ls-cart">Add to cart</button>
+                                        </form>
                                     </div>
                                 </div>
-                                <h5><a href="">Speakers</a></h5>
-                                <p><span>$320</span> <i class="item_price">$250</i></p>
-                                <div class="simpleCart_shelfItem">
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Speakers" />
-                                        <input type="hidden" name="amount" value="250.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
+                                <?php }
+                                $count_pro++;
+                                }
+                                } ?>
+                                <div class="clearfix"> </div>
                             </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/10.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/10.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Headphones</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$180</span> <i class="item_price">$150</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Headphones" />
-                                        <input type="hidden" name="amount" value="150.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/10.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/10.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/8.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/9.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Audio Player</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$220</span> <i class="item_price">$180</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Audio Player" />
-                                        <input type="hidden" name="amount" value="180.00"/>
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="clearfix"> </div>
                         </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="video" aria-labelledby="video-tab">
-                        <div class="agile_ecommerce_tabs">
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/13.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/13.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Laptop</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$880</span> <i class="item_price">$850</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Laptop" />
-                                        <input type="hidden" name="amount" value="850.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/13.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/13.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Notebook</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$290</span> <i class="item_price">$280</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Notebook" />
-                                        <input type="hidden" name="amount" value="280.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/13.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/13.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/11.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/12.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Kid's Toy</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$120</span> <i class="item_price">$80</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Kid's Toy" />
-                                        <input type="hidden" name="amount" value="80.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tv" aria-labelledby="tv-tab">
-                        <div class="agile_ecommerce_tabs">
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/16.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/16.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Refrigerator</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$950</span> <i class="item_price">$820</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Refrigerator" />
-                                        <input type="hidden" name="amount" value="820.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/16.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/16.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">LED Tv</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$700</span> <i class="item_price">$680</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="LED Tv"/>
-                                        <input type="hidden" name="amount" value="680.00"/>
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/16.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/16.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/14.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/15.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Washing Machine</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$520</span> <i class="item_price">$510</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Washing Machine" />
-                                        <input type="hidden" name="amount" value="510.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="kitchen" aria-labelledby="kitchen-tab">
-                        <div class="agile_ecommerce_tabs">
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/19.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/19.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Grinder</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$460</span> <i class="item_price">$450</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Grinder" />
-                                        <input type="hidden" name="amount" value="450.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/19.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/19.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Water Purifier</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$390</span> <i class="item_price">$350</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Water Purifier" />
-                                        <input type="hidden" name="amount" value="350.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-4 agile_ecommerce_tab_left">
-                                <div class="hs-wrapper">
-                                    <img src="{{asset('/electronic_store')}}/images/19.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/19.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/17.jpg" alt=" " class="img-responsive" />
-                                    <img src="{{asset('/electronic_store')}}/images/18.jpg" alt=" " class="img-responsive" />
-                                    <div class="w3_hs_bottom">
-                                        <ul>
-                                            <li>
-                                                <a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5><a href="">Coffee Maker</a></h5>
-                                <div class="simpleCart_shelfItem">
-                                    <p><span>$250</span> <i class="item_price">$220</i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="add" value="1" />
-                                        <input type="hidden" name="w3ls_item" value="Coffee Maker" />
-                                        <input type="hidden" name="amount" value="220.00" />
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
+            <?php }
+            $i1++;
+                    } ?>
                 </div>
             </div>
         </div>
@@ -1025,124 +650,44 @@
 <!-- new-products -->
 <div class="new-products">
     <div class="container">
-        <h3>New Products</h3>
+        <h3>Sản Phẩm Mới</h3>
         <div class="agileinfo_new_products_grids">
-            <div class="col-md-3 agileinfo_new_products_grid">
-                <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-                    <div class="hs-wrapper hs-wrapper1">
-                        <img src="{{asset('/electronic_store')}}/images/25.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/23.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/24.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/22.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/26.jpg" alt=" " class="img-responsive" />
-                        <div class="w3_hs_bottom w3_hs_bottom_sub">
-                            <ul>
-                                <li>
-                                    <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                </li>
-                            </ul>
+            <?php
+            foreach($lastest_product as $product){  ?>
+                <div class="col-md-3 agileinfo_new_products_grid">
+                    <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
+                        <div class="hs-wrapper hs-wrapper1">
+                            <?php
+                            $data = json_decode($product->product_images);
+                            if(is_array($data)){
+                            foreach($data as $image){ ?>
+                            <img src="{{asset('storage/files/' .basename($image))}}" alt="" class="img-responsive" >
+                            <?php }
+                            } ?>
+                            <div class="w3_hs_bottom w3_hs_bottom_sub">
+                                <ul>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h5><a href="">{{$product->product_title}}</a></h5>
+                        <div class="simpleCart_shelfItem">
+                            <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
+                            <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="add" value="1">
+                                <input type="hidden" name="w3ls_item" value="Red Laptop">
+                                <input type="hidden" name="amount" value="500.00">
+                                <button type="submit" class="w3ls-cart">Add to cart</button>
+                            </form>
                         </div>
                     </div>
-                    <h5><a href="">Laptops</a></h5>
-                    <div class="simpleCart_shelfItem">
-                        <p><span>$520</span> <i class="item_price">$500</i></p>
-                        <form action="#" method="post">
-                            <input type="hidden" name="cmd" value="_cart">
-                            <input type="hidden" name="add" value="1">
-                            <input type="hidden" name="w3ls_item" value="Red Laptop">
-                            <input type="hidden" name="amount" value="500.00">
-                            <button type="submit" class="w3ls-cart">Add to cart</button>
-                        </form>
-                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 agileinfo_new_products_grid">
-                <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-                    <div class="hs-wrapper hs-wrapper1">
-                        <img src="{{asset('/electronic_store')}}/images/27.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/28.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/29.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/30.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/31.jpg" alt=" " class="img-responsive" />
-                        <div class="w3_hs_bottom w3_hs_bottom_sub">
-                            <ul>
-                                <li>
-                                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h5><a href="">Black Phone</a></h5>
-                    <div class="simpleCart_shelfItem">
-                        <p><span>$380</span> <i class="item_price">$370</i></p>
-                        <form action="#" method="post">
-                            <input type="hidden" name="cmd" value="_cart">
-                            <input type="hidden" name="add" value="1">
-                            <input type="hidden" name="w3ls_item" value="Black Phone">
-                            <input type="hidden" name="amount" value="370.00">
-                            <button type="submit" class="w3ls-cart">Add to cart</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 agileinfo_new_products_grid">
-                <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-                    <div class="hs-wrapper hs-wrapper1">
-                        <img src="{{asset('/electronic_store')}}/images/34.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/33.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/32.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/35.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/36.jpg" alt=" " class="img-responsive" />
-                        <div class="w3_hs_bottom w3_hs_bottom_sub">
-                            <ul>
-                                <li>
-                                    <a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h5><a href="">Kids Toy</a></h5>
-                    <div class="simpleCart_shelfItem">
-                        <p><span>$150</span> <i class="item_price">$100</i></p>
-                        <form action="#" method="post">
-                            <input type="hidden" name="cmd" value="_cart">
-                            <input type="hidden" name="add" value="1">
-                            <input type="hidden" name="w3ls_item" value="Kids Toy">
-                            <input type="hidden" name="amount" value="100.00">
-                            <button type="submit" class="w3ls-cart">Add to cart</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 agileinfo_new_products_grid">
-                <div class="agile_ecommerce_tab_left agileinfo_new_products_grid1">
-                    <div class="hs-wrapper hs-wrapper1">
-                        <img src="{{asset('/electronic_store')}}/images/37.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/38.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/39.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/40.jpg" alt=" " class="img-responsive" />
-                        <img src="{{asset('/electronic_store')}}/images/41.jpg" alt=" " class="img-responsive" />
-                        <div class="w3_hs_bottom w3_hs_bottom_sub">
-                            <ul>
-                                <li>
-                                    <a href="#" data-toggle="modal" data-target="#myModal6"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h5><a href="">Induction Stove</a></h5>
-                    <div class="simpleCart_shelfItem">
-                        <p><span>$280</span> <i class="item_price">$250</i></p>
-                        <form action="#" method="post">
-                            <input type="hidden" name="cmd" value="_cart">
-                            <input type="hidden" name="add" value="1">
-                            <input type="hidden" name="w3ls_item" value="Induction Stove">
-                            <input type="hidden" name="amount" value="250.00">
-                            <button type="submit" class="w3ls-cart">Add to cart</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      <?php }
+            ?>
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -1151,24 +696,20 @@
 <!-- top-brands -->
 <div class="top-brands">
     <div class="container">
-        <h3>Top Brands</h3>
+        <h3>Hãng Sản Xuất</h3>
         <div class="sliderfig">
             <ul id="flexiselDemo1">
-                <li>
-                    <img src="{{asset('/electronic_store')}}/images/tb1.jpg" alt=" " class="img-responsive" />
-                </li>
-                <li>
-                    <img src="{{asset('/electronic_store')}}/images/tb2.jpg" alt=" " class="img-responsive" />
-                </li>
-                <li>
-                    <img src="{{asset('/electronic_store')}}/images/tb3.jpg" alt=" " class="img-responsive" />
-                </li>
-                <li>
-                    <img src="{{asset('/electronic_store')}}/images/tb4.jpg" alt=" " class="img-responsive" />
-                </li>
-                <li>
-                    <img src="{{asset('/electronic_store')}}/images/tb5.jpg" alt=" " class="img-responsive" />
-                </li>
+                <?php
+                foreach ($manufacturer as $manu){
+                    if($manu->manufacturer_image){ ?>
+                    <li>
+                        <a href="{{url('/shop-manufacturer/'.$manu->manufacturer_id)}}">
+                            <img src="{{asset('storage/files/'.basename($manu->manufacturer_image))}}" alt=" " class="img-responsive" />
+                        </a>
+                    </li>
+         <?php      }
+                }
+                ?>
             </ul>
         </div>
     </div>

@@ -1,10 +1,12 @@
 @extends("backend.layouts.main")
-@section("title","Quản lý thể loại")
+@section("title","Quản lý danh mục")
 @section("content")
-
+    <div class="cf_del_cat">
+        <p>Danh mục này sẽ bị xóa khỏi hệ thống</p>
+    </div>
     <div class="container-fluid">
         <div>
-            <a href="{{url("/admin/product_category/create")}}" class="btn btn-success">Thêm Thể Loại</a>
+            <a href="{{url("/admin/product_category/create")}}" class="btn btn-success">Thêm Danh Mục</a>
         </div>
         @if(session('success'))
             <div class="alert alert-success">
@@ -33,9 +35,11 @@
         </table>
     </div>
     <?php
-    function viewmenu(&$categories,$parent_id=0,$char='',$level=0){
+    function viewmenu(&$categories,$parent_id=0,$level=0,$char=''){
     foreach ($categories as $key => $manage){
-    if ($manage->parent_id == $parent_id){
+    if ($manage->parent_id==$parent_id){
+        $a = $level+1;
+
     ?>
     <tr>
         <td>
@@ -48,28 +52,26 @@
             <?php echo $manage->parent_id; ?>
         </td>
         <td>
-            <?php $a = $level+1; echo $a; ?>
+            <?php echo $a; ?>
         </td>
-        <td class="text-right">
-            <a href="{{url("/admin/product_category/edit/$manage->category_id")}}" class="btn btn-warning" style="width: 43px;">
+        <td style="text-align: right;">
+            <a href="{{url("/admin/product_category/edit/$manage->category_id")}}" class="btn btn-warning" >
                 <i class="fas fa-edit"></i>
             </a>
-            <form class="del_cat" method="post" action="{{url("/admin/product_category/delete/$manage->category_id")}}" style="display: inline;">
+            <form class="del_cat" action="{{url("/admin/product_category/delete/$manage->category_id")}}" method="post" style="display: inline;">
                 @method('delete')
                 @csrf
-                <button class="btn btn-danger" type="submit" style="width: 43px">
+                <button class="btn btn-danger" type="submit">
                     <i class="fa fa-trash"></i>
                 </button>
             </form>
-
         </td>
     </tr>
     <?php
     unset($categories[$key]);
-    viewmenu($categories,$manage->category_id,$manage->category_name.' > ',$a);
+    viewmenu($categories,$manage->category_id,$a,$char.$manage->category_name.' > ');
     }
     }
     }
     ?>
-
 @endsection

@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 //route hiển thị view electronic store
 Route::get('/','Frontend\IndexController@index')->name('homepage');
-
+//route hiển thị view danh mục electronic store
+Route::get('/shop-category/{category_id}','Frontend\CategoryController@index');
+//route hiển thị view nhà sản xuất electronic store
+Route::get('/shop-manufacturer/{manufacturer_id}','Frontend\ManufacturerController@index');
 
 Route::prefix('admin')->group(function() {
     // Gom nhóm các route cho phần admin
@@ -42,13 +45,18 @@ Route::prefix('admin')->group(function() {
     Route::get('/product_category', 'Backend\CategoryProductController@index');
     Route::get('/product_category/create', 'Backend\CategoryProductController@createpage');
     Route::get('/product_category/edit/{category_id}', 'Backend\CategoryProductController@editpage');
-
     //route hiển thị product
     Route::get('/product', 'Backend\ProductController@index');
     Route::get('/product/create', 'Backend\ProductController@createpage');
     Route::get('/product/edit/{product_id}', 'Backend\ProductController@editpage');
     //route hiển thị manufacturer
-
+    Route::get('/manufacturer', 'Backend\ManufacturerController@index');
+    Route::get('/manufacturer/create', 'Backend\ManufacturerController@createpage');
+    Route::get('/manufacturer/edit/{manufacturer_id}', 'Backend\ManufacturerController@editpage');
+    //route hiển thị thuộc tính sản phẩm
+    Route::get('/attribute', 'Backend\AttributeController@index');
+    Route::get('/attribute/create', 'Backend\AttributeController@createpage');
+    Route::get('/attribute/edit/{attribute_id}', 'Backend\AttributeController@editpage');
 
     //route chức năng category
     Route::post('/product_category/create', 'Backend\CategoryProductController@create');
@@ -58,6 +66,15 @@ Route::prefix('admin')->group(function() {
     Route::post('/product/create', 'Backend\ProductController@create');
     Route::post('/product/edit/{product_id}', 'Backend\ProductController@edit');
     Route::delete('/product/delete/{product_id}', 'Backend\ProductController@delete');
+    //route chức năng manufacturer
+    Route::post('/manufacturer/create', 'Backend\ManufacturerController@create');
+    Route::post('/manufacturer/edit/{manufacturer_id}', 'Backend\ManufacturerController@edit');
+    Route::delete('/manufacturer/delete/{manufacturer_id}', 'Backend\ManufacturerController@delete');
+    //route chức năng thuộc tính sản phẩm
+    Route::post('/attribute/create', 'Backend\AttributeController@create');
+    Route::post('/attribute/edit/{attribute_id}', 'Backend\AttributeController@edit');
+    Route::delete('/attribute/delete/{attribute_id}', 'Backend\AttributeController@delete');
+    //
 });
 
 Auth::routes();

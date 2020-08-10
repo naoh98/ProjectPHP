@@ -22,7 +22,7 @@
 }
 .custom_img{
     border: 1px solid black;
-    background: mediumpurple;
+    background: #2d54c6;
     display: inline-block;
     padding: 17px 0px;
     width: 50%;
@@ -37,4 +37,43 @@
 }
 .custom_img input[type='file']{
     display: none;
+}
+div[role='dialog']{
+    position: fixed;
+    padding: 0px;
+    background: #464853;
+}
+.ui-dialog-content{
+    height: auto !important;
+}
+.ui-widget-header{
+    background: #2d54c6;
+    color: white;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{
+    float: none;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+    width: 50%;
+    margin: 0px;
+}
+.ui-dialog .ui-dialog-buttonpane button:first-child:hover {
+     background: #e74a3b;
+     color: white;
+ }
+.ui-dialog .ui-dialog-buttonpane button:last-child:hover {
+    background: #f6c23e;
+    color: white;
+}
+.ui-dialog .ui-dialog-buttonpane{
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+.cf_del_att, .cf_del_fact, .cf_del_pro, .cf_del_cat{
+    display: none;
+    color: white;
+}
+.att_tbl td{
+    padding: 0px 20px 8px 0px;
 }

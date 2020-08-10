@@ -8,6 +8,7 @@
             <div class="col-md-12">
                 <a href="{{url('/admin/product')}}" class="btn btn-info">Quay về</a>
             </div>
+            <br><br>
             <div class="col-md-12">
                 <form name="up_pro" action="{{url("/admin/product/create")}}"  method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
@@ -19,7 +20,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label style="display: block;">Ảnh Bìa</label>
+                        <label style="display: block;">Ảnh Đại Diện</label>
                         <label class="custom_img">
                             <input type="file" value="" name="product_main_image">
                             <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
@@ -57,7 +58,15 @@
                     @enderror
                     <div class="form-group">
                         <label>Hãng Sản Xuất</label>
-                        <input type="text" value="" name="product_manufacturer" class="form-control">
+                        <div>
+                            <select name="product_manufacturer">
+                                <?php
+                                foreach ($fact as $partner){ ?>
+                                    <option value="{{$partner->manufacturer_id}}">{{$partner->manufacturer_name}}</option>
+                              <?php  }
+                                ?>
+                            </select>
+                        </div>
                     </div>
                     @error('product_manufacturer')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -88,7 +97,13 @@
                         <label>Thể Loại</label>
                         <div>
                             <select name="product_type">
-                                <?php viewcreate($category); ?>
+                                <?php
+                                foreach ($category as $value){ ?>
+                                <option value="{{$value->category_id}}">
+                                    <?php  echo $value->category_name  ?>
+                                </option>
+                                <?php     }
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -98,21 +113,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-    <?php
-    function viewcreate(&$categories,$parent_id=0,$char=""){
-    foreach ($categories as $key => $manage){
-    if ($manage->parent_id==$parent_id){
-    ?>
-    <option value="{{$manage->category_id}}"><?php echo $char.$manage->category_name.' ['.$manage->category_id.']'; ?></option>
-    <?php
-    unset($categories[$key]);
-    viewcreate($categories,$manage->category_id,$manage->category_name.' ['.$manage->category_id.']'.' > ');
-    }
-    }
-    }
-    ?>
 @endsection

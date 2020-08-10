@@ -39,9 +39,10 @@
                 <a class="collapse-item" href="">Đơn hàng</a>
                 <a class="collapse-item" href="{{url('/admin/product_category')}}">Danh mục sản phẩm</a>
                 <a class="collapse-item" href="{{url('/admin/product')}}">Sản phẩm</a>
+                <a class="collapse-item" href="{{url('/admin/attribute')}}">Thuộc tính sản phẩm</a>
                 <a class="collapse-item" href="">Đánh giá</a>
                 <a class="collapse-item" href="">Chat support</a>
-                <a class="collapse-item" href="">Nhà sản xuất</a>
+                <a class="collapse-item" href="{{url('/admin/manufacturer')}}">Nhà sản xuất</a>
             </div>
         </div>
     </li>
