@@ -25,7 +25,6 @@
     <script src="{{asset('/electronic_store')}}/js/jquery.magnific-popup.js" type="text/javascript"></script>
     <script type="text/javascript" src="{{asset('/electronic_store')}}/js/jquery.flexisel.js"></script>
     <script src="{{asset('/electronic_store')}}/js/easyResponsiveTabs.js" type="text/javascript"></script>
-    <script src="{{asset('/electronic_store')}}/js/main.js" type="text/javascript"></script> <!-- custom js tại đây -->
 </head>
 <body>
 
@@ -40,7 +39,7 @@
 
 @include('frontend.partials.footer')
 
-
+<script src="{{asset('/electronic_store')}}/js/main.js" type="text/javascript"></script> <!-- custom js tại đây -->
 
 </body>
 </html>

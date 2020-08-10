@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\CategoryProductModel;
+use Illuminate\Validation\Rule;
 
 class CategoryProductController extends Controller
 {
@@ -15,9 +16,7 @@ class CategoryProductController extends Controller
         /*echo "<pre>";
         print_r($category);
         echo "</pre>";*/
-        $data = [];
-        $data["category"] = $category;
-        return view('backend.contents.productcategories.index',$data);
+        return view('backend.contents.productcategories.index',['category'=>$category]);
     }
 
     //hiển thị trang thêm thể loại
@@ -31,24 +30,31 @@ class CategoryProductController extends Controller
     //code thêm thể loại
     public function create(Request $request){
         $validate_cat =[
-            'category_name' => 'required',
-            'parent_id' => 'required'
-
+            'category_name' => 'required|unique:category,category_name',
+            'category_image' => 'required'
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống'
+            'required' => ':attribute không được để trống',
+            'unique' => ':attribute đã tồn tại'
         ];
         $this->validate($request,$validate_cat,$error_messages);
 
-        $cr_arr=[];
-        if ($request->hasFile('category_image')) {
-            $file_name = $request->category_image->getClientOriginalName();
-            $path = $request->category_image->storeAs('public/files', $file_name);
-            $cr_arr['category_image'] = $path;
+        //tạo biến lấy ra mảng các sản phẩm trong danh mục
+        $products = DB::table('product')->where('product_type',$request->parent_id)->get();
+        if ($products->isNotEmpty()){
+            return redirect('/admin/product_category/create')
+                ->with('error','Danh mục đã chọn vẫn còn sản phẩm.<br>Vui lòng xóa sản phẩm hoặc sửa lại danh mục của sản phẩm trong mục Sản Phẩm trước khi thêm danh mục.');
+        }else{
+            $cr_arr=[];
+            if ($request->hasFile('category_image')) {
+                $file_name = $request->category_image->getClientOriginalName();
+                $path = $request->category_image->storeAs('public/files', $file_name);
+                $cr_arr['category_image'] = $path;
+            }
+            $cr_arr['category_name'] = $request->category_name;
+            $cr_arr['parent_id'] = $request->parent_id;
+            DB::table('category')->insert($cr_arr);
         }
-        $cr_arr['category_name'] = $request->category_name;
-        $cr_arr['parent_id'] = $request->parent_id;
-        DB::table('category')->insert($cr_arr);
 
         return redirect('/admin/product_category')->with('success','Thêm danh mục thành công');
     }
@@ -84,21 +90,26 @@ class CategoryProductController extends Controller
     public function edit(Request $request,$category_id){
 
         $validate_cat =[
-            'category_name' => 'required',
-            'parent_id' => 'required'
-
+            'category_name' => ["required",Rule::unique('category')->ignore($category_id,'category_id')]
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống'
+            'required' => ':attribute không được để trống',
+            'unique' => ':attribute đã tồn tại'
         ];
         $this->validate($request,$validate_cat,$error_messages);
 
         //khai báo mảng mới để truyền vào function cat()
         $arr=[];
         $test = $this->cat($arr,$category_id);
-        //dump($test);die;
+        //dump($arr);die;
+        //tạo biến lấy ra mảng các sản phẩm trong danh mục
+        $products = DB::table('product')->where('product_type',$request->parent_id)->get();
         if (in_array($request->parent_id,$arr)){
             return redirect('/admin/product_category/edit/'.$category_id)->with('error','Danh mục cha không thể làm con của danh mục con trong chính nó !');
+        }
+        elseif ($products->isNotEmpty()){
+            return redirect('/admin/product_category/edit/'.$category_id)
+                ->with('error','Danh mục đã chọn vẫn còn sản phẩm.<br>Vui lòng xóa sản phẩm hoặc sửa lại danh mục của sản phẩm trong mục Sản Phẩm trước khi sửa danh mục.');
         }
         else{
             $ed_arr=[];

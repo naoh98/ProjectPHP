@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
+use App\Models\ProductModel;
 
 class ProductController extends Controller
 {
@@ -12,10 +14,10 @@ class ProductController extends Controller
     public function index() {
 
         $product = DB::table('product')
-            ->join('category', 'product.product_type', '=', 'category.category_id')
-            ->select('product.*','category.category_id','category.category_name')
-            ->paginate(4);
-
+            ->leftJoin('category', 'product.product_type', '=', 'category.category_id')
+            ->join('manufacturer','product.product_manufacturer','=','manufacturer.manufacturer_id')
+            ->select('product.*','category.category_name','manufacturer_name')
+            ->paginate(10);
         return view("backend.contents.products.index",['product'=>$product]);
     }
 
@@ -25,36 +27,60 @@ class ProductController extends Controller
         return redirect('/admin/product')->with('success', 'Xóa sản phẩm thành công');
     }
 
+    //lấy ra các danh mục con Cuối Cùng của danh mục cha
+    public function lowest_cat(&$arr,$category_id){
+        $data = DB::table('category')->where('parent_id',$category_id)->get();
+        if ($data->isNotEmpty()){
+            foreach ($data as $value){
+                $id = $value->category_id;
+                $this->lowest_cat($arr,$id);
+            }
+        }else{
+            $arr[]=$category_id;
+        }
+    }
+
     //hiển thị trang edit
     public function editpage($product_id){
-        //trả về toàn bộ csdl để đệ quy option category theo dạng object - dùng " product-> "
-        $category = DB::table('category')->get();
+        $arr=[];
         //trả về toàn bộ csdl để đệ quy option category theo dạng array (mảng) - dùng " product[''] "
         //$category = CategoryProductModel::all();
-
+        //trả về toàn bộ csdl để đệ quy option category theo dạng object - dùng " product-> "
+        $category = DB::table('category')->get();
+        foreach ($category as $value){
+            $this->lowest_cat($arr,$value->category_id);
+        }
+        $categories = DB::table('category')->whereIn('category_id',$arr)->get();
+        //trả về toàn bộ csdl bảng manufacturer để in ra option hãng sản xuất
+        $manufacturer = DB::table('manufacturer')->get();
         //trả về 1 bản ghi cần chỉnh sửa
         $product = DB::table('product')->where('product_id',$product_id)->first();
-
-        return view("backend.contents.products.edit",['category'=>$category,'product'=>$product]);
+        //trả về danh sách các attribute và giá trị của chúng của sản phẩm đang xét
+        $att = DB::table('product_attributes')
+        ->where('product_attributes.product_id',$product_id)
+        ->join('attributes','product_attributes.attribute_id','=','attributes.attribute_id')
+        ->select('product_attributes.*','attributes.attribute_name')
+        ->get();
+        //trả về danh sách các attribute
+        $att_all = DB::table('attributes')->get();
+        return view("backend.contents.products.edit",['category'=>$categories,'product'=>$product,'fact' => $manufacturer,'product_att'=>$att,'att_all'=>$att_all]);
     }
 
     //code edit
     public function edit(Request $request,$product_id){
 
         $validate_pro =[
-            'product_title' => 'required',
+            'product_title' => ["required",Rule::unique('product')->ignore($product_id,'product_id')],
             'product_desc' => 'required',
-            'product_main_image' => 'required',
-            'product_images' => 'required',
             'product_manufacturer' => 'required',
             'product_quantity' => 'required|numeric',
-            'product_type' => 'required|numeric',
             'product_price_core' => 'required|numeric',
             'product_tax' => 'required|numeric'
         ];
         $error_messages = [
             'required' => ':attribute không được để trống',
-            'numeric' => ':attribute phải là số'
+            'numeric' => ':attribute phải là số',
+            'unique' => ':attribute đã tồn tại'
         ];
         $this->validate($request,$validate_pro,$error_messages);
         $arr=[];
@@ -81,17 +107,49 @@ class ProductController extends Controller
         $arr['product_type'] = $request->product_type;
         DB::table('product')->where('product_id', $product_id)->update($arr);
 
+        if ($request->id){
+            foreach($request->id as $key => $value){
+                $arr1['value'] = $request->edit_value[$key];
+                DB::table('product_attributes')->where('id',$request->id[$key])->update($arr1);
+            }
+        }
+        if ($request->del_id){
+            foreach($request->del_id as $value){
+                DB::table('product_attributes')->where('id',$value)->delete();
+            }
+        }
+        if ($request->add_id){
+            foreach($request->add_id as $key => $value){
+                    $arr2['attribute_id'] = $request->add_id[$key];
+                    $arr2['product_id'] = $product_id;
+                    $arr2['value'] = $request->add_value[$key];
+                    if ($arr2['value'] != null){
+                        DB::table('product_attributes')->insert($arr2);
+                    }
+                }
+        }
+
         return redirect('/admin/product')->with('success','Sửa sản phẩm thành công');
     }
 
     //hiển thị trang thêm thể loại
     public function createpage(){
+        $arr=[];
+        //trả về toàn bộ csdl để đệ quy option category theo dạng array (mảng) - dùng " product[''] "
+        //$category = CategoryProductModel::all();
         //trả về toàn bộ csdl để đệ quy option category theo dạng object - dùng " product-> "
         $category = DB::table('category')->get();
-        return view("backend.contents.products.create",['category'=>$category]);
+        foreach ($category as $value){
+            $this->lowest_cat($arr,$value->category_id);
+        }
+        $categories = DB::table('category')->whereIn('category_id',$arr)->get();
+
+        //trả về toàn bộ csdl bảng manufacturer để in ra option hãng sản xuất
+        $manufacturer = DB::table('manufacturer')->get();
+        return view("backend.contents.products.create",['category'=>$categories,'fact' => $manufacturer]);
     }
 
-    //code thêm san pham
+    //code thêm sản phẩm
     public function create(Request $request){
         $validate_pro =[
             'product_title' => 'required|unique:product,product_title',
@@ -100,7 +158,6 @@ class ProductController extends Controller
             'product_images' => 'required',
             'product_manufacturer' => 'required',
             'product_quantity' => 'required|numeric',
-            'product_type' => 'required|numeric',
             'product_price_core' => 'required|numeric',
             'product_tax' => 'required|numeric'
         ];
