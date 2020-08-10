@@ -14,7 +14,7 @@ li[role='presentation']{
     list-style-type: none;
     position:relative;
     flex-grow: 1;
-    padding: 20px;
+    padding: 10px;
 }
 .menu ul li:hover{
     cursor: pointer;
@@ -51,4 +51,8 @@ li[role='presentation']{
     margin-top: 0px;
     border: none;
 }
-
+.menu_top_pro{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
