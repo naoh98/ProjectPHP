@@ -21,9 +21,10 @@
                                 <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                                     <div class="facts">
                                         <div class="register">
-                                            <form action="#" method="post">
-                                                <input name="Email" placeholder="Email Address" type="text" required="">
-                                                <input name="Password" placeholder="Password" type="password" required="">
+                                            <form action="{{ route('login') }}" method="post">
+                                                @csrf
+                                                <input name="email" placeholder="Email Address" type="text" required="">
+                                                <input name="password" placeholder="Password" type="password" required="">
                                                 <div class="sign-up">
                                                     <input type="submit" value="Sign in"/>
                                                 </div>
@@ -34,11 +35,12 @@
                                 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                     <div class="facts">
                                         <div class="register">
-                                            <form action="#" method="post">
-                                                <input placeholder="Name" name="Name" type="text" required="">
-                                                <input placeholder="Email Address" name="Email" type="email" required="">
-                                                <input placeholder="Password" name="Password" type="password" required="">
-                                                <input placeholder="Confirm Password" name="Password" type="password" required="">
+                                            <form action="{{route('register')}}" method="post">
+                                                @csrf
+                                                <input placeholder="Name" name="name" type="text" required="">
+                                                <input placeholder="Email Address" name="email" type="email" required="">
+                                                <input placeholder="Password" name="password" type="password" required="">
+                                                <input placeholder="Confirm Password" name="password_confirmation" type="password" required="">
                                                 <div class="sign-up">
                                                     <input type="submit" value="Create Account"/>
                                                 </div>
@@ -77,6 +79,9 @@
     <div class="container">
         <div class="w3l_login">
             <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            {{--@guest--}}
+              {{--<span> Hello {{Auth::user()->name }}</span>--}}
+            {{--@endguest--}}
         </div>
         <div class="w3l_logo">
             <h1><a href="">Electronic Store<span>Your stores. Your place.</span></a></h1>
@@ -103,9 +108,9 @@
 <!-- end header -->
 
 <script type="text/javascript">
-    $(window).on('load',function(){
-        $('#myModal88').modal('show');
-    });
+    // $(window).on('load',function(){
+    //     $('#myModal88').modal('show');
+    // });
     $(document).ready(function () {
         $('#horizontalTab').easyResponsiveTabs({
             type: 'default', //Types: default, vertical, accordion

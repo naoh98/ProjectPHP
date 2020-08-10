@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
+
+
+
     //lấy ra các danh mục con Cuối Cùng của danh mục cha
     public function lowest_cat(&$arr,$category_id){
         $data = DB::table('category')->where('parent_id',$category_id)->get();
@@ -20,12 +23,6 @@ class IndexController extends Controller
             $arr[]=$category_id;
         }
     }
-
-    //
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
 
 
     public function index(){
@@ -49,6 +46,8 @@ class IndexController extends Controller
         $manufacturer = DB::table('manufacturer')->get();
 
         return view('frontend.contents.homepage',['min_cat'=>$categories,'product'=>$products,'lastest_product'=>$lastest_products,'manufacturer'=>$manufacturer]);
+
     }
+
 
 }

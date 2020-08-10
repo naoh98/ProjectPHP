@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 //route hiển thị view electronic store
 Route::get('/','Frontend\IndexController@index')->name('homepage');
+
 //route hiển thị view danh mục electronic store
 Route::get('/shop-category/{category_id}','Frontend\CategoryController@index');
 //route hiển thị view nhà sản xuất electronic store
 Route::get('/shop-manufacturer/{manufacturer_id}','Frontend\ManufacturerController@index');
+
+
 
 Route::prefix('admin')->group(function() {
     // Gom nhóm các route cho phần admin
