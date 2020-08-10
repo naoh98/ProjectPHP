@@ -8,4 +8,5 @@ class ManufacturerModel extends Model
 {
     //
     protected $table='manufacturer';
+
 }

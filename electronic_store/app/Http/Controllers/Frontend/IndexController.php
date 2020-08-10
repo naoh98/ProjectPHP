@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
+
+
+
     //lấy ra các danh mục con Cuối Cùng của danh mục cha
     public function lowest_cat(&$arr,$category_id){
         $data = DB::table('category')->where('parent_id',$category_id)->get();
@@ -20,6 +23,7 @@ class IndexController extends Controller
             $arr[]=$category_id;
         }
     }
+
     //lấy ra toàn bộ id danh mục con của danh mục đang chọn
     public function cat(&$arr,$category_id){
         $data = DB::table('category')->where('parent_id',$category_id)->get();
@@ -34,6 +38,7 @@ class IndexController extends Controller
         return $arr;
     }
     //
+    
     public function index(){
         $arr=[];
         $category = DB::table('category')->get();
@@ -54,7 +59,6 @@ class IndexController extends Controller
             unset($arr2);
         }
 
-
         $lastest_products = DB::table('product')
         ->orderBy('product_id','desc')
         ->take(4)
@@ -64,5 +68,6 @@ class IndexController extends Controller
 
         return view('frontend.contents.homepage',['top_cat'=>$categories,'product'=>$a,'lastest_product'=>$lastest_products,'manufacturer'=>$manufacturer]);
     }
+
 
 }
