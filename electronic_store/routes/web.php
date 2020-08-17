@@ -15,11 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 //route hiển thị view electronic store
 Route::get('/','Frontend\IndexController@index')->name('homepage');
+//route hiển thị view tất cả sản phẩm electronic store
+Route::get('/shop-category','Frontend\CategoryController@indexall')->name('cat.pro.all');
+//route chức năng lọc tất cả sản phẩm
+Route::get('/shop-category/product_filter','Frontend\CategoryController@filterall')->name('filter.all');
+//route hiển thị view sản phẩm theo danh mục electronic store
+Route::get('/shop-category/{category_id}','Frontend\CategoryController@index')->name('cat.pro');
+//route chức năng lọc sản phẩm theo danh mục
+Route::get('/shop-category/{category_id}/product_filter','Frontend\CategoryController@filter')->name('filter');
+//route hiển thị chi tiết sản phẩm
+Route::get('/product/{product_id}','Frontend\ProductController@index');
 
-//route hiển thị view danh mục electronic store
-Route::get('/shop-category/{category_id}','Frontend\CategoryController@index');
-//route hiển thị view nhà sản xuất electronic store
-Route::get('/shop-manufacturer/{manufacturer_id}','Frontend\ManufacturerController@index');
+
 
 
 // Route for add to cart

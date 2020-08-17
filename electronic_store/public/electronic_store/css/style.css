@@ -582,8 +582,8 @@ li.w3pages .dropdown-menu > li > a:hover{
 }
 /*-- //banner --*/
 /*-- banner-bottom --*/
-.banner-bottom,.team,.checkout,.additional_info,.team-bottom,.single,.mail,.special-deals,.about,.faq,.typo,.new-products,.banner-bottom1,.top-brands,.mobiles,.w3l_related_products{
-	padding:5em 0;
+.banner-bottom,.team,.checkout,.additional_info,.team-bottom,.single,.mail,.special-deals,.about,.faq,.typo,.new-products,.banner-bottom1,.top-brands,.w3l_related_products{
+        padding:5em 0;
 }
 .modal-body iframe {
     width: 100%;
@@ -781,9 +781,12 @@ li.w3pages .dropdown-menu > li > a:hover{
 }
 .w3_hs_bottom ul li{
 	display:inline-block;
+    width: 50%;
 }
 .w3_hs_bottom ul li a{
 	display: block;
+    border-radius: 7px;
+    font-size: 18px;
 }
 .w3_hs_bottom ul li a,.flex_ecommerce a{
 	font-size:1em;
@@ -1638,9 +1641,8 @@ h3.other-nw {
 /*-- //login --*/
 /*-- breadcrumb --*/
 .breadcrumb_dress {
-    background: #e7e5e6;
-    padding: .5em 0;
-    text-align: center;
+    background: #EEECED;
+    padding: 8px 0px 8px 3em;
 	-webkit-box-shadow: 0px 1px 5px #555;
 	-moz-box-shadow: 0px 1px 5px #555;
 	-o-box-shadow: 0px 1px 5px #555;
