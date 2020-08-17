@@ -24,7 +24,17 @@
                                             <form action="{{ route('login') }}" method="post">
                                                 @csrf
                                                 <input name="email" placeholder="Email Address" type="text" required="">
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                                 <input name="password" placeholder="Password" type="password" required="">
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                                 <div class="sign-up">
                                                     <input type="submit" value="Sign in"/>
                                                 </div>
@@ -38,8 +48,23 @@
                                             <form action="{{route('register')}}" method="post">
                                                 @csrf
                                                 <input placeholder="Name" name="name" type="text" required="">
+                                                @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                                 <input placeholder="Email Address" name="email" type="email" required="">
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                                 <input placeholder="Password" name="password" type="password" required="">
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                                 <input placeholder="Confirm Password" name="password_confirmation" type="password" required="">
                                                 <div class="sign-up">
                                                     <input type="submit" value="Create Account"/>
@@ -84,14 +109,11 @@
             {{--@endguest--}}
         </div>
         <div class="w3l_logo">
-            <h1><a href="">Electronic Store<span>Your stores. Your place.</span></a></h1>
+            <h1><a href="{{route('homepage')}}">Electronic Store<span>Your stores. Your place.</span></a></h1>
         </div>
         <div class="cart cart box_1">
-            <form action="#" method="post" class="last">
-                <input type="hidden" name="cmd" value="_cart" />
-                <input type="hidden" name="display" value="1" />
-                <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-            </form>
+
+            <a href="{{ route('showCart') }}" class="w3view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
         </div>
     </div>
 </div>

@@ -59,6 +59,44 @@ li[role='presentation']{
     justify-content: center;
     text-align: center;
 }
+<<<<<<< HEAD
+/*================================== CART PAGE =================================*/
+
+.cart {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+/*================================== CHECKOUT PAGE =================================*/
+
+.checkout-block {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.checkout-block__title {
+    margin-bottom: 30px;
+}
+
+.summary {
+    margin-bottom: 30px;
+}
+
+.summary-content {
+    display: flex;
+    justify-content: space-between;
+
+}
+.summary__title {
+    width: 70%;
+}
+.summary__quantity {
+    width: 5%;
+}
+
+.summary__price {
+    width: 25%;
+}
+=======
 .ecommerce_manu ul li{
     list-style-type: none;
     margin: 10px 0px;
@@ -127,3 +165,4 @@ li[role='presentation']{
 .dropdown i:hover{
     color: rgb(255, 93, 106);
 }
+>>>>>>> 16e0df0a67d7ca93227ea003576c95f2bf2bdfff

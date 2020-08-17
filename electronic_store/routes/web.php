@@ -29,6 +29,29 @@ Route::get('/product/{product_id}','Frontend\ProductController@index');
 
 
 
+// Route for add to cart
+Route::get('/products/add-to-cart/{id}', 'Frontend\CartController@addToCart')->name('addToCart');
+// Route for show cart
+Route::get('/products/show-cart', 'Frontend\CartController@showCart')->name('showCart');
+
+// Route for update cart
+Route::get('/products/update-cart', 'Frontend\CartController@updateCart')->name('updateCart');
+
+// Route for delete cart
+Route::get('/products/delete-cart', 'Frontend\CartController@deleteCart')->name('deleteCart');
+
+
+// Route for checkout
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/checkout', 'Frontend\CheckoutController@index')->name('checkout.index');
+    Route::post('/checkout','Frontend\CheckoutController@storeOrder' )->name('checkout.order');
+
+});
+Route::get('/checkout/alert', function () {
+   return view('frontend.contents.confirm-order');
+});
+
 
 Route::prefix('admin')->group(function() {
     // Gom nhóm các route cho phần admin
