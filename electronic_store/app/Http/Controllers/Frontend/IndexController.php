@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
 
-
-
     //lấy ra các danh mục con Cuối Cùng của danh mục cha
     public function lowest_cat(&$arr,$category_id){
         $data = DB::table('category')->where('parent_id',$category_id)->get();
@@ -38,7 +36,7 @@ class IndexController extends Controller
         return $arr;
     }
     //
-    
+
     public function index(){
         $arr=[];
         $category = DB::table('category')->get();

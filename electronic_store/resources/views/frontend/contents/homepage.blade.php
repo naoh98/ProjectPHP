@@ -33,13 +33,13 @@
                         foreach($top_cat as $value){
                         if ($i1==0){?>
                         <div role="tabpanel" class="tab-pane fade active in" id="{{$value->category_id}}" aria-labelledby="">
-                            <div class="agile_ecommerce_tabs">
+                            <div class="agile_ecommerce_tabs col-md-12">
                                 <?php $count_pro=1;
                                 foreach($product as $key => $value2){
                                 if($value->category_id==$key){
                                     foreach ($product[$key] as $item){
                                 if ($count_pro<=8){  ?>
-                                <div class="col-md-3 agile_ecommerce_tab_left">
+                                <div class="col-md-3 agile_ecommerce_tab_left single_product">
                                     <div class="hs-wrapper">
                                         <?php
                                         $data = json_decode($item->product_images);
@@ -51,7 +51,7 @@
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span>Chi tiết</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -85,7 +85,7 @@
                                 if($value->category_id==$key){
                                     foreach ($product[$key] as $item){
                                 if ($count_pro<=8){   ?>
-                                <div class="col-md-3 agile_ecommerce_tab_left">
+                                <div class="col-md-3 agile_ecommerce_tab_left single_product">
                                     <div class="hs-wrapper">
                                         <?php
                                         $data = json_decode($item->product_images);
@@ -97,7 +97,7 @@
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span>Chi tiết</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -142,9 +142,6 @@
             <div class="col-md-7 w3agile_special_deals_grid_left">
                 <div class="w3agile_special_deals_grid_left_grid">
                     <img src="{{asset('/electronic_store')}}/images/21.jpg" alt=" " class="img-responsive" />
-                    <div class="w3agile_special_deals_grid_left_grid_pos1">
-                        <h5>30%<span>Off/-</span></h5>
-                    </div>
                     <div class="w3agile_special_deals_grid_left_grid_pos">
                         <h4>We Offer <span>Best Products</span></h4>
                     </div>
@@ -219,7 +216,7 @@
                             <div class="w3_hs_bottom w3_hs_bottom_sub">
                                 <ul>
                                     <li>
-                                        <a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                        <a href="#" data-toggle="modal" data-target="#myModal2"><span>Chi tiết</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -255,7 +252,7 @@
                 foreach ($manufacturer as $manu){
                     if($manu->manufacturer_image){ ?>
                     <li>
-                        <a href="{{url('/shop-manufacturer/'.$manu->manufacturer_id)}}">
+                        <a href="{{route('cat.pro.all',['manu'=>$manu->manufacturer_id])}}">
                             <img src="{{asset('storage/files/'.basename($manu->manufacturer_image))}}" alt=" " class="img-responsive" />
                         </a>
                     </li>

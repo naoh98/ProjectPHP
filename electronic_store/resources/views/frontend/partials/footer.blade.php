@@ -56,9 +56,6 @@
                 <a href="#home1" class="scroll"><img src="{{asset('/electronic_store')}}/images/arrow.png" alt=" " class="img-responsive" /></a>
             </div>
         </div>
-        <div class="container">
-            <p>&copy; 2017 Electronic Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
-        </div>
     </div>
 </div>
 <!-- end footer -->

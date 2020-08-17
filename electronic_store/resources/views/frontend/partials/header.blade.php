@@ -80,21 +80,11 @@
         <div class="w3l_login">
             <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
             {{--@guest--}}
-              {{--<span> Hello {{Auth::user()->name }}</span>--}}
+            {{--<span> Hello {{Auth::user()->name }}</span>--}}
             {{--@endguest--}}
         </div>
         <div class="w3l_logo">
             <h1><a href="">Electronic Store<span>Your stores. Your place.</span></a></h1>
-        </div>
-        <div class="search">
-            <input class="search_box" type="checkbox" id="search_box">
-            <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
-            <div class="search_form">
-                <form action="#" method="post">
-                    <input type="text" name="Search" placeholder="Search...">
-                    <input type="submit" value="Send">
-                </form>
-            </div>
         </div>
         <div class="cart cart box_1">
             <form action="#" method="post" class="last">

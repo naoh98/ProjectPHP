@@ -2,8 +2,7 @@
 @section('title','Sản Phẩm')
 @section('content')
 
-    <div class="banner banner1"
-         style="background: url('{{asset("/storage/files/".basename($this_cat->category_image))}}') no-repeat center;background-size: 100% 100%;">
+    <div class="banner banner1">
     </div>
 
     <div class="breadcrumb_dress">
@@ -22,8 +21,8 @@
                     <div class="w3ls_mobiles_grid_left_grid">
                         <h3>Danh Mục</h3>
                         <div class="w3ls_mobiles_grid_left_grid_sub catforpro">
-                            <a href="{{url('/shop-category')}}">Tất cả</a>
-                            <?php showcatforpro($categories,$this_cat); ?>
+                            <a class="{{route('cat.pro.all') ? 'manu_active':''}}" href="{{url('/shop-category')}}">Tất cả</a>
+                            <?php showcatforpro($categories); ?>
                         </div>
                     </div>
                     <div class="w3ls_mobiles_grid_left_grid">
@@ -33,14 +32,14 @@
                                 <ul>
                                     <?php
                                     foreach ($manufacturer as $manu){ ?>
-                                        <li>
-                                            <i class="fa fa-cubes" aria-hidden="true"></i>
-                                            <a class="searchf_manu {{request()->get('manu')==$manu->manufacturer_id ? 'manu_active' : ''}}"
-                                             href="{{ route('cat.pro', ['page'=>1, 'manu'=>$manu->manufacturer_id,'category_id'=>$this_cat->category_id]) }}">
-                                                {{$manu->manufacturer_name}}
-                                            </a>
-                                        </li>
-                             <?php  }
+                                    <li>
+                                        <i class="fa fa-cubes" aria-hidden="true"></i>
+                                        <a class="searchf_manu {{request()->get('manu')==$manu->manufacturer_id ? 'manu_active' : ''}}"
+                                           href="{{ route('cat.pro.all', ['page'=>1, 'manu'=>$manu->manufacturer_id]) }}">
+                                            {{$manu->manufacturer_name}}
+                                        </a>
+                                    </li>
+                                    <?php  }
                                     ?>
                                 </ul>
                             </div>
@@ -51,7 +50,7 @@
                     <div class="w3ls_mobiles_grid_right_grid2">
 
                         <div class="w3ls_mobiles_grid_right_grid2_left cat_title">
-                            <h2>{{$this_cat->category_name}}</h2>
+                            <h2>Sản Phẩm</h2>
                             <div class="cat_title_de"></div>
                         </div>
 
@@ -137,7 +136,7 @@
             }
 
             $.ajax({
-                url: '{{ route('filter',$this_cat->category_id) }}/',
+                url: '{{ route('filter.all')}}/',
                 data: data,
                 method: 'post',
                 beforeSend: function() {
@@ -161,7 +160,7 @@
 @endsection
 
 <?php
-function showcatforpro(&$categories,$this_cat,$parent_id = 0,$char='<span></span>'){
+function showcatforpro(&$categories,$parent_id = 0,$char='<span></span>'){
 $cat_child = [];
 foreach ($categories as $key => $item){
     if($item->parent_id==$parent_id){
@@ -174,10 +173,10 @@ if ($cat_child){
 echo '<ul>';
 foreach ($cat_child as $key => $item){?>
 <li><?php echo $char; ?><i class="fa fa-arrow-right" aria-hidden="true" style="color: limegreen; margin-right: 8px;"></i></i>
-    <a class="{{$item->category_id==$this_cat->category_id ? 'cat_active' : ''}}" href="{{url('/shop-category/'.$item->category_id)}}">
+    <a href="{{url('/shop-category/'.$item->category_id)}}">
         <?php
         echo $item->category_name;
-        showcatforpro($categories,$this_cat,$item->category_id,$char.'<span style="margin-left: 15px;"></span>');
+        showcatforpro($categories,$item->category_id,$char.'<span style="margin-left: 15px;"></span>');
         ?>
     </a>
 </li>

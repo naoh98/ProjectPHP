@@ -13,14 +13,18 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                 <ul class="nav navbar-nav">
-                    <li><a href="">Trang Chủ</a></li>
+                    <li><a href="{{url('/')}}">Trang Chủ</a></li>
                     <!-- Mega Menu -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm<b class="caret"></b></a>
+                        <a href="{{url('/shop-category')}}" style="display: inline-block; padding: 20px 8px 20px 30px;">Sản Phẩm</a>
+                        <span class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </span>
                             <div class="menu dropdown-menu">
                                 <?php showcat($menu); ?>
                             </div>
                     </li>
+                    <li><a href="">Tin Tức</a></li>
                     <li><a href="">Giới Thiệu</a></li>
                     <li><a href="">Liên Hệ</a></li>
                 </ul>
@@ -44,7 +48,7 @@ if ($cat_child){
 echo '<ul>';
 foreach ($cat_child as $key => $item){?>
 <li>
-    <a href=""> {{$item->category_name}}
+    <a href="{{url('/shop-category/'.$item->category_id)}}"> {{$item->category_name}}
         <?php showcat($categories,$item->category_id); ?>
     </a>
 </li>
