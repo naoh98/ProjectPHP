@@ -59,14 +59,8 @@
                                     <h5><a href="single.html">{{$item->product_title}}</a></h5>
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($item->product_price_sell ,0,',','.'); ?>
-                                        <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="w3ls_item" value="Mobile Phone1" />
-                                            <input type="hidden" name="amount" value="350.00" />
-                                            <button type="submit" class="w3ls-cart">Add to cart</button>
-                                        </form>
+                                        <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $item->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
                                     </div>
                                 </div>
                                 <?php }
@@ -105,14 +99,8 @@
                                     <h5><a href="single.html">{{$item->product_title}}</a></h5>
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($item->product_price_sell ,0,',','.'); ?>
-                                        <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="w3ls_item" value="Mobile Phone1" />
-                                            <input type="hidden" name="amount" value="350.00" />
-                                            <button type="submit" class="w3ls-cart">Add to cart</button>
-                                        </form>
+                                        <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $item->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
                                     </div>
                                 </div>
                                 <?php }
@@ -227,14 +215,8 @@
                         <h5><a href="">{{$product->product_title}}</a></h5>
                         <div class="simpleCart_shelfItem">
                             <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
-                            <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
-                            <form action="#" method="post">
-                                <input type="hidden" name="cmd" value="_cart">
-                                <input type="hidden" name="add" value="1">
-                                <input type="hidden" name="w3ls_item" value="Red Laptop">
-                                <input type="hidden" name="amount" value="500.00">
-                                <button type="submit" class="w3ls-cart">Add to cart</button>
-                            </form>
+                            <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
+                            <a href="#" data-url="{{ route('addToCart', ['id' => $product->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -308,6 +290,31 @@
     });
     //
     $('.example1').wmuSlider();
+    function addToCart(event) {
+        event.preventDefault();
+        let urlCart = $(this).data('url');
+
+
+        $.ajax({
+            type: 'GET',
+            url: urlCart,
+            dataType: 'json',
+            success: function (data) {
+                if (data.code === 200) {
+                    alert('Thêm sản phẩm thành công !');
+                }
+            },
+
+            error: function () {
+
+            }
+            
+        });
+    }
+    
+    $(function () {
+        $('.add_to_cart').on('click', addToCart);
+    })
 </script>
 
 @endsection

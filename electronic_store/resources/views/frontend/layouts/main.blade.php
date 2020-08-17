@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/fasthover.css" />
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/main.css" /> <!-- custom css tại đây -->
 
+
     <script src="{{asset('/electronic_store')}}/js/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('/electronic_store')}}/js/bootstrap-3.1.1.min.js"></script>
     <script src="{{asset('/electronic_store')}}/js/jquery.wmuSlider.js"></script>

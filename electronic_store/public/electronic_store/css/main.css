@@ -56,3 +56,39 @@ li[role='presentation']{
     justify-content: center;
     text-align: center;
 }
+/*================================== CART PAGE =================================*/
+
+.cart {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+/*================================== CHECKOUT PAGE =================================*/
+
+.checkout-block {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.checkout-block__title {
+    margin-bottom: 30px;
+}
+
+.summary {
+    margin-bottom: 30px;
+}
+
+.summary-content {
+    display: flex;
+    justify-content: space-between;
+
+}
+.summary__title {
+    width: 70%;
+}
+.summary__quantity {
+    width: 5%;
+}
+
+.summary__price {
+    width: 25%;
+}

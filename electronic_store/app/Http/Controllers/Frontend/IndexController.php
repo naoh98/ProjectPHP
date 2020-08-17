@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\ProductModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -38,7 +39,7 @@ class IndexController extends Controller
         return $arr;
     }
     //
-    
+
     public function index(){
         $arr=[];
         $category = DB::table('category')->get();
