@@ -59,7 +59,7 @@ li[role='presentation']{
     justify-content: center;
     text-align: center;
 }
-<<<<<<< HEAD
+
 /*================================== CART PAGE =================================*/
 
 .cart {
@@ -96,7 +96,7 @@ li[role='presentation']{
 .summary__price {
     width: 25%;
 }
-=======
+
 .ecommerce_manu ul li{
     list-style-type: none;
     margin: 10px 0px;
@@ -165,4 +165,7 @@ li[role='presentation']{
 .dropdown i:hover{
     color: rgb(255, 93, 106);
 }
->>>>>>> 16e0df0a67d7ca93227ea003576c95f2bf2bdfff
+.description{
+    display: flex;
+    justify-content: space-around;
+}

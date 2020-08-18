@@ -14,7 +14,7 @@ class ProductController extends Controller
             ->where('product_id',$product_id)
             ->join('manufacturer','product.product_manufacturer','=','manufacturer.manufacturer_id')
             ->join('category','product.product_type','=','category.category_id')
-            ->select('product.*','manufacturer.manufacturer_name','manufacturer.manufacturer_id','category.category_name','category.category_id')
+            ->select('product.*','manufacturer.*','category.*')
             ->first();
 
         $attributes = DB::table('product_attributes')

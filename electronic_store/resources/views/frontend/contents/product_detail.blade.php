@@ -1,7 +1,8 @@
 @extends('frontend.layouts.main')
 @section('title',$product->product_title)
 @section('content')
-    <div class="banner banner1">
+    <div class="banner banner1"
+         style="background: url('{{asset('/storage/files/'.basename($product->category_image))}}')no-repeat center;background-size: 100% 100%;">
     </div>
     <!-- //banner -->
     <!-- breadcrumbs -->
@@ -15,9 +16,9 @@
     </div>
     <!-- //breadcrumbs -->
     <!-- single -->
-    <div class="single">
+    <div class="single" style="padding-bottom: 3em;">
         <div class="container">
-            <div class="col-md-4 single-left">
+            <div class="col-md-5 single-left">
                 <div class="flexslider">
                     <ul class="slides">
                         <?php
@@ -33,9 +34,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-8 single-right">
-                <h3>{{$product->product_title}}</h3>
-                <div class="rating1">
+            <div class="col-md-7 single-right">
+                <h3 style="text-align: center;">{{$product->product_title}}</h3>
+                <div class="rating1" style="text-align: center;">
 					<span class="starRating">
 						<input id="rating5" type="radio" name="rating" value="5">
 						<label for="rating5">5</label>
@@ -51,15 +52,18 @@
                 </div>
                 <div class="description">
                     <div>
-                        <label>Hãng sản xuất: </label>
-                        <span><a href="{{route('cat.pro.all',['manu'=>$product->manufacturer_id])}}">{{$product->manufacturer_name}}</a></span>
-                    </div>
-                    <div>
                         <label>Danh mục: </label>
                         <span><a href="{{route('cat.pro',['category_id'=>$product->category_id])}}">{{$product->category_name}}</a></span>
                     </div>
+                    <div>
+                        <label>Hãng sản xuất: </label>
+                        <span><a href="{{route('cat.pro.all',['manu'=>$product->manufacturer_id])}}">{{$product->manufacturer_name}}</a></span>
+                    </div>
                 </div>
                 <div class="occasional">
+                    <div style="margin-bottom: 20px;">
+                        <p>{{$product->manufacturer_desc}}</p>
+                    </div>
                     <h5>Thông tin chi tiết</h5>
                     <?php
                         if (count($attributes)<=0){ ?>
@@ -68,7 +72,7 @@
                             </div>
                  <?php  }else{
                     foreach ($attributes as $attribute){ ?>
-                    <div>
+                    <div style="width: 33%; float: left;">
                         <label>{{$attribute->attribute_name}}:</label>
                         <span>{{$attribute->value}}</span>
                     </div>
@@ -77,10 +81,10 @@
                     ?>
                     <div class="clearfix"> </div>
                 </div>
-                <div class="simpleCart_shelfItem">
+                <div class="simpleCart_shelfItem" style="display: flex; justify-content: center;">
                     <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
-                    <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
-                    <form action="#" method="post">
+                    <p style="margin-right: 20px"><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
+                    <form action="#" method="post" style="margin-top: 5px;">
                         <input type="hidden" name="cmd" value="_cart">
                         <input type="hidden" name="add" value="1">
                         <input type="hidden" name="w3ls_item" value="Smart Phone">
@@ -92,8 +96,8 @@
             <div class="clearfix"> </div>
         </div>
     </div>
-
-    <div class="additional_info">
+    
+    <div class="additional_info" style="padding-top: 3em;">
         <div class="container">
             <div class="sap_tabs">
                 <div id="horizontalTab1" style="display: block; width: 100%; margin: 0px;">
@@ -102,10 +106,15 @@
                         <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Đánh giá</span></li>
                     </ul>
                     <div class="tab-1 resp-tab-content additional_info_grid" aria-labelledby="tab_item-0">
-                        <h3>{{$product->product_title}}</h3>
-                        <p>{{$product->product_desc}}</p>
+                            <h3>{{$product->product_title}}</h3>
+                            <p class="col-md-9">{{$product->product_desc}}</p>
+                            <?php
+                            if ($product->product_main_image){ ?>
+                                <img class="col-md-3" src="{{asset('/storage/files/'.basename($product->product_main_image))}}" style="height: 320px; " >
+                    <?php   }
+                            ?>
+                        <div class="clearfix"> </div>
                     </div>
-
                     <div class="tab-2 resp-tab-content additional_info_grid" aria-labelledby="tab_item-1">
                         <h4>Reviews</h4>
                         <div class="additional_info_sub_grids">
@@ -183,9 +192,6 @@
                         <div class="review_grids">
                             <h5>Add A Review</h5>
                             <form action="#" method="post">
-                                <input type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                                <input type="email" name="Email" placeholder="Email" required="">
-                                <input type="text" name="Telephone" value="Telephone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone';}" required="">
                                 <textarea name="Review" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Add Your Review';}" required="">Add Your Review</textarea>
                                 <input type="submit" value="Submit" >
                             </form>

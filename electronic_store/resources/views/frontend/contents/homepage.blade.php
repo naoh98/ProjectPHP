@@ -51,12 +51,12 @@
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span>Chi tiết</span></a>
+                                                    <a href="{{url('/product/'.$item->product_id)}}"><span>Chi tiết</span></a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <h5><a href="single.html">{{$item->product_title}}</a></h5>
+                                    <h5><a href="{{url('/product/'.$item->product_id)}}">{{$item->product_title}}</a></h5>
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($item->product_price_sell ,0,',','.'); ?>
                                         <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
@@ -91,12 +91,12 @@
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal"><span>Chi tiết</span></a>
+                                                    <a href="{{url('/product/'.$item->product_id)}}"><span>Chi tiết</span></a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <h5><a href="single.html">{{$item->product_title}}</a></h5>
+                                    <h5><a href="{{url('/product/'.$item->product_id)}}">{{$item->product_title}}</a></h5>
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($item->product_price_sell ,0,',','.'); ?>
                                         <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
@@ -204,12 +204,12 @@
                             <div class="w3_hs_bottom w3_hs_bottom_sub">
                                 <ul>
                                     <li>
-                                        <a href="#" data-toggle="modal" data-target="#myModal2"><span>Chi tiết</span></a>
+                                        <a href="{{url('/product/'.$product->product_id)}}"><span>Chi tiết</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <h5><a href="">{{$product->product_title}}</a></h5>
+                        <h5><a href="{{url('/product/'.$product->product_id)}}">{{$product->product_title}}</a></h5>
                         <div class="simpleCart_shelfItem">
                             <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
                             <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
