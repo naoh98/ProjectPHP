@@ -83,7 +83,7 @@
                                         <div class="w3_hs_bottom w3_hs_bottom_sub1">
                                             <ul>
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#myModal9"><span>Chi tiết</span></a>
+                                                    <a href="{{url('/product/'.$value->product_id)}}"><span>Chi tiết</span></a>
                                                 </li>
                                             </ul>
                                         </div>

@@ -72,7 +72,7 @@
                     @enderror
                     <div class="form-group">
                         <label>Giới Thiệu</label>
-                        <input type="text" value="{{$product->product_desc}}" name="product_desc" class="form-control">
+                        <textarea name="product_desc" cols="40" rows="20" class="form-control">{{$product->product_desc}}</textarea>
                     </div>
                     @error('product_desc')
                     <div class="alert alert-danger">{{ $message }}</div>
