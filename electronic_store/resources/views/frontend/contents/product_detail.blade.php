@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <ul>
                 <li><a href="{{url('/')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
-                <li>Chi tiết sản phẩm</li>
+                <li>Chi tiết sản phẩm<i>/</i></li><li>{{$product->product_title}}</li>
             </ul>
         </div>
     </div>
@@ -36,24 +36,20 @@
             </div>
             <div class="col-md-7 single-right">
                 <h3 style="text-align: center;">{{$product->product_title}}</h3>
-                <div class="rating1" style="text-align: center;">
-					<span class="starRating">
-						<input id="rating5" type="radio" name="rating" value="5">
-						<label for="rating5">5</label>
-						<input id="rating4" type="radio" name="rating" value="4">
-						<label for="rating4">4</label>
-						<input id="rating3" type="radio" name="rating" value="3" checked>
-						<label for="rating3">3</label>
-						<input id="rating2" type="radio" name="rating" value="2">
-						<label for="rating2">2</label>
-						<input id="rating1" type="radio" name="rating" value="1">
-						<label for="rating1">1</label>
-					</span>
-                </div>
                 <div class="description">
                     <div>
                         <label>Danh mục: </label>
                         <span><a href="{{route('cat.pro',['category_id'=>$product->category_id])}}">{{$product->category_name}}</a></span>
+                    </div>
+                    <div class="rating-avg">
+                        <?php
+                        $point_avg = 0;
+                        if ($product->product_total_point && $product->product_total_post){
+                            $point_avg = round($product->product_total_point / $product->product_total_post,1);
+                        }
+                        ?>
+                        <b><?php echo $point_avg; ?></b>
+                        <span class="fa fa-star"></span>
                     </div>
                     <div>
                         <label>Hãng sản xuất: </label>
@@ -62,9 +58,9 @@
                 </div>
                 <div class="occasional">
                     <div style="margin-bottom: 20px;">
-                        <p>{{$product->manufacturer_desc}}</p>
+                        <p>{{$product->product_desc}}</p>
                     </div>
-                    <h5>Thông tin chi tiết</h5>
+                    <h5>Thông số kỹ thuật</h5>
                     <?php
                         if (count($attributes)<=0){ ?>
                             <div>
@@ -72,7 +68,7 @@
                             </div>
                  <?php  }else{
                     foreach ($attributes as $attribute){ ?>
-                    <div style="width: 33%; float: left;">
+                    <div style="width: 50%; float: left;">
                         <label>{{$attribute->attribute_name}}:</label>
                         <span>{{$attribute->value}}</span>
                     </div>
@@ -102,99 +98,95 @@
             <div class="sap_tabs">
                 <div id="horizontalTab1" style="display: block; width: 100%; margin: 0px;">
                     <ul>
-                        <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Giới thiệu về sản phẩm</span></li>
+                        <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Giới thiệu về hãng sản xuất</span></li>
                         <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Đánh giá</span></li>
                     </ul>
                     <div class="tab-1 resp-tab-content additional_info_grid" aria-labelledby="tab_item-0">
-                            <h3>{{$product->product_title}}</h3>
-                            <p class="col-md-9">{{$product->product_desc}}</p>
+                            <h3>{{$product->manufacturer_name}}</h3>
+                            <p class="col-md-9">{{$product->manufacturer_desc}}</p>
                             <?php
-                            if ($product->product_main_image){ ?>
-                                <img class="col-md-3" src="{{asset('/storage/files/'.basename($product->product_main_image))}}" style="height: 320px; " >
+                            if ($product->manufacturer_image){ ?>
+                                <img class="col-md-3" src="{{asset('/storage/files/'.basename($product->manufacturer_image))}}" style="height: 180px; " >
                     <?php   }
                             ?>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="tab-2 resp-tab-content additional_info_grid" aria-labelledby="tab_item-1">
-                        <h4>Reviews</h4>
-                        <div class="additional_info_sub_grids">
-                            <div class="col-xs-2 additional_info_sub_grid_left">
-                                <img src="images/t1.png" alt=" " class="img-responsive" />
-                            </div>
-                            <div class="col-xs-10 additional_info_sub_grid_right">
-                                <div class="additional_info_sub_grid_rightl">
-                                    <a href="single.html">Laura</a>
-                                    <h5>Oct 06, 2016.</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate
-                                        velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat
-                                        quo voluptas nulla pariatur.</p>
+                        <h4>({{$product->product_total_post}}) Reviews</h4>
+                        <div class="post_content">
+                            <?php
+                            foreach ($rate_list as $post){ ?>
+                            <div class="additional_info_sub_grids">
+                                <div class="col-xs-2 additional_info_sub_grid_left">
+                                    <?php
+                                    for ($i=1;$i<=5;$i++){ ?>
+                                    <i class="fa fa-star {{$i <= $post->rate_point ? 'star_active':''}}"></i>
+                                    <?php } ?>
                                 </div>
-                                <div class="additional_info_sub_grid_rightr">
-                                    <div class="rating">
-                                        <div class="rating-left">
-                                            <img src="images/star-.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="rating-left">
-                                            <img src="images/star-.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="rating-left">
-                                            <img src="images/star-.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="rating-left">
-                                            <img src="images/star.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="rating-left">
-                                            <img src="images/star.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="clearfix"> </div>
+                                <div class="col-xs-10 additional_info_sub_grid_right">
+                                    <div class="additional_info_sub_grid_rightl">
+                                        <h5>{{$post->name}}</h5>
+                                        <p>{{$post->post}}</p>
                                     </div>
+                                    <div class="additional_info_sub_grid_rightr">
+                                        <h5>{{$post->updated_at ? $post->updated_at.' (đã sửa)' : $post->created_at}}</h5>
+                                    </div>
+                                    <div class="clearfix"> </div>
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
-                            <div class="clearfix"> </div>
+                            <hr style="border: 1px solid darkgrey;">
+                            <?php  }
+                            ?>
                         </div>
-                        <div class="additional_info_sub_grids">
-                            <div class="col-xs-2 additional_info_sub_grid_left">
-                                <img src="images/t2.png" alt=" " class="img-responsive" />
-                            </div>
-                            <div class="col-xs-10 additional_info_sub_grid_right">
-                                <div class="additional_info_sub_grid_rightl">
-                                    <a href="single.html">Michael</a>
-                                    <h5>Oct 04, 2016.</h5>
-                                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate
-                                        velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat
-                                        quo voluptas nulla pariatur.</p>
-                                </div>
-                                <div class="additional_info_sub_grid_rightr">
-                                    <div class="rating">
-                                        <div class="rating-left">
-                                            <img src="images/star-.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="rating-left">
-                                            <img src="images/star-.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="rating-left">
-                                            <img src="images/star.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="rating-left">
-                                            <img src="images/star.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="rating-left">
-                                            <img src="images/star.png" alt=" " class="img-responsive">
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="clearfix"> </div>
+                        <div style="text-align: center;">
+                            <button class="btn btn-success loadmore_post">Xem thêm</button>
+                            <h5 class="alert_outofdata" style="display: none;"><i>Không còn bài đánh giá nào cho sản phẩm này</i></h5>
                         </div>
                         <div class="review_grids">
-                            <h5>Add A Review</h5>
-                            <form action="#" method="post">
-                                <textarea name="Review" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Add Your Review';}" required="">Add Your Review</textarea>
-                                <input type="submit" value="Submit" >
+                            <h5>Thêm nhận xét cho sản phẩm này</h5>
+                            <?php
+                            if (!$rating){ ?>
+                            <form class="product_rate_form">
+                                <div class="rating1" style="font-size: 20px;">
+                                    <span class="listRate">
+                                    <?php
+                                        for ($i=1;$i<=5;$i++){ ?>
+                                        <i class="fa fa-star" data-key="{{$i}}"></i>
+                                        <?php } ?>
+                                    </span>
+                                    <span class="listRatingText" style="display: none;"></span>
+                                </div>
+                                <div class="error_rate_point" style="color: red; font-style: italic;margin-bottom: 1em;"></div>
+                                <textarea name="review"></textarea>
+                                <div class="error_review" style="color: red; font-style: italic;margin-bottom: 0.8em;"></div>
+                                <input type="hidden" name="user_id" value="{{auth()->check() ? auth()->user()->id : ''}}">
+                                <input type="hidden" name="rate_point" value="" class="point_rating">
+                                <input type="submit" class="submit_rate" value="Gửi" >
                             </form>
+                     <?php  }else{ ?>
+                            <i style="color: grey;display: block;text-align: center;">Bạn đã đánh giá sản phẩm này. <a class="edit_review" href="#">Sửa</a></i>
+                            <form class="product_rate_form_edit" style="position: relative;padding: 15px;">
+                                <div class="rating1" style="font-size: 20px;">
+                                    <span class="listRate_edit">
+                                    <?php
+                                        for ($i=1;$i<=5;$i++){ ?>
+                                        <i class="fa fa-star {{$i <= $rating->rate_point ? 'star_active_click':''}}" data-key="{{$i}}"></i>
+                                        <?php } ?>
+                                    </span>
+                                    <span class="listRatingText" style="display: none;"></span>
+                                </div>
+                                <textarea name="review">{{$rating->post}}</textarea>
+                                <div class="error_edit_review" style="color: red; font-style: italic;margin-bottom: 0.8em;"></div>
+                                <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                                <input type="hidden" name="rate_point" value="{{$rating->rate_point}}" class="point_rating">
+                                <input type="hidden" name="old_rate_point" value="{{$rating->rate_point}}">
+                                <input type="submit" class="submit_rate" value="Sửa">
+                                <div class="after_form"></div>
+                            </form>
+                     <?php  }
+                            ?>
+
                         </div>
                     </div>
                 </div>
@@ -212,6 +204,91 @@
         </div>
     </div>
 
+    <div class="user_only">
+        <div class="user_login_req">
+            <p>Hãy đăng nhập để đánh giá sản phẩm này.</p>
+            <div class="log_option_req">
+                <button class="btn btn-primary redirect_user_only">Đăng nhập ngay</button>
+                <button class="btn btn-primary close_user_only">Để lúc khác</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="w3l_related_products">
+        <div class="container">
+            <h3>Sản phẩm tương tự</h3>
+            <ul id="flexiselDemo2">
+                <?php
+                foreach ($related_pros as $related_pro){ ?>
+                    <li>
+                        <div class="w3l_related_products_grid">
+                            <div class="agile_ecommerce_tab_left mobiles_grid">
+                                <div class="hs-wrapper hs-wrapper3">
+                                    <?php
+                                    if ($related_pro->product_images){
+                                        $data = json_decode($related_pro->product_images);
+                                        foreach ($data as $image){ ?>
+                                        <img src="{{asset('/storage/files/'.basename($image))}}" alt=" " class="img-responsive" />
+                             <?php      }
+                                    }
+                                    ?>
+                                    <div class="w3_hs_bottom">
+                                        <div class="flex_ecommerce">
+                                            <a style="display: block; border-radius: 7px; width: 50%; margin: 0px auto;" href="{{url('/product/'.$related_pro->product_id)}}"><span>Chi tiết</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5><a href="{{url('/product/'.$related_pro->product_id)}}">{{$related_pro->product_title}}</a></h5>
+                                <div class="simpleCart_shelfItem">
+                                    <?php $price= number_format($related_pro->product_price_sell ,0,',','.'); ?>
+                                    <p class="flexisel_ecommerce_cart"><i class="item_price"><?php echo $price. ' Đ'; ?></i></p>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="w3ls_item" value="Kid's Toy">
+                                        <input type="hidden" name="amount" value="100.00">
+                                        <button type="submit" class="w3ls-cart">Add to cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+          <?php }
+                ?>
+            </ul>
+
+            <script type="text/javascript">
+                $(window).load(function() {
+                    $("#flexiselDemo2").flexisel({
+                        visibleItems:4,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint:480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint:640,
+                                visibleItems:2
+                            },
+                            tablet: {
+                                changePoint:768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+        </div>
+    </div>
+    <!-- //Related Products -->
+
     <!-- flexslider -->
     <script defer src="{{asset('/electronic_store')}}/js/jquery.flexslider.js"></script>
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/flexslider.css" type="text/css" media="screen" />
@@ -225,7 +302,198 @@
         });
     </script>
     <!-- flexslider -->
+
     <!-- zooming-effect -->
     <script src="{{asset('/electronic_store')}}/js/imagezoom.js"></script>
     <!-- //zooming-effect -->
+
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).ready(function () {
+            var star = $('.listRate .fa');
+            var star_edit = $('.listRate_edit .fa');
+            var listRatingText = {
+                1 : 'Không thích',
+                2 : 'Bình thường',
+                3 : 'Tạm được',
+                4 : 'Rất tốt',
+                5 : 'Quá tuyệt vời'
+            };
+            star.on('click', function () {
+                var number = $(this).attr('data-key');
+                $('.point_rating').val(number);
+                $.each(star, function (key,value) {
+                    if (key+1 <= number){
+                        $(this).addClass('star_active_click');
+                    }else{
+                        $(this).removeClass('star_active_click');
+                    }
+                });
+            });
+            //
+            star_edit.on('click', function () {
+                var number = $(this).attr('data-key');
+                $('.point_rating').val(number);
+                $.each(star_edit, function (key,value) {
+                    if (key+1 <= number){
+                        $(this).addClass('star_active_click');
+                    }else{
+                        $(this).removeClass('star_active_click');
+                    }
+                });
+            });
+            //
+            star.on('mouseover', function () {
+                var number = $(this).attr('data-key');
+                $.each(star, function (key,value) {
+                   if (key+1 <= number){
+                       $(this).addClass('star_active');
+                   }
+                });
+                $('.listRatingText').text(listRatingText[number]).show();
+            });
+            //
+            star.on('mouseout', function () {
+                $('.listRatingText').text('').hide();
+                star.removeClass('star_active');
+            });
+            //
+            $('.product_rate_form').on('submit', function (event) {
+                event.preventDefault();
+                $('.error_rate_point').html('');
+                $('.error_review').html('');
+                var data ={};
+                data.user_id= $('input[name="user_id"]').val();
+                data.rate_point= $('input[name="rate_point"]').val();
+                data.review= $('textarea[name="review"]').val();
+                if (data.user_id){
+                    if (data.rate_point == '' || data.rate_point == null){
+                        $('.error_rate_point').html('Bạn chưa chọn số sao !');
+                        return false;
+                    }else if (data.review == '' || data.review == null){
+                        $('.error_review').html('Bạn chưa nhập nội dung đánh giá !');
+                        return false;
+                    }else{
+                        $.ajax({
+                            url: "{{route('rate',$product->product_id)}}",
+                            data: data,
+                            type: 'POST',
+                            dataType: 'json',
+                            beforeSend: function() {
+
+                            },
+                            success: function(res){
+                                if (res.code == 200){
+                                    alert('Gửi đánh giá thành công');
+                                    location.reload();
+                                }
+                            },
+                            error: function(res) {
+                                console.log(res);
+                            },
+                            complete: function() {
+
+                            }
+                        });
+                    }
+                }else{
+                    $('.user_only').css(
+                        {'visibility':'visible',
+                            'opacity':'1',
+                            'z-index':'1001',
+                            'position':'fixed'
+                        });
+                    return false;
+                }
+
+            });
+            //
+            $('.redirect_user_only').on('click', function () {
+               $('.user_only').css('visibility','hidden');
+               $('#myModal88').modal('show');
+            });
+            //
+            $('.close_user_only').on('click', function () {
+                $('.user_only').css('visibility','hidden');
+            });
+            //
+            $('.edit_review').on('click', function (event) {
+                event.preventDefault();
+                $('.after_form').css('visibility','hidden');
+            });
+            //
+            $('.product_rate_form_edit').on('submit', function (event) {
+                event.preventDefault();
+                $('.error_edit_review').html('');
+                var data ={};
+                data.user_id= $('input[name="user_id"]').val();
+                data.rate_point= $('input[name="rate_point"]').val();
+                data.review= $('textarea[name="review"]').val();
+                data.old_rate_point= $('input[name="old_rate_point"]').val();
+                if (data.review == '' || data.review == null){
+                    $('.error_edit_review').html('Bạn chưa nhập nội dung đánh giá');
+                    return false;
+                }else{
+                    $.ajax({
+                        url: "{{route('rate.edit',$product->product_id)}}",
+                        data: data,
+                        type: 'POST',
+                        dataType: 'json',
+                        beforeSend: function() {
+
+                        },
+                        success: function(res){
+                            if (res.code == 200){
+                                alert('Gửi đánh giá thành công');
+                                location.reload();
+                            }
+                        },
+                        error: function(res) {
+                            console.log(res);
+                        },
+                        complete: function() {
+
+                        }
+                    });
+                }
+            });
+            //
+            $('.loadmore_post').on('click', function () {
+                var start = $('.additional_info_sub_grids').length;
+                var limit = 2;
+                var data ={};
+                data.start = start;
+                data.limit = limit;
+                $.ajax({
+                 url: "{{route('loadmore',$product->product_id)}}",
+                 data: data,
+                 type: 'POST',
+                 dataType: 'json',
+                 beforeSend: function() {
+
+                 },
+                 success: function(res){
+                     if (res.code==200){
+                         $('.post_content').append(res.html);
+                     }else{
+                         $('.loadmore_post').hide();
+                         $('.alert_outofdata').show();
+                     }
+                 },
+                 error: function(res) {
+                    console.log(res);
+                 },
+                 complete: function() {
+
+                 }
+                 });
+
+            })
+        });
+
+    </script>
 @endsection

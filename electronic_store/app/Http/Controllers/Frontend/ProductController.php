@@ -17,12 +17,32 @@ class ProductController extends Controller
             ->select('product.*','manufacturer.*','category.*')
             ->first();
 
+        $related_pros = DB::table('product')
+            ->where('product_type',$product->category_id)
+            ->get();
+
+        $rating=null;
+        if (auth()->check()){
+            $rating = DB::table('product_rating')
+                ->where('product_id',$product_id)
+                ->where('user_id',auth()->user()->id)
+                ->first();
+        }
+
+        $rate_list = DB::table('product_rating')
+            ->where('product_rating.product_id',$product_id)
+            ->join('users','product_rating.user_id','users.id')
+            ->select('product_rating.*','users.name')
+            ->offset(0)
+            ->limit(2)
+            ->get();
+
         $attributes = DB::table('product_attributes')
         ->where('product_attributes.product_id',$product_id)
         ->join('attributes','product_attributes.attribute_id','=','attributes.attribute_id')
         ->select('attributes.attribute_name','product_attributes.value')
         ->get();
 
-        return view('frontend.contents.product_detail',['product'=>$product,'attributes'=>$attributes]);
+        return view('frontend.contents.product_detail',['product'=>$product,'attributes'=>$attributes,'rating'=>$rating,'rate_list'=>$rate_list,'related_pros'=>$related_pros]);
     }
 }

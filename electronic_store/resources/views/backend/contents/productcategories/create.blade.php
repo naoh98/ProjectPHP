@@ -29,10 +29,10 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Danh Mục</label>
+                        <label>Danh Mục Cha</label>
                         <div>
                             <select name="parent_id">
-                                <option value="0">Gốc</option>
+                                <option value="0">None</option>
                                 <?php viewcreate($category); ?>
                             </select>
                         </div>

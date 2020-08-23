@@ -40,7 +40,7 @@
                     @enderror
 
                     <div class="form-group">
-                        <label>Danh Mục</label>
+                        <label>Danh Mục Cha</label>
                         <div>
                             <select name="parent_id">
                                 <option value="0">None</option>
@@ -65,7 +65,7 @@
     if ($manage['parent_id']==$parent_id){
 
     ?>
-    <option value="{{$manage->category_id}}" {{($manage->category_id == $category->category_id) ? "disabled" : ""}}><?php echo $char.$manage['category_name']; ?></option>
+    <option value="{{$manage->category_id}}" {{($manage->category_id == $category->parent_id) ? "selected" : ""}} {{($manage->category_id == $category->category_id) ? "disabled" : ""}}><?php echo $char.$manage['category_name']; ?></option>
     <?php
     unset($categories[$key]);
     viewedit($categories,$category,$manage['category_id'],$char.$manage['category_name'].' > ');

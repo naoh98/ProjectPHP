@@ -1,3 +1,6 @@
+*{
+    word-break: break-word;
+}
 ul li {
     list-style-type: none;
 }
@@ -13,46 +16,77 @@ li[role='presentation']{
     height: inherit;
     object-fit: cover;
 }
-.menu ul li {
-    list-style-type: none;
-    position:relative;
-    flex-grow: 1;
-    padding: 10px;
-}
-.menu ul li:hover{
-    cursor: pointer;
-    background-color: #6166B2;
-}
-.menu ul li a{
-    color: white;
-}
-.menu ul li:hover>a{
-    color: #ff5063;
-}
-.menu{
+.menucat ul {
+    border: 1px solid #ebebeb;
+    background: #3c43a4;
     width: 100%;
-    text-align: center;
-    background-color: #3c43a4;
-}
-.menu ul{
     display: none;
     position: absolute;
+    top:0;
+    left:100%;
+    border-radius: 5px;
+}
+.menucat>ul>li:last-child>ul li ul{
+    position: absolute;
+    top: 0;
+    right: 100% !important;
+    left: unset;
+}
+.menucat>ul>li>ul {
     top: 100%;
     left: 0;
-    background-color: #3c43a4;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #ccc;
 }
-.menu>ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.menucat>ul{
+    background: #3c43a4;
     position: relative;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: space-around;
+}
+.menucat ul li {
+    list-style: none;
+    position:relative;
+    flex-grow: 1;
+    padding: 10px 0px;
+    border-radius: 5px;
+}
+.menucat ul li a{
+    display: block;
+    color: white;
+}
+.menucat ul li a:hover{
+    color: #FF5063;
+}
+.menucat ul li:hover{
+    background: #4c7ace;
+}
+.menucat{
+    color: white;
+    text-align: center;
+    width: 100%;
+    background-color: #3c43a4;
+}
+.menucat::after{
+    content: '';
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
-    margin-top: 0px;
-    border: none;
+    transition: opacity .15s ease-in-out;
+    opacity: 0;
+    visibility:hidden;
+    background-color: rgba(0,0,0,.7);
+    pointer-events: none;
+}
+.menucat ul, li{
+    z-index:15;
+}
+.menucat:hover::after{
+    z-index:10;
+    opacity:1;
+    visibility:visible;
+    position: fixed;
 }
 .menu_top_pro{
     display: flex;
@@ -168,4 +202,103 @@ li[role='presentation']{
 .description{
     display: flex;
     justify-content: space-around;
+    text-align: center;
+}
+.description div {
+    width: 33%;
+}
+.rating-avg{
+    text-align: center;
+    position: relative;
+}
+.rating-avg b{
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+.rating-avg span{
+    color: orange !important;
+    font-size: 54px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.listRatingText{
+    display: inline-block;
+    margin-left: 15px;
+    position: relative;
+    background: #52b858;
+    color: #fff;
+    padding: 2px 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 2px;
+}
+.listRatingText::after{
+     right: 100%;
+     top: 50%;
+     border: solid transparent;
+     content: " ";
+     height: 0;
+     width: 0;
+     position: absolute;
+     pointer-events: none;
+     border-color: rgba(82,184,88,0);
+     border-right-color: #52b858;
+     border-width: 6px;
+     margin-top: -6px;
+ }
+.fa.fa-star{
+    color: grey;
+}
+.listRate {
+    margin-right: 3px;
+    display: inline-block;
+    min-height: 30px;
+}
+.listRate .star_active, .star_active, .listRate .star_active_click, .listRate_edit .star_active_click {
+    color: orange !important;
+}
+.user_only{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.7);
+    visibility: hidden;
+    opacity: 0;
+}
+.log_option_req{
+    display: flex;
+    justify-content: space-around;
+}
+.log_option_req button{
+    width: 47%;
+}
+.user_login_req{
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+.user_login_req p {
+    margin-bottom: 15px;
+}
+.after_form{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }

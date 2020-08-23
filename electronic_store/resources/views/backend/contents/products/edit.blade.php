@@ -11,9 +11,36 @@
             <div class="col-md-12">
                 <form name="up_pro" action="{{url("/admin/product/edit/$product->product_id")}}"  method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
-                    <div class="form-group">
-                        <label>ID: </label>
-                        <span>{{$product->product_id}}</span>
+                    <div class="form-group info_social">
+                        <div>
+                            <label>ID: </label>
+                            <span>{{$product->product_id}}</span>
+                        </div>
+                        <div>
+                            <label>Tổng số lượt đánh giá: </label>
+                            <span>{{$product->product_total_post}}</span>
+                        </div>
+                        <div>
+                            <label>Tổng điểm đánh giá: </label>
+                            <span>{{$product->product_total_point}}</span>
+                        </div>
+                        <div>
+                            <?php
+                            $point_avg = 0;
+                            if ($product->product_total_point && $product->product_total_post){
+                                $point_avg = round($product->product_total_point / $product->product_total_post,1);
+                            }
+                            ?>
+                            <label>Điểm đánh giá trung bình: </label>
+                            <span>
+                                <?php
+                                    for ($i=1;$i<=5;$i++){ ?>
+                                    <i class="fa fa-star {{$i <= $point_avg ? 'star_active':''}}"></i>
+                                    <?php }
+                                    ?>
+                            </span>
+                            <span>{{$point_avg}}</span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Tên Sản Phẩm</label>

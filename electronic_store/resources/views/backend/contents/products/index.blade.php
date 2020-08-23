@@ -18,13 +18,11 @@
             <thead class=" thead-dark">
             <tr>
                 <th>Sản Phẩm</th>
-                <th>Giới Thiệu</th>
                 <th>Hãng Sản Xuất</th>
                 <th>Số Lượng</th>
                 <th>Danh Mục</th>
-                <th>Giá</th>
-                <th>Thuế</th>
-                <th>Thành Tiền</th>
+                <th>Hình Ảnh</th>
+                <th>Giá Bán</th>
                 <th></th>
             </tr>
             </thead>
@@ -32,8 +30,23 @@
                 <?php
                 foreach($product as $products){ ?>
                    <tr>
-                       <td>{{$products->product_title}}</td>
-                       <td>{{$products->product_desc}}</td>
+                       <td>
+                           <ul>
+                               <li>{{$products->product_title}}</li>
+                               <li>Đánh giá:
+                                   <?php
+                                   $point_avg = 0;
+                                   if ($products->product_total_point && $products->product_total_post){
+                                       $point_avg = round($products->product_total_point / $products->product_total_post,1);
+                                   }
+                                    for ($i=1;$i<=5;$i++){ ?>
+                                       <i class="fa fa-star {{$i <= $point_avg ? 'star_active':''}}"></i>
+                              <?php }
+                                   ?>
+                                   <span style="margin-left: 5px;"><?php echo $point_avg; ?></span>
+                               </li>
+                           </ul>
+                       </td>
                        <td>{{$products->manufacturer_name}}</td>
                        <td>{{$products->product_quantity}}</td>
                        <td class="catname">
@@ -44,10 +57,16 @@
                                 <p style="color: red;"><?php echo 'Không xác định'; ?></p>
                    <?php   } ?>
                        </td>
-                       <td>{{$products->product_price_core}}</td>
-                       <td>{{$products->product_tax}}</td>
-                       <td>{{$products->product_price_sell}}</td>
                        <td>
+                           <?php
+                           if ($products->product_main_image){ ?>
+                               <img src="{{asset('/storage/files/'.basename($products->product_main_image))}}" style="margin: 0px auto;max-height: 150px;max-width: 80px;width: auto; height: auto;">
+                    <?php  }
+                           ?>
+                       </td>
+                       <?php $price= number_format($products->product_price_sell ,0,',','.'); ?>
+                       <td><?php echo $price?></td>
+                       <td style="text-align: right;">
                            <a href="{{url("/admin/product/edit/$products->product_id")}}" class="btn btn-warning" style="width: 43px;">
                                <i class="fas fa-edit"></i>
                            </a>

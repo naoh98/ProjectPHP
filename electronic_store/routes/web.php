@@ -25,8 +25,12 @@ Route::get('/shop-category/{category_id}','Frontend\CategoryController@index')->
 Route::get('/shop-category/{category_id}/product_filter','Frontend\CategoryController@filter')->name('filter');
 //route hiển thị chi tiết sản phẩm
 Route::get('/product/{product_id}','Frontend\ProductController@index');
-
-
+//route thêm đánh giá
+Route::post('/rating/{product_id}','Frontend\RatingController@saveRating')->name('rate');
+//route edit đánh giá
+Route::post('/rating/edit/{product_id}','Frontend\RatingController@editRating')->name('rate.edit');
+//route chức năng load more review
+Route::post('/loadmore/{product_id}','Frontend\RatingController@loadmore')->name('loadmore');
 
 
 // Route for add to cart

@@ -34,7 +34,7 @@ class CategoryController extends Controller
         $products =
             $products->join('category','product.product_type','=','category.category_id')
                      ->select('product.*')
-                     ->paginate(12);
+                     ->paginate(9);
         return view('frontend.contents.productall',['product'=>$products,'manufacturer'=>$manu,'categories'=>$cat]);
     }
     //
@@ -51,7 +51,7 @@ class CategoryController extends Controller
             $manu1 = $request->manu;
             $cat_pro->where('product_manufacturer',$manu1);
         }
-        $cat_pro = $cat_pro->paginate(12);
+        $cat_pro = $cat_pro->paginate(9);
 
 
         return view('frontend.contents.product',['product'=>$cat_pro,'manufacturer'=>$manu,'categories'=>$cat,'this_cat'=>$this_cat]);
@@ -82,7 +82,7 @@ class CategoryController extends Controller
             $manu1 = $request->manu;
             $echo->where('product_manufacturer',$manu1);
         }
-        $echo=$echo->paginate(12);
+        $echo=$echo->paginate(9);
 
         //giữ kết quả phân trang sau khi filter
         if (isset($_POST['manu'])){
@@ -121,7 +121,7 @@ class CategoryController extends Controller
         $echo =
             $echo->join('category','product.product_type','=','category.category_id')
                  ->select('product.*')
-                 ->paginate(12);
+                 ->paginate(9);
 
         //giữ kết quả phân trang sau khi filter
         if (isset($_POST['manu'])){
