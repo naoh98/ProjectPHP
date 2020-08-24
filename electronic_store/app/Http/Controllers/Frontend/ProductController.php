@@ -17,8 +17,6 @@ class ProductController extends Controller
             ->select('product.*','manufacturer.*','category.*')
             ->first();
 
-<<<<<<< HEAD
-=======
         $related_pros = DB::table('product')
             ->where('product_type',$product->category_id)
             ->get();

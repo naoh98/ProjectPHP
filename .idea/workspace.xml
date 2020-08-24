@@ -59,7 +59,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53c4026c-901e-4a42-b385-f58db3353948" name="Default Changelist" comment="" />
+    <list default="true" id="53c4026c-901e-4a42-b385-f58db3353948" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/ProductController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -232,9 +235,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598267290759" />
-    <state x="339" y="21" width="672" height="676" key="search.everywhere.popup" timestamp="1598267210793">
+    <state x="339" y="21" width="672" height="676" key="search.everywhere.popup" timestamp="1598269174488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="21" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598267210793" />
+    <state x="339" y="21" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598269174488" />
   </component>
 </project>
