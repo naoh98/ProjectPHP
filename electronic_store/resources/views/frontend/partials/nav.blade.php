@@ -20,7 +20,7 @@
                         <span class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-chevron-down" aria-hidden="true"></i>
                         </span>
-                            <div class="menu dropdown-menu">
+                            <div class="menucat dropdown-menu">
                                 <?php showcat($menu); ?>
                             </div>
                     </li>
@@ -47,7 +47,7 @@ if ($cat_child){
 
 echo '<ul>';
 foreach ($cat_child as $key => $item){?>
-<li>
+<li class="show">
     <a href="{{url('/shop-category/'.$item->category_id)}}"> {{$item->category_name}}
         <?php showcat($categories,$item->category_id); ?>
     </a>

@@ -26,7 +26,6 @@
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Subtotal</th>
                                 <th scope="col">Action</th>
-
                             </tr>
                             </thead>
                             <tbody>

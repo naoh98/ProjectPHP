@@ -7,9 +7,9 @@
         $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
     });
 //
-    $('.menu ul li').hover(function () {
+    $('.menucat ul li').hover(function () {
             // over
-            $(this).find('>ul').show(600);
+            $(this).find('>ul').show();
         }, function () {
             // out
             $(this).find('>ul').hide();

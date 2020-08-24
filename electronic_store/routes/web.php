@@ -30,6 +30,7 @@ Route::get('/shop-category/{category_id}/product_filter','Frontend\CategoryContr
 
 //route hiển thị chi tiết sản phẩm
 Route::get('/product/{product_id}','Frontend\ProductController@index');
+<<<<<<< HEAD
 
 
 /*============== ROUTE FOR ABOUT, CONTACT, USER PROFILE, NEWS PAGE ===================== */
@@ -46,6 +47,14 @@ Route::post('/profile/update', 'Frontend\ProfileController@update')->name('profi
 
 Route::get('/news', 'Frontend\NewController@index')->name('news.index');
 Route::get('/news/{id}', 'Frontend\NewController@show')->name('news.show');
+=======
+//route thêm đánh giá
+Route::post('/rating/{product_id}','Frontend\RatingController@saveRating')->name('rate');
+//route edit đánh giá
+Route::post('/rating/edit/{product_id}','Frontend\RatingController@editRating')->name('rate.edit');
+//route chức năng load more review
+Route::post('/loadmore/{product_id}','Frontend\RatingController@loadmore')->name('loadmore');
+>>>>>>> 5221e2f261de5cf79229ef95578a6a7841454c06
 
 
 

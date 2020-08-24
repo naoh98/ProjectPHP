@@ -891,7 +891,7 @@ li.w3pages .dropdown-menu > li > a:hover{
 }
 .rating1 {
     direction:ltr;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 }
 .starRating:not(old) {
     display: inline-block;
@@ -2940,7 +2940,7 @@ div#horizontalTab1 ul {
 }
 .additional_info_sub_grid_rightl{
 	float:left;
-	width: 70%;
+	width: 75%;
 }
 .additional_info_sub_grid_rightr{
 	float:right;

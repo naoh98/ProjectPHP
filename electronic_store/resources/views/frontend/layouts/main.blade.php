@@ -5,6 +5,7 @@
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
         function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- end for-mobile-apps -->
@@ -17,7 +18,6 @@
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/fasthover.css" />
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/main.css" /> <!-- custom css tại đây -->
     <link rel="stylesheet" href="{{asset('/add-to-cart')}}/css/style.css">
-
 
     <script src="{{asset('/electronic_store')}}/js/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('/electronic_store')}}/js/bootstrap-3.1.1.min.js"></script>
