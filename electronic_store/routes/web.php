@@ -20,17 +20,17 @@ Route::get('/','Frontend\IndexController@index')->name('homepage');
 
 //route hiển thị view tất cả sản phẩm electronic store
 Route::get('/shop-category','Frontend\CategoryController@indexall')->name('cat.pro.all');
-//route hiển thị view sản phẩm theo danh mục electronic store
-Route::get('/shop-category/{category_id}','Frontend\CategoryController@index')->name('cat.pro');
-
 //route chức năng lọc tất cả sản phẩm
 Route::get('/shop-category/product_filter','Frontend\CategoryController@filterall')->name('filter.all');
+
+//route hiển thị view sản phẩm theo danh mục electronic store
+Route::get('/shop-category/{category_id}','Frontend\CategoryController@index')->name('cat.pro');
 //route chức năng lọc sản phẩm theo danh mục
 Route::get('/shop-category/{category_id}/product_filter','Frontend\CategoryController@filter')->name('filter');
 
 //route hiển thị chi tiết sản phẩm
 Route::get('/product/{product_id}','Frontend\ProductController@index');
-<<<<<<< HEAD
+
 
 
 /*============== ROUTE FOR ABOUT, CONTACT, USER PROFILE, NEWS PAGE ===================== */
@@ -47,17 +47,13 @@ Route::post('/profile/update', 'Frontend\ProfileController@update')->name('profi
 
 Route::get('/news', 'Frontend\NewController@index')->name('news.index');
 Route::get('/news/{id}', 'Frontend\NewController@show')->name('news.show');
-=======
+
 //route thêm đánh giá
 Route::post('/rating/{product_id}','Frontend\RatingController@saveRating')->name('rate');
 //route edit đánh giá
 Route::post('/rating/edit/{product_id}','Frontend\RatingController@editRating')->name('rate.edit');
 //route chức năng load more review
 Route::post('/loadmore/{product_id}','Frontend\RatingController@loadmore')->name('loadmore');
->>>>>>> 5221e2f261de5cf79229ef95578a6a7841454c06
-
-
-
 
 
 /*============== ROUTE FOR SHOPPING CART, CHECKOUT PAGE ===================== */
@@ -132,7 +128,6 @@ Route::prefix('admin')->group(function() {
     Route::get('/news', 'Backend\NewController@index')->name('admin.new.index');
     Route::get('/news/create', 'Backend\NewController@create')->name('admin.new.create');
     Route::get('/news/edit/{new_id}', 'Backend\NewController@edit')->name('admin.new.edit');
-
 
 
 

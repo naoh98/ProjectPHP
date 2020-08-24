@@ -35,16 +35,10 @@ class CategoryController extends Controller
         $products =
             $products->join('category','product.product_type','=','category.category_id')
                      ->select('product.*')
-<<<<<<< HEAD
-                     ->paginate(12);
-
-
+                     ->paginate(9);
 
         return view('frontend.contents.productall',['product' => $products,'manufacturer' => $manu,'categories' => $cat]);
-=======
-                     ->paginate(9);
-        return view('frontend.contents.productall',['product'=>$products,'manufacturer'=>$manu,'categories'=>$cat]);
->>>>>>> 5221e2f261de5cf79229ef95578a6a7841454c06
+
     }
     //
     public function index(Request $request, $category_id){

@@ -17,8 +17,6 @@ class ProductController extends Controller
             ->select('product.*','manufacturer.*','category.*')
             ->first();
 
-<<<<<<< HEAD
-=======
         $related_pros = DB::table('product')
             ->where('product_type',$product->category_id)
             ->get();
@@ -38,7 +36,6 @@ class ProductController extends Controller
             ->offset(0)
             ->limit(2)
             ->get();
->>>>>>> 5221e2f261de5cf79229ef95578a6a7841454c06
 
         $attributes = DB::table('product_attributes')
         ->where('product_attributes.product_id',$product_id)

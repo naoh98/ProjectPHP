@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 .page-wrapper {
     min-height: 90vh;
-=======
+}
 *{
     word-break: break-word;
->>>>>>> 5221e2f261de5cf79229ef95578a6a7841454c06
 }
 ul li {
     list-style-type: none;
@@ -16,11 +14,11 @@ li[role='presentation']{
     width: 20%;
     font-size: 16px;
 }
-/*.img-responsive{*/
-/*    width: inherit;*/
-/*    height: inherit;*/
-/*    object-fit: cover;*/
-/*}*/
+.img-responsive{
+  width: inherit;
+   height: inherit;
+  object-fit: cover;
+}
 .team_image {
     width: 250px;
 }
@@ -66,16 +64,14 @@ li[role='presentation']{
 .menucat ul li a:hover{
     color: #FF5063;
 }
-<<<<<<< HEAD
 
-.menu{
+.menu {
     width: 100%;
     text-align: center;
     background-color: #3c43a4;
-=======
+}
 .menucat ul li:hover{
     background: #4c7ace;
->>>>>>> 5221e2f261de5cf79229ef95578a6a7841454c06
 }
 .menucat{
     color: white;

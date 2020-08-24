@@ -2,8 +2,11 @@
 @section('title','Sản Phẩm')
 @section('content')
 
-    <div class="banner banner1"
-         style="background: url('{{asset("/storage/files/".basename($this_cat->category_image))}}') no-repeat center;background-size: 100% 100%;">
+    <div class="banner banner1">
+        <div
+            style="background: url('{{asset("/storage/files/".basename($this_cat->category_image))}}') no-repeat center;background-size: 100% 100%;">
+
+        </div>
     </div>
 
     <div class="breadcrumb_dress">

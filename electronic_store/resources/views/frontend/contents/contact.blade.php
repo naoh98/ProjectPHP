@@ -11,9 +11,9 @@
 <!-- //banner -->
 <!-- breadcrumbs -->
 <div class="breadcrumb_dress">
-    <div class="container">
+    <div class="container-fluid">
         <ul>
-            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
+            <li><a href="{{url('/')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
             <li>Contact Us</li>
         </ul>
     </div>
