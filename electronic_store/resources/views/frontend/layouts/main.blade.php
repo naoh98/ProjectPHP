@@ -46,9 +46,9 @@
 
 @include('frontend.partials.minicart')
 
-<script src="{{asset('/electronic_store')}}/js/main.js" type="text/javascript"></script> <!-- custom js tại đây -->
 <script src="{{asset('/electronic_store')}}/js/main-cart.js" type="text/javascript"></script>
 <script src="{{asset('/electronic_store')}}/js/util.js" type="text/javascript"></script>
+<script src="{{asset('/electronic_store')}}/js/main.js" type="text/javascript"></script> <!-- custom js tại đây -->
  @yield('scripts')
 </body>
 </html>

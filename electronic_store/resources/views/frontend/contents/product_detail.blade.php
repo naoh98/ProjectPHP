@@ -79,7 +79,7 @@
                 </div>
                 <div class="simpleCart_shelfItem" style="display: flex; justify-content: center;">
                     <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
-                    <p style="margin-right: 20px"><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
+                    <p style="margin: 5px 20px 0px 0px;"><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
                         <a href="#" data-url="{{ route('addToCart', ['id' => $product->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
 
                 </div>
@@ -301,9 +301,6 @@
     <!-- zooming-effect -->
     <script src="{{asset('/electronic_store')}}/js/imagezoom.js"></script>
     <!-- //zooming-effect -->
-<<<<<<< HEAD
-@endsection
-=======
 
     <script>
         $.ajaxSetup({
@@ -495,4 +492,4 @@
 
     </script>
 @endsection
->>>>>>> 5221e2f261de5cf79229ef95578a6a7841454c06
+
