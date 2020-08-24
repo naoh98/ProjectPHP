@@ -1,12 +1,22 @@
 @extends('frontend.layouts.main')
 @section('title','Giỏ hàng')
 @section('content')
-    <div class="cart_wrapper">
+    <div class="cart-wrapper">
         <div class="cart mt-4 delete_cart_url" data-url="{{route('deleteCart')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table mt-3 table-striped update_cart_url" data-url="{{route('updateCart')}}">
+                        @if( !session()->get('cart'))
+                            <div class="cart__empty">
+                                <h2 class="cart__title">Your cart is empty !</h2>
+                                <div class="cart__image">
+                                    <img src="{{ asset('electronic_store') }}/images/cart-empty.png" alt="" class="img-responsive">
+                                </div>
+                                <a href="{{ url('/shop-category') }}" class="btn btn-warning">Purchase some products now ?</a>
+                            </div>
+                        @else
+                            <table class="table mt-3 table-striped update_cart_url" data-url="{{route('updateCart')}}">
+
                             <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
@@ -20,16 +30,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @php
+
+                                @php
                                 $total = 0;
-                            @endphp
-                            @if( !session()->get('cart'))
-                                <div style="text-align: center">
-                                    <h2>Your cart is empty !</h2>
-                                </div>
-                            @else
+                                @endphp
                                 @foreach($carts as $key => $cartItem)
-                                <tr>
+                                    <tr>
 
                                     @php
                                         $total += $cartItem['price'] * $cartItem['quantity'];
@@ -41,11 +47,11 @@
                                         <img style="width: 150px;" src="{{asset('/storage/files/' . basename($cartItem['image']))}}" alt="image">
                                     </td>
                                     <td>{{ $cartItem['name'] }}</td>
-                                    <td>{{ $cartItem['price'] }}</td>
+                                    <td>{{ number_format($cartItem['price']) }}</td>
                                     <td>
                                         <input type="number" value="{{ $cartItem['quantity'] }}" min="1" class="quantity" />
                                     </td>
-                                    <td>{{ $cartItem['price'] * $cartItem['quantity'] }} VNĐ</td>
+                                    <td>{{ number_format($cartItem['price'] * $cartItem['quantity']) }} VNĐ</td>
                                     <td>
                                         <a href="" data-id="{{$key}}" class="btn btn-primary update-cart">Update</a>
                                         <a href="" data-id="{{$key}}" class="btn btn-warning delete-cart">Delete</a>
@@ -64,7 +70,12 @@
                         <h2 style="text-align: left">Total: {{number_format($total)}} VNĐ</h2>
                     </div>
                     <div class="col-md-6">
-                        <h2 style="text-align: right"><a href="{{route('checkout.index')}}" class="btn btn-success">Proceed to checkout</a></h2>
+                        @auth
+                            <h2 style="text-align: right"><a href="{{route('checkout.index')}}" class="btn btn-success">Proceed to checkout</a></h2>
+                        @endauth
+                        @guest
+                                <h2 style="text-align: right"><a href="#" data-toggle="modal" data-target="#myModal88" class="btn btn-success">Proceed to checkout</a></h2>
+                            @endguest
                     </div>
                 </div>
                 @endif

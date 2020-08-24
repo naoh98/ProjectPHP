@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/jquery.countdown.css" />
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/fasthover.css" />
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/main.css" /> <!-- custom css tại đây -->
+    <link rel="stylesheet" href="{{asset('/add-to-cart')}}/css/style.css">
 
 
     <script src="{{asset('/electronic_store')}}/js/jquery.min.js"></script>
@@ -26,21 +27,28 @@
     <script src="{{asset('/electronic_store')}}/js/jquery.magnific-popup.js" type="text/javascript"></script>
     <script type="text/javascript" src="{{asset('/electronic_store')}}/js/jquery.flexisel.js"></script>
     <script src="{{asset('/electronic_store')}}/js/easyResponsiveTabs.js" type="text/javascript"></script>
+
 </head>
 <body>
-
 
 @include('frontend.partials.header')
 
 @include('frontend.partials.nav')
 
-@yield('content')
+    <div class="page-wrapper">
+        @yield('content')
+    </div>
+
 
 @include('frontend.partials.newsletter')
 
 @include('frontend.partials.footer')
 
-<script src="{{asset('/electronic_store')}}/js/main.js" type="text/javascript"></script> <!-- custom js tại đây -->
+@include('frontend.partials.minicart')
 
+<script src="{{asset('/electronic_store')}}/js/main.js" type="text/javascript"></script> <!-- custom js tại đây -->
+<script src="{{asset('/electronic_store')}}/js/main-cart.js" type="text/javascript"></script>
+<script src="{{asset('/electronic_store')}}/js/util.js" type="text/javascript"></script>
+ @yield('scripts')
 </body>
 </html>

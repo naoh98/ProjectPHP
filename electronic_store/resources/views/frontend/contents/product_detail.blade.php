@@ -84,19 +84,14 @@
                 <div class="simpleCart_shelfItem" style="display: flex; justify-content: center;">
                     <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
                     <p style="margin-right: 20px"><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
-                    <form action="#" method="post" style="margin-top: 5px;">
-                        <input type="hidden" name="cmd" value="_cart">
-                        <input type="hidden" name="add" value="1">
-                        <input type="hidden" name="w3ls_item" value="Smart Phone">
-                        <input type="hidden" name="amount" value="450.00">
-                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                    </form>
+                        <a href="#" data-url="{{ route('addToCart', ['id' => $product->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
+
                 </div>
             </div>
             <div class="clearfix"> </div>
         </div>
     </div>
-    
+
     <div class="additional_info" style="padding-top: 3em;">
         <div class="container">
             <div class="sap_tabs">

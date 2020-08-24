@@ -23,7 +23,7 @@
                         <h3>Danh Mục</h3>
                         <div class="w3ls_mobiles_grid_left_grid_sub catforpro">
                             <a href="{{url('/shop-category')}}">Tất cả</a>
-                            <?php showcatforpro($categories,$this_cat); ?>
+                            <?php showcatforpro($categories, $this_cat); ?>
                         </div>
                     </div>
                     <div class="w3ls_mobiles_grid_left_grid">
@@ -93,13 +93,8 @@
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($value->product_price_sell ,0,',','.'); ?>
                                         <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="w3ls_item" value="Smart Phone" />
-                                            <input type="hidden" name="amount" value="245.00"/>
-                                            <button type="submit" class="w3ls-cart">Add to cart</button>
-                                        </form>
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $value->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +156,7 @@
 @endsection
 
 <?php
-function showcatforpro(&$categories,$this_cat,$parent_id = 0,$char='<span></span>'){
+function showcatforpro(&$categories, $this_cat,$parent_id = 0,$char='<span></span>'){
 $cat_child = [];
 foreach ($categories as $key => $item){
     if($item->parent_id==$parent_id){
@@ -173,7 +168,7 @@ if ($cat_child){
 
 echo '<ul>';
 foreach ($cat_child as $key => $item){?>
-<li><?php echo $char; ?><i class="fa fa-arrow-right" aria-hidden="true" style="color: limegreen; margin-right: 8px;"></i></i>
+<li><?php echo $char; ?><i class="fa fa-arrow-right" aria-hidden="true" style="color: limegreen; margin-right: 8px;"></i>
     <a class="{{$item->category_id==$this_cat->category_id ? 'cat_active' : ''}}" href="{{url('/shop-category/'.$item->category_id)}}">
         <?php
         echo $item->category_name;

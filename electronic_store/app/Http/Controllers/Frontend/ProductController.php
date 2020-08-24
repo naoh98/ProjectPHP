@@ -17,6 +17,7 @@ class ProductController extends Controller
             ->select('product.*','manufacturer.*','category.*')
             ->first();
 
+
         $attributes = DB::table('product_attributes')
         ->where('product_attributes.product_id',$product_id)
         ->join('attributes','product_attributes.attribute_id','=','attributes.attribute_id')

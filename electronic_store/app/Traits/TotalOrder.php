@@ -2,6 +2,10 @@
 
 namespace App\Traits;
 
+
+
+use Illuminate\Http\Request;
+
 trait TotalOrder {
     public function getTotalOrder() {
         $carts = session()->get('cart');
@@ -20,5 +24,9 @@ trait TotalOrder {
             $total += $cart['quantity'];
         }
         return $total;
+    }
+
+    public function destroyCart(Request $request) {
+       $request->session()->forget('cart');
     }
 }

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -13,7 +16,7 @@ class LoginController extends Controller
     | Login Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles authenticating users for the application and
+    | This controller handles authenticatNing users for the application and
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
@@ -27,6 +30,9 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+//    protected function redirectTo() {
+//        return Request::session()->get('url.intended') ?? '/';
+//    }
 
     /**
      * Create a new controller instance.
@@ -37,4 +43,5 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
 }

@@ -14,6 +14,7 @@ class CheckoutController extends Controller
     //
     use TotalOrder;
 
+
     public function index() {
         $carts = session()->get('cart');
 
@@ -58,7 +59,11 @@ class CheckoutController extends Controller
                 $orderItem->price = $item['quantity'] * $item['price'];
                 $orderItem->save();
             }
+            // Destroy cart when checkout success
+            $this->destroyCart($request);
+
         }
+
 
         return redirect('/checkout/alert');
 

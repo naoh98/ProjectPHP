@@ -8,6 +8,9 @@
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/doctrine/lexer" />

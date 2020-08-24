@@ -55,8 +55,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="utilities-color.html">Danh mục tin</a>
-                <a class="collapse-item" href="utilities-color.html">Danh sách bài viết</a>
+                <a class="collapse-item" href="{{ route('admin.new.index') }}">Danh sách bài viết</a>
                 <a class="collapse-item" href="utilities-border.html">Trang tĩnh</a>
             </div>
         </div>

@@ -5,6 +5,7 @@
     <div class="banner banner1">
     </div>
 
+
     <div class="breadcrumb_dress">
         <div class="container-fluid">
             <ul>
@@ -92,13 +93,8 @@
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($value->product_price_sell ,0,',','.'); ?>
                                         <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart" />
-                                            <input type="hidden" name="add" value="1" />
-                                            <input type="hidden" name="w3ls_item" value="Smart Phone" />
-                                            <input type="hidden" name="amount" value="245.00"/>
-                                            <button type="submit" class="w3ls-cart">Add to cart</button>
-                                        </form>
+                                            <a href="#" data-url="{{ route('addToCart', ['id' => $value->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +168,7 @@ if ($cat_child){
 
 echo '<ul>';
 foreach ($cat_child as $key => $item){?>
-<li><?php echo $char; ?><i class="fa fa-arrow-right" aria-hidden="true" style="color: limegreen; margin-right: 8px;"></i></i>
+<li><?php echo $char; ?><i class="fa fa-arrow-right" aria-hidden="true" style="color: limegreen; margin-right: 8px;"></i>
     <a href="{{url('/shop-category/'.$item->category_id)}}">
         <?php
         echo $item->category_name;

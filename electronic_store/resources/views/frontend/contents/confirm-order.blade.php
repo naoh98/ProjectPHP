@@ -2,6 +2,10 @@
 @section('title','Giỏ hàng')
 @section('content')
    <div class="confirm-order">
-       <h3>Your order is completed !</h3>
+       <h3>Thanks for your order ! </h3>
+       <div class="confirm-order__image">
+          <i class="fa fa-check"></i>
+       </div>
+       <a href="{{ route('cat.pro.all') }}" class="btn btn-primary">Continue shopping ?</a>
    </div>
 @endsection

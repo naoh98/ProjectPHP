@@ -30,20 +30,27 @@ class CategoryController extends Controller
         if ($request->manu){
             $manu1 = $request->manu;
             $products->where('product_manufacturer',$manu1);
+
         }
         $products =
             $products->join('category','product.product_type','=','category.category_id')
                      ->select('product.*')
                      ->paginate(12);
-        return view('frontend.contents.productall',['product'=>$products,'manufacturer'=>$manu,'categories'=>$cat]);
+
+
+
+        return view('frontend.contents.productall',['product' => $products,'manufacturer' => $manu,'categories' => $cat]);
     }
     //
     public function index(Request $request, $category_id){
         $manu = DB::table('manufacturer')->get();
 
+
+
         $cat = DB::table('category')->get();
 
         $this_cat = DB::table('category')->where('category_id',$category_id)->first();
+
         $arr=[];
         $this->cat($arr,$category_id);
         $cat_pro = DB::table('product')->whereIn('product_type',$arr);

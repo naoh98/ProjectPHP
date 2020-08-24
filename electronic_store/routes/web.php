@@ -15,19 +15,43 @@ use Illuminate\Support\Facades\Route;
 */
 //route hiển thị view electronic store
 Route::get('/','Frontend\IndexController@index')->name('homepage');
+
+/*============== ROUTE FOR PRODUCT PAGE, SINGLE PAGE ===================== */
+
 //route hiển thị view tất cả sản phẩm electronic store
 Route::get('/shop-category','Frontend\CategoryController@indexall')->name('cat.pro.all');
-//route chức năng lọc tất cả sản phẩm
-Route::get('/shop-category/product_filter','Frontend\CategoryController@filterall')->name('filter.all');
 //route hiển thị view sản phẩm theo danh mục electronic store
 Route::get('/shop-category/{category_id}','Frontend\CategoryController@index')->name('cat.pro');
+
+//route chức năng lọc tất cả sản phẩm
+Route::get('/shop-category/product_filter','Frontend\CategoryController@filterall')->name('filter.all');
 //route chức năng lọc sản phẩm theo danh mục
 Route::get('/shop-category/{category_id}/product_filter','Frontend\CategoryController@filter')->name('filter');
+
 //route hiển thị chi tiết sản phẩm
 Route::get('/product/{product_id}','Frontend\ProductController@index');
 
 
+/*============== ROUTE FOR ABOUT, CONTACT, USER PROFILE, NEWS PAGE ===================== */
 
+Route::get('/about', function () {
+    return view('frontend.contents.about');
+})->name('about');
+Route::get('/contact',function () {
+    return view('frontend.contents.contact');
+})->name('contact');
+
+Route::get('/profile', 'Frontend\ProfileController@index')->name('profile.index');
+Route::post('/profile/update', 'Frontend\ProfileController@update')->name('profile.update');
+
+Route::get('/news', 'Frontend\NewController@index')->name('news.index');
+Route::get('/news/{id}', 'Frontend\NewController@show')->name('news.show');
+
+
+
+
+
+/*============== ROUTE FOR SHOPPING CART, CHECKOUT PAGE ===================== */
 
 // Route for add to cart
 Route::get('/products/add-to-cart/{id}', 'Frontend\CartController@addToCart')->name('addToCart');
@@ -48,10 +72,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/checkout','Frontend\CheckoutController@storeOrder' )->name('checkout.order');
 
 });
+// Route for Confirm order
 Route::get('/checkout/alert', function () {
    return view('frontend.contents.confirm-order');
 });
 
+
+
+
+/*============== ROUTE FOR ADMINISTRATION ===================== */
 
 Route::prefix('admin')->group(function() {
     // Gom nhóm các route cho phần admin
@@ -90,6 +119,13 @@ Route::prefix('admin')->group(function() {
     Route::get('/attribute', 'Backend\AttributeController@index');
     Route::get('/attribute/create', 'Backend\AttributeController@createpage');
     Route::get('/attribute/edit/{attribute_id}', 'Backend\AttributeController@editpage');
+    // route hiển thị bài viết
+    Route::get('/news', 'Backend\NewController@index')->name('admin.new.index');
+    Route::get('/news/create', 'Backend\NewController@create')->name('admin.new.create');
+    Route::get('/news/edit/{new_id}', 'Backend\NewController@edit')->name('admin.new.edit');
+
+
+
 
     //route chức năng category
     Route::post('/product_category/create', 'Backend\CategoryProductController@create');
@@ -107,11 +143,13 @@ Route::prefix('admin')->group(function() {
     Route::post('/attribute/create', 'Backend\AttributeController@create');
     Route::post('/attribute/edit/{attribute_id}', 'Backend\AttributeController@edit');
     Route::delete('/attribute/delete/{attribute_id}', 'Backend\AttributeController@delete');
-    //
+    //route chức năng đăng tin tức
+    Route::post('/news/create', 'Backend\NewController@store')->name('admin.new.store');
+    Route::post('/news/edit/{new_id}', 'Backend\NewController@update')->name('admin.new.update');
+    Route::delete('/news/delete/{new_id}', 'Backend\NewController@delete')->name('admin.new.delete');
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 
