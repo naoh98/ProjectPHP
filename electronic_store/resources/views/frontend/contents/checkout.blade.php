@@ -46,19 +46,35 @@
                      <div class="form-group">
                          <label>Address</label>
                          <input class="form-control" name="address" value="">
+
+                         @error('address')
+                         <div class="alert alert-danger">{{ $message }}</div>
+                         @enderror
                      </div>
                      <div class="form-group">
                          <label>City</label>
                          <input class="form-control" name="city" value="">
+
+                         @error('city')
+                         <div class="alert alert-danger">{{ $message }}</div>
+                         @enderror
                      </div>
                      <div class="form-group">
                          <label>Country</label>
                          <input type="text" name="country" class="form-control" value="">
+
+                         @error('country')
+                         <div class="alert alert-danger">{{ $message }}</div>
+                         @enderror
                      </div>
                      <div class="form-group">
                          <label>Phone number</label>
                          <!-- thêm nhiều file bằng multiple vào thẻ input -->
                          <input type="text" name="phone_number" class="form-control" value="">
+
+                         @error('phone_number')
+                         <div class="alert alert-danger">{{ $message }}</div>
+                         @enderror
 
                      </div>
                      <div class="form-group">

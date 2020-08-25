@@ -33,8 +33,9 @@
     }, function () {
         clearInterval(auto);
     });
-    // ADD TO CART AJAX
 
+
+    // ADD TO CART AJAX
     function addToCart(event) {
          event.preventDefault();
          let urlCart = $(this).data('url');

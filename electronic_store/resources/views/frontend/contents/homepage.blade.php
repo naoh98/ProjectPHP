@@ -8,9 +8,45 @@
     </div>
 </div>
 <!-- end banner -->
-<!-- banner-bottom -->
+<!-- Sale section-->
+<div class="special-deals">
+    <div class="container">
+        <h2>Hot Sales</h2>
+        <div class="w3agile_special_deals_grids">
+            <div class="col-md-7 w3agile_special_deals_grid_left">
+                <div class="w3agile_special_deals_grid_left_grid fix-height">
+                    <img src="{{asset('/electronic_store')}}/images/21.jpg" alt=" "/>
+                    <div class="w3agile_special_deals_grid_left_grid_pos">
+                        <h4>We Offer <span>Best Products</span></h4>
+                    </div>
+                </div>
+                <div class="w3agile_special_deals_grid_left_grid fix-height">
+                    <img src="{{asset('/electronic_store')}}/images/45.jpg" alt=" " class="img-responsive"/>
+                    <div class="w3agile_special_deals_grid_left_grid_pos">
+                        <h4>Save up to <span>55%</span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 w3agile_special_deals_grid_right">
+                <div class="w3agile_special_deals_grid_right_grid">
+                    <img src="{{asset('/electronic_store')}}/images/20.jpg" alt=" " />
+                    <div class="w3agile_special_deals_grid_right_pos">
+                        <h4>Men's <span>Special</span></h4>
+                        <h5>save up <span>to</span>30%</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- Sale section-->
+
+<!-- Top Products -->
 <div class="banner-bottom" style="background: #f3f3f3;">
     <div class="container">
+        <h2>Top Products</h2>
         <div class="row">
             <div class="col-md-12 wthree_banner_bottom_right">
                 <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
@@ -121,19 +157,57 @@
         </div>
     </div>
 </div>
-<!-- //banner-bottom -->
+<!-- Top Products -->
 <!-- our services -->
 <div class="special-deals">
     <div class="container">
-        <h2>Dịch vụ</h2>
+        <h2>Our Services</h2>
         <div class="w3agile_special_deals_grids">
-            <div class="col-md-7 w3agile_special_deals_grid_left">
+            <div class="col-md-6 w3agile_special_deals_grid_left">
                 <div class="w3agile_special_deals_grid_left_grid">
-                    <img src="{{asset('/electronic_store')}}/images/21.jpg" alt=" " class="img-responsive" />
-                    <div class="w3agile_special_deals_grid_left_grid_pos">
-                        <h4>We Offer <span>Best Products</span></h4>
+                    <div class="service-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <i class="fa fa-user service__icon"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <h4 class="service__tile">24/7 online free support</h4>
+                                <p class="service__content">uis autem vel eum iure reprehenderit qui in ea voluptateuis autem vel eum iure reprehenderit qui in ea voluptate</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="service-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <i class="fa fa-bus service__icon"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <h4 class="service__tile">Free shipping</h4>
+                                <p class="service__content">uis autem vel eum iure reprehenderit qui in ea voluptateuis autem vel eum iure reprehenderit qui in ea voluptate</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="service-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <i class="fa fa-money service__icon"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <h4 class="service__tile">100% money back</h4>
+                                <p class="service__content">uis autem vel eum iure reprehenderit qui in ea voluptateuis autem vel eum iure reprehenderit qui in ea voluptate</p>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
+
+            </div>
+            <div class="col-md-6 w3agile_special_deals_grid_right">
                 <div class="wmuSlider example1">
                     <div class="wmuSliderWrapper">
                         <article style="position: absolute; width: 100%; opacity: 0;">
@@ -172,13 +246,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5 w3agile_special_deals_grid_right">
-                <img src="{{asset('/electronic_store')}}/images/20.jpg" alt=" " class="img-responsive" />
-                <div class="w3agile_special_deals_grid_right_pos">
-                    <h4>Women's <span>Special</span></h4>
-                    <h5>save up <span>to</span> 30%</h5>
-                </div>
-            </div>
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -187,7 +254,7 @@
 <!-- new-products -->
 <div class="new-products">
     <div class="container">
-        <h3>Sản Phẩm Mới</h3>
+        <h3>New Products</h3>
         <div class="agileinfo_new_products_grids">
             <?php
             foreach($lastest_product as $product){  ?>
@@ -227,7 +294,7 @@
 <!-- top-brands -->
 <div class="top-brands">
     <div class="container">
-        <h3>Hãng Sản Xuất</h3>
+        <h3>Top Brands</h3>
         <div class="sliderfig">
             <ul id="flexiselDemo1">
                 <?php

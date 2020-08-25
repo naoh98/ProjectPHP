@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use App\Models\ProductModel;
+use Illuminate\Validation\ValidationException;
 
 class ProductController extends Controller
 {
@@ -82,7 +83,10 @@ class ProductController extends Controller
             'numeric' => ':attribute phải là số',
             'unique' => ':attribute đã tồn tại'
         ];
-        $this->validate($request,$validate_pro,$error_messages);
+        try {
+            $this->validate($request, $validate_pro, $error_messages);
+        } catch (ValidationException $e) {
+        }
         $arr=[];
         if ($request->hasFile('product_main_image')) {
             $file_name1 = $request->product_main_image->getClientOriginalName();

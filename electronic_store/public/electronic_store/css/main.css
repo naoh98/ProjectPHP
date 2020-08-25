@@ -344,8 +344,38 @@ li[role='presentation']{
 .user__image {
 
 }
+/*================================== SERVICE PAGE ================================= */
+.service-group {
+    margin-bottom: 30px;
+}
+.service__tile {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
 
-/*================================== HOAN's PAGE ================================= */
+
+}
+.service__content {
+    line-height: 21px;
+}
+
+.service__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    border: 1px solid #363636;
+    text-align: center;
+    line-height: 55px;
+    transition: all .3s;
+
+}
+.service__icon:hover {
+    background: #3C43A4;
+    color: #fff;
+}
+
+
+    /*================================== HOAN's PAGE ================================= */
 
 .ecommerce_manu ul li{
     list-style-type: none;

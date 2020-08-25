@@ -238,13 +238,8 @@
                                 <div class="simpleCart_shelfItem">
                                     <?php $price= number_format($related_pro->product_price_sell ,0,',','.'); ?>
                                     <p class="flexisel_ecommerce_cart"><i class="item_price"><?php echo $price. ' Đ'; ?></i></p>
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart">
-                                        <input type="hidden" name="add" value="1">
-                                        <input type="hidden" name="w3ls_item" value="Kid's Toy">
-                                        <input type="hidden" name="amount" value="100.00">
-                                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                                    </form>
+                                        <a href="#" data-url="{{ route('addToCart', ['id' => $related_pro->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
+
                                 </div>
                             </div>
                         </div>

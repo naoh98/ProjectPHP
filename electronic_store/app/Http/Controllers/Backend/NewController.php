@@ -31,7 +31,7 @@ class NewController extends Controller
         $post = new NewModel();
 
 
-        $validate_pro =[
+        $validate =[
             'title' => 'required|unique:news,title',
             'image' => 'required',
             'excerpt' => 'required',
@@ -42,12 +42,8 @@ class NewController extends Controller
             'required' => ':attribute không được để trống',
             'unique' => ':attribute đã tồn tại'
         ];
-        try {
-            $this->validate($request, $validate_pro, $error_messages);
-        } catch (ValidationException $e) {
-            echo "Something went wrong !";
-            die();
-        }
+        $this->validate($request, $validate, $error_messages);
+
 
 
         $post->title = $request->title;

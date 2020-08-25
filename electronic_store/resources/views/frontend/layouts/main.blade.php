@@ -44,7 +44,7 @@
 
 @include('frontend.partials.footer')
 
-@include('frontend.partials.minicart')
+{{--@include('frontend.partials.minicart')--}}
 
 <script src="{{asset('/electronic_store')}}/js/main-cart.js" type="text/javascript"></script>
 <script src="{{asset('/electronic_store')}}/js/util.js" type="text/javascript"></script>

@@ -41,7 +41,7 @@
                         <label>Nội dung</label>
                         <textarea name="content_post" cols="40" rows="20" class="form-control"></textarea>
                     </div>
-                    @error('content')
+                    @error('content_post')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
