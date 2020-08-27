@@ -85,7 +85,6 @@ class DashboardController extends Controller
     public function logout(Request $request) {
 
         $request->session()->forget('sblogin');
-        $request->session()->flush();
 
         return redirect('admin/login')->with('status', 'Đăng xuất thành công');
 

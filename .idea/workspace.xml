@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="383d1377-65ba-4133-85f0-b9071dc7e66b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/public/electronic_store/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/public/electronic_store/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/public/electronic_store/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/public/electronic_store/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/confirm-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/confirm-order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/minicart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/partials/minicart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/DashboardController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598489251056</updated>
       <workItem from="1598489274609" duration="780000" />
-      <workItem from="1598524920419" duration="6707000" />
+      <workItem from="1598524920419" duration="8698000" />
     </task>
     <servers />
   </component>
@@ -180,20 +168,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="416" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1598521315185" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598531502501">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1598544071641">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598531502501" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/cart.blade.php</url>
-          <line>75</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1598544071641" />
   </component>
 </project>
