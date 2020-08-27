@@ -128,6 +128,25 @@ Route::prefix('admin')->group(function() {
     Route::get('/news', 'Backend\NewController@index')->name('admin.new.index');
     Route::get('/news/create', 'Backend\NewController@create')->name('admin.new.create');
     Route::get('/news/edit/{new_id}', 'Backend\NewController@edit')->name('admin.new.edit');
+    //route thống kê order
+    Route::get('/orders', 'Backend\Ordercontroller@index')->name('orders.index');
+    //route chi tiết order
+    Route::get('/orders/item/{order_id}', 'Backend\Ordercontroller@detail')->name('orders.detail');
+    //route thống kê khách hàng
+    Route::get('/customers', function () {
+        $order_items = \App\Models\OrderModel::get();
+
+        $user_id = $order_items->map(function ($item) {
+           return $item->user_id;
+        });
+        $customers = \App\User::find($user_id);
+
+
+
+
+        return view('backend.contents.customers.index', compact('customers'));
+
+    })->name('customer.index');
 
 
 
@@ -151,6 +170,7 @@ Route::prefix('admin')->group(function() {
     Route::post('/news/create', 'Backend\NewController@store')->name('admin.new.store');
     Route::post('/news/edit/{new_id}', 'Backend\NewController@update')->name('admin.new.update');
     Route::delete('/news/delete/{new_id}', 'Backend\NewController@delete')->name('admin.new.delete');
+
 });
 
 Auth::routes();

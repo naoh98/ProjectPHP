@@ -35,8 +35,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">Khách hàng</a>
-                <a class="collapse-item" href="">Đơn hàng</a>
+                <a class="collapse-item" href="{{url('/admin/customers')}}">Khách hàng</a>
+                <a class="collapse-item" href="{{url('/admin/orders')}}">Đơn hàng</a>
                 <a class="collapse-item" href="{{url('/admin/product_category')}}">Danh mục sản phẩm</a>
                 <a class="collapse-item" href="{{url('/admin/product')}}">Sản phẩm</a>
                 <a class="collapse-item" href="{{url('/admin/attribute')}}">Thuộc tính sản phẩm</a>
