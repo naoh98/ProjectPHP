@@ -28,7 +28,7 @@ Route::get('/shop-category/{category_id}','Frontend\CategoryController@index')->
 //route chức năng lọc sản phẩm theo danh mục
 Route::get('/shop-category/{category_id}/product_filter','Frontend\CategoryController@filter')->name('filter');
 
-//route hiển thị chi tiết sản phẩm
+//route hiển thị Detail sản phẩm
 Route::get('/product/{product_id}','Frontend\ProductController@index');
 
 
@@ -130,7 +130,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/news/edit/{new_id}', 'Backend\NewController@edit')->name('admin.new.edit');
     //route thống kê order
     Route::get('/orders', 'Backend\Ordercontroller@index')->name('orders.index');
-    //route chi tiết order
+    //route Detail order
     Route::get('/orders/item/{order_id}', 'Backend\Ordercontroller@detail')->name('orders.detail');
     //route thống kê khách hàng
     Route::get('/customers', function () {

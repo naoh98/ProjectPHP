@@ -255,11 +255,17 @@ a.simpleCart_empty {
     outline: none;
 	z-index: 999
 }
+.cart__number {
+    margin-left: 5px;
+    color: #fff;
+    font-size: 21px;
+    display: inline-block;
+}
 .w3view-cart i.fa {
     font-size: 1.8em;
     color: #ffffff;
     vertical-align: middle;
-    line-height: 1.8em;
+
 }
 /*-- //header --*/
 /*-- cart-css --*/

@@ -27,9 +27,12 @@ class CartController extends Controller
 
         session()->put('cart', $cart);
 
+        $htmlCart = view('frontend.partials.header')->render();
+
         return response()->json([
             'code' => 200,
-            'message' => 'success'
+            'message' => 'success',
+            'htmlHeader' => $htmlCart
         ], 200);
 
     }

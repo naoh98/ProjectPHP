@@ -37,8 +37,8 @@ class CheckoutController extends Controller
 
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống',
-            'unique' => ':attribute đã tồn tại'
+            'required' => ':attribute is required',
+            'unique' => ':attribute existed'
         ];
 
         $this->validate($request, $validate, $error_messages);

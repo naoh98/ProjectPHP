@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-@section('title','Trang Chủ')
+@section('title','Home')
 @section('content')
 <!-- banner -->
 <div class="banner">
@@ -87,7 +87,7 @@
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="{{url('/product/'.$item->product_id)}}"><span>Chi tiết</span></a>
+                                                    <a href="{{url('/product/'.$item->product_id)}}"><span>Detail</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -127,7 +127,7 @@
                                         <div class="w3_hs_bottom">
                                             <ul>
                                                 <li>
-                                                    <a href="{{url('/product/'.$item->product_id)}}"><span>Chi tiết</span></a>
+                                                    <a href="{{url('/product/'.$item->product_id)}}"><span>Detail</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -271,7 +271,7 @@
                             <div class="w3_hs_bottom w3_hs_bottom_sub">
                                 <ul>
                                     <li>
-                                        <a href="{{url('/product/'.$product->product_id)}}"><span>Chi tiết</span></a>
+                                        <a href="{{url('/product/'.$product->product_id)}}"><span>Detail</span></a>
                                     </li>
                                 </ul>
                             </div>

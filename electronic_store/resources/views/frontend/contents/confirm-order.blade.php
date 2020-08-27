@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-@section('title','Giỏ hàng')
+@section('title','Cart')
 @section('content')
    <div class="confirm-order">
        <h3>Thanks for your order ! </h3>

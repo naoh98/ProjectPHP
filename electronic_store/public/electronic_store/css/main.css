@@ -181,6 +181,15 @@ li[role='presentation']{
 .checkout-block {
     margin-bottom: 30px;
     margin-top: 30px;
+
+}
+.checkout__group {
+    border: 2px solid #E9EBEF;
+    border-radius: 6px;
+  padding: 70px 20px;
+}
+.ckright {
+    background-color: #E9EBEF;
 }
 .checkout-block__title {
     margin-bottom: 30px;
@@ -190,20 +199,37 @@ li[role='presentation']{
     margin-bottom: 30px;
 }
 
-.summary-content {
+.summary__content {
+    display: flex;
+    flex-direction: column;
+
+}
+.summary__block {
     display: flex;
     justify-content: space-between;
-
 }
 .summary__title {
-    width: 70%;
+    width: 75%;
+    font-weight: 400;
+    color: #1d68a7;
 }
 .summary__quantity {
-    width: 5%;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
 }
-
 .summary__price {
     width: 25%;
+    font-weight: 600;
+
+}
+.summary-total {
+    font-weight: 400;
+    color: #1d68a7;
+}
+.summary-total span {
+    font-weight: 600;
+    color: #333333;
 }
 
 .confirm-order {

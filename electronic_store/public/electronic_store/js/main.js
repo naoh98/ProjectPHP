@@ -26,19 +26,20 @@
     });
 
 
-    // ADD TO CART AJAX
+    //ADD TO CART AJAX
     function addToCart(event) {
          event.preventDefault();
          let urlCart = $(this).data('url');
-
-
+         let card_number = $('.cart__number');
          $.ajax({
             type: 'GET',
             url: urlCart,
             dataType: 'json',
             success: function (data) {
                 if (data.code === 200) {
-                    alert('Thêm sản phẩm thành công !');
+
+                    alert('Product added successfully, check your cart !');
+                    $('#home1').html(data.htmlHeader);
                 }
             },
 

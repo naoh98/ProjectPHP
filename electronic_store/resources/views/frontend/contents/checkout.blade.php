@@ -5,6 +5,7 @@
      <div class="container">
          <div class="rơw">
              <div class="col-md-7">
+                 <div class="checkout__group">
                  <h2 class="checkout-block__title">Billing Details </h2>
                  <form name="order" action="{{ route('checkout.order') }}" method="post">
 
@@ -35,10 +36,10 @@
                      <div class="form-group">
                          <label>Payment Method</label>
                          <select name="payment_method" class="form-control">
-                             <option value="0">Giao hàng nhận tiền</option>
-                             <option value="1">Thanh toán qua thẻ ATM</option>
-                             <option value="2">Ví điện tử MOMO</option>
-                             <option value="3">Thanh toán qua Mastercard</option>
+                             <option value="0">Delivery received money</option>
+                             <option value="1">Payment via ATM card</option>
+                             <option value="2">Digital wallet MOMO</option>
+                             <option value="3">Payment via Mastercard</option>
                          </select>
 
                      </div>
@@ -85,8 +86,10 @@
 
                      <button type="submit" class="btn btn-success">Place order</button>
                  </form>
+                 </div>
              </div>
              <div class="col-md-5">
+                 <div class="checkout__group ckright">
                  <h2 class="checkout-block__title">Your order</h2>
 
                  <div class="summary">
@@ -99,15 +102,19 @@
                             $total += $cart['quantity'] * $cart['price']
                          @endphp
 
-                        <div class="summary-content">
-                            <div class="summary__title">{{$cart['name']}}</div>
-                            <div class="summary__quantity">{{$cart['quantity']}}</div>
-                            <div class="summary__price">{{ $cart['price'] }} VNĐ</div>
+                        <div class="summary__content">
+                            <div class="summary__block">
+                                <div class="summary__title">{{$cart['name']}} <span class="summary__quantity">x {{$cart['quantity']}}</span></div>
+                                <div class="summary__price">{{ $cart['price'] }} $</div>
+                            </div>
+
+
                         </div>
 
                      @endforeach
                  </div>
-                 <div class="summary-total">Total: {{ number_format($total) }}VNĐ</div>
+                 <div class="summary-total">Total: <span>{{ number_format($total) }} $</span></div>
+                 </div>
              </div>
          </div>
      </div>

@@ -22,12 +22,12 @@
 
                     <div id="myDropdown" class="dropdown-content">
                         <a href="{{ route('profile.index') }}" class="user__link"><i class="fa fa-tablet"></i>Profile</a>
-                        <a href="#" class="user__link"><i class="fa fa-shopping-bag"></i>Your cart</a>
+                        <a href="{{ route('showCart') }}" class="user__link"><i class="fa fa-shopping-bag"></i>Your cart</a>
                         <a href="{{ route('logout') }}" class="user__link" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                             <i class="fa fa-sign-out"></i>Logout
                         </a>
                         <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
+                            @csrf
                         </form>
                     </div>
                 @endauth
@@ -37,7 +37,11 @@
             </div>
             <div class="box_1">
 
-                <a href="{{ route('showCart') }}" class="w3view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
+                <a href="{{ route('showCart') }}" class="w3view-cart">
+                        <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+                        <span class="cart__number">{{ session('cart') != null? count((array) session('cart')):0 }}</span>
+
+                </a>
             </div>
         </div>
 
