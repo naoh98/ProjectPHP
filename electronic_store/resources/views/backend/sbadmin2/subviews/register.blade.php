@@ -6,7 +6,7 @@
 <div class="card o-hidden border-0 shadow-lg my-5">
 
     @if (session('status'))
-        <div class="alert alert-danger">
+        <div class="alert alert-danger text-center">
             {{ session('status') }}
         </div>
     @endif
@@ -43,19 +43,16 @@
                         </div>
                        <input type="submit" name="submit" value="Register Account" class="btn btn-primary btn-user btn-block">
                         <hr>
-                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                        <a href="#" class="btn btn-google btn-user btn-block">
                             <i class="fab fa-google fa-fw"></i> Register with Google
                         </a>
-                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                        <a href="#" class="btn btn-facebook btn-user btn-block">
                             <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                         </a>
                     </form>
                     <hr>
                     <div class="text-center">
-                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                    </div>
-                    <div class="text-center">
-                        <a class="small" href="login.html">Already have an account? Login!</a>
+                        <a class="small" href="{{url('/admin/login')}}">Already have an account? Login!</a>
                     </div>
                 </div>
             </div>
