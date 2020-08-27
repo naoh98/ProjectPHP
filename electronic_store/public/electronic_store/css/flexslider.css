@@ -105,9 +105,6 @@ html[xmlns] .flexslider .slides {
   transition: all 1s ease;
   border: 1px solid #D1CFCF;
 }
-.single-left .flex-viewport {
-	max-height: 450px;
-}
 .loading .flex-viewport {
   max-height: 300px;
 }

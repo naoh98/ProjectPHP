@@ -1,12 +1,12 @@
 @extends('backend.layouts.main')
-@section('title','Attribute')
+@section('title','Attributes management')
 @section('content')
     <div class="cf_del_att">
-        <p>Thuộc tính này sẽ bị xóa khỏi toàn bộ sản phẩm có trong hệ thống</p>
+        <p>This attribute will be permanently removed from the whole system</p>
     </div>
     <div class="container-fluid">
         <div>
-            <a href="{{url("/admin/attribute/create")}}" class="btn btn-success">Thêm Thuộc Tính</a>
+            <a href="{{url("/admin/attribute/create")}}" class="btn btn-success">Add New Attribute</a>
         </div>
         @if(session('success'))
             <div class="alert alert-success">
@@ -22,7 +22,7 @@
         <table class="table">
             <thead class=" thead-dark">
             <tr>
-                <th>Thuộc tính</th>
+                <th>Attribute</th>
                 <th></th>
             </tr>
             </thead>
@@ -48,5 +48,6 @@
             ?>
             </tbody>
         </table>
+        <div class="row pages">{{$att->links()}}</div>
     </div>
 @endsection

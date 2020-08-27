@@ -1,11 +1,11 @@
 @extends("backend.layouts.main")
-@section("title","Sửa Nhà Sản Xuất")
+@section("title","Update Brand")
 @section("content")
     <div class="container-fluid">
         <div class="row">
-            <h1>Sửa Sản Phẩm</h1>
+            <h1>Update Brand</h1>
             <div class="col-md-12">
-                <a href="{{url('/admin/manufacturer')}}" class="btn btn-info">Quay về</a>
+                <a href="{{url('/admin/manufacturer')}}" class="btn btn-info">Back</a>
             </div>
             <br><br>
             <div class="col-md-12">
@@ -16,22 +16,22 @@
                         <span>{{$fact->manufacturer_id}}</span>
                     </div>
                     <div class="form-group">
-                        <label>Hãng</label>
+                        <label>Brand</label>
                         <input type="text" value="{{$fact->manufacturer_name}}" name="manufacturer_name" class="form-control">
                     </div>
                     @error('manufacturer_name')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label style="display: block;">Ảnh Đại Diện</label>
+                        <label style="display: block;">Main Image</label>
                         <label class="custom_img">
                             <input type="file" value="{{$fact->manufacturer_image}}" name="manufacturer_image">
-                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Choose A File</span>
                         </label>
                     </div>
                     <div class="text-center">
                         <?php if($fact->manufacturer_image){ ?>
-                        <img src="{{asset('storage/files/' .basename($fact->manufacturer_image))}}" alt="" width="500px" height="350px">
+                        <img src="{{asset('storage/files/' .basename($fact->manufacturer_image))}}" alt="" >
                         <?php } ?>
                     </div>
                     @error('manufacturer_image')
@@ -39,14 +39,14 @@
                     @enderror
 
                     <div class="form-group">
-                        <label>Giới Thiệu</label>
+                        <label>Information</label>
                         <textarea name="manufacturer_desc" cols="40" rows="20" class="form-control">{{$fact->manufacturer_desc}}</textarea>
                     </div>
                     @error('manufacurer_desc')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
-                    <button type="submit" class="btn btn-danger">Sửa</button>
+                    <button type="submit" class="btn btn-danger">Update</button>
                 </form>
             </div>
         </div>

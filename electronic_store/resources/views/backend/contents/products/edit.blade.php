@@ -1,11 +1,11 @@
 @extends("backend.layouts.main")
-@section("title","Sửa Sản Phẩm")
+@section("title","Update product")
 @section("content")
     <div class="container-fluid">
         <div class="row">
-            <h1>Sửa Sản Phẩm</h1>
+            <h1>Update Product</h1>
             <div class="col-md-12">
-                <a href="{{url('/admin/product')}}" class="btn btn-info">Quay về</a>
+                <a href="{{url('/admin/product')}}" class="btn btn-info">Back</a>
             </div>
             <br><br>
             <div class="col-md-12">
@@ -17,11 +17,11 @@
                             <span>{{$product->product_id}}</span>
                         </div>
                         <div>
-                            <label>Tổng số lượt đánh giá: </label>
+                            <label>Total Reviews: </label>
                             <span>{{$product->product_total_post}}</span>
                         </div>
                         <div>
-                            <label>Tổng điểm đánh giá: </label>
+                            <label>Total point: </label>
                             <span>{{$product->product_total_point}}</span>
                         </div>
                         <div>
@@ -31,7 +31,7 @@
                                 $point_avg = round($product->product_total_point / $product->product_total_post,1);
                             }
                             ?>
-                            <label>Điểm đánh giá trung bình: </label>
+                            <label>Average Point: </label>
                             <span>
                                 <?php
                                     for ($i=1;$i<=5;$i++){ ?>
@@ -43,22 +43,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Tên Sản Phẩm</label>
+                        <label>Product Name</label>
                         <input type="text" value="{{$product->product_title}}" name="product_title" class="form-control">
                     </div>
                     @error('product_title')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label style="display: block;">Ảnh Đại Diện</label>
+                        <label style="display: block;">Main Image</label>
                         <label class="custom_img">
                             <input type="file" value="{{$product->product_main_image}}" name="product_main_image">
-                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Choose A File</span>
                         </label>
                     </div>
                     <div class="text-center">
                         <?php if($product->product_main_image){ ?>
-                            <img src="{{asset('storage/files/' .basename($product->product_main_image))}}" alt="" width="500px" height="350px">
+                            <img src="{{asset('storage/files/' .basename($product->product_main_image))}}" alt="">
                         <?php } ?>
                     </div>
                     @error('product_main_image')
@@ -66,7 +66,7 @@
                     @enderror
                     <div class="form-group">
                         <div class="form-group">
-                            <label style="display: block;">Album Ảnh
+                            <label style="display: block;">Image Collection
                                 <span style="margin-left: 10px;">
                                     <button class="btn btn-success add_images" type="button"  style="border-radius: 50%;">
                                         <i class="fa fa-plus"></i>
@@ -76,7 +76,7 @@
                             <div class="group_imgs">
                                 <label class="custom_img" id="clone_images">
                                     <input type="file" value="{{$product->product_images}}" name="product_images[]">
-                                    <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                                    <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Choose Files</span>
                                 </label>
                             </div>
                             <div>
@@ -89,7 +89,7 @@
 
                             if(is_array($data)){
                             foreach($data as $image){ ?>
-                            <img src="{{asset('storage/files/' .basename($image))}}" alt="" width="500px" height="350px">
+                            <img src="{{asset('storage/files/' .basename($image))}}" alt="">
                             <?php }
                             } ?>
                         </div>
@@ -98,14 +98,14 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Giới Thiệu</label>
+                        <label>Information</label>
                         <textarea name="product_desc" cols="40" rows="20" class="form-control">{{$product->product_desc}}</textarea>
                     </div>
                     @error('product_desc')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Hãng Sản Xuất</label>
+                        <label>Brand</label>
                         <div>
                             <select name="product_manufacturer">
                                 <?php
@@ -122,21 +122,21 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Số Lượng</label>
+                        <label>Quantity</label>
                         <input type="text" value="{{$product->product_quantity}}" name="product_quantity" class="form-control">
                     </div>
                     @error('product_quantity')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Giá Nhập</label>
+                        <label>Price Core</label>
                         <input type="text" value="{{$product->product_price_core}}" name="product_price_core" class="form-control">
                     </div>
                     @error('product_price_core')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Thuế</label>
+                        <label>Tax</label>
                         <input type="text" value="{{$product->product_tax}}" name="product_tax" class="form-control">
                     </div>
                     @error('product_tax')
@@ -144,10 +144,10 @@
                     @enderror
 
                     <div class="form-group">
-                        <label>Danh Mục</label>
+                        <label>Category</label>
                         <div>
                             <select name="product_type">
-                                <option value="-1" {{($product->product_type == -1) ? "selected" : ""}}>Không xác định</option>
+                                <option value="-1" {{($product->product_type == -1) ? "selected" : ""}}>Unknown</option>
                                 <?php
                                 foreach ($category as $value){ ?>
                                 <option value="{{$value->category_id}}" {{($value->category_id == $product->product_type) ? "selected" : ""}}>
@@ -159,7 +159,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Thuộc Tính
+                        <label>Attributes
                             <span style="margin-left: 10px;">
                                     <button class="btn btn-success add_product_att" type="button"  style="border-radius: 50%;">
                                         <i class="fa fa-plus"></i>
@@ -194,7 +194,7 @@
                         ?>
                         </table>
                     </div>
-                    <button type="submit" class="btn btn-danger">Sửa</button>
+                    <button type="submit" class="btn btn-danger">Update</button>
                 </form>
             </div>
         </div>

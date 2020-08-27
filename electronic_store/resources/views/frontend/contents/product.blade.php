@@ -1,19 +1,16 @@
 @extends('frontend.layouts.main')
-@section('title','Sản Phẩm')
+@section('title','Product Category')
 @section('content')
 
-    <div class="banner banner1">
-        <div
+    <div class="banner banner1"
             style="background: url('{{asset("/storage/files/".basename($this_cat->category_image))}}') no-repeat center;background-size: 100% 100%;">
-
-        </div>
     </div>
 
     <div class="breadcrumb_dress">
         <div class="container-fluid">
             <ul>
                 <li><a href="{{url('/')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
-                <li>Danh mục sản phẩm</li>
+                <li>Product category</li>
             </ul>
         </div>
     </div>
@@ -23,14 +20,14 @@
             <div class="w3ls_mobiles_grids">
                 <div class="col-md-4 w3ls_mobiles_grid_left">
                     <div class="w3ls_mobiles_grid_left_grid">
-                        <h3>Danh Mục</h3>
+                        <h3>Category</h3>
                         <div class="w3ls_mobiles_grid_left_grid_sub catforpro">
-                            <a href="{{url('/shop-category')}}">Tất cả</a>
+                            <a href="{{url('/shop-category')}}">All</a>
                             <?php showcatforpro($categories, $this_cat); ?>
                         </div>
                     </div>
                     <div class="w3ls_mobiles_grid_left_grid">
-                        <h3>Hãng Sản Xuất</h3>
+                        <h3>Brand</h3>
                         <div class="w3ls_mobiles_grid_left_grid_sub">
                             <div class="ecommerce_manu">
                                 <ul>
@@ -54,16 +51,26 @@
                     <div class="w3ls_mobiles_grid_right_grid2">
 
                         <div class="w3ls_mobiles_grid_right_grid2_left cat_title">
-                            <h2>{{$this_cat->category_name}}</h2>
+                            <h2>{{$this_cat->category_name}}
+                            <?php
+                            foreach ($manufacturer as $manu){
+                                if (request()->get('manu')==$manu->manufacturer_id){
+                                    echo ' <i class="fa fa-angle-double-right" aria-hidden="true"></i> '.$manu->manufacturer_name;
+                                }else{
+                                    echo '';
+                                }
+                            }
+                            ?>
+                            </h2>
                             <div class="cat_title_de"></div>
                         </div>
 
                         <div class="w3ls_mobiles_grid_right_grid2_right">
                             <select name="select_item" class="select_item product_filter">
-                                <option value="all">Mặc định</option>
-                                <option value="lastest" {{request()->get('sortby')=='lastest' ? 'selected':''}}>Mới nhất</option>
-                                <option value="price_desc" {{request()->get('sortby')=='price_desc' ? 'selected':''}}>Giá (giảm dần)</option>
-                                <option value="price_asc" {{request()->get('sortby')=='price_asc' ? 'selected':''}}>Giá (tăng dần)</option>
+                                <option value="all">Default</option>
+                                <option value="lastest" {{request()->get('sortby')=='lastest' ? 'selected':''}}>Lastest</option>
+                                <option value="price_desc" {{request()->get('sortby')=='price_desc' ? 'selected':''}}>Price (descending)</option>
+                                <option value="price_asc" {{request()->get('sortby')=='price_asc' ? 'selected':''}}>Price (ascending)</option>
                             </select>
                         </div>
                         <div class="clearfix"> </div>
@@ -71,7 +78,9 @@
 
                     <div>
                         <div class="row">
-                            <?php foreach ($product as $value){  ?>
+                            <?php
+                            if (count($product)>0){
+                            foreach ($product as $value){  ?>
                             <div class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_mobiles single_product">
                                 <div class="agile_ecommerce_tab_left mobiles_grid">
                                     <div class="hs-wrapper hs-wrapper2">
@@ -87,7 +96,7 @@
                                         <div class="w3_hs_bottom w3_hs_bottom_sub1">
                                             <ul>
                                                 <li>
-                                                    <a href="{{url('/product/'.$value->product_id)}}"><span>Chi tiết</span></a>
+                                                    <a href="{{url('/product/'.$value->product_id)}}"><span>Detail</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -95,13 +104,16 @@
                                     <h5><a href="{{url('/product/'.$value->product_id)}}">{{$value->product_title}}</a></h5>
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($value->product_price_sell ,0,',','.'); ?>
-                                        <p><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
+                                        <p><i class="item_price"><?php echo $price.' $'; ?></i></p>
                                             <a href="#" data-url="{{ route('addToCart', ['id' => $value->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
 
                                     </div>
                                 </div>
                             </div>
-                            <?php  }  ?>
+                            <?php  }
+                            } else{ ?>
+                                <h3 style="font-style: italic; color: grey; text-align: center; margin-top: 15px;">No product found !</h3>
+                    <?php   }?>
                         </div>
                         <div class="row pages">
                             <?php
@@ -146,7 +158,7 @@
                     $('body').html(res);
                 },
                 error: function(res) {
-                    alert('gửi dữ liệu thất bại');
+                    alert('sending data fail');
                     console.log(res);
                 },
                 complete: function() {

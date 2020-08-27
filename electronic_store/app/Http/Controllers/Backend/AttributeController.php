@@ -11,7 +11,7 @@ class AttributeController extends Controller
 {
     //
     public function index(){
-        $att = DB::table('attributes')->get();
+        $att = DB::table('attributes')->paginate(12);
         return view('backend.contents.attributes.index',['att'=>$att]);
     }
     public function createpage(){
@@ -24,17 +24,18 @@ class AttributeController extends Controller
     //
     public function create(Request $request){
         $validate_att = [
-            "attribute_name" => "required",
+            "attribute_name" => "required|unique:attributes,attribute_name",
         ];
         $error_message = [
-            'required' => ':attribute không được để trống',
+            'required' => ':attribute required',
+            'unique' => ':attribute already exist'
         ];
         $this->validate($request,$validate_att,$error_message);
 
         $arr['attribute_name'] = $request->attribute_name;
 
         DB::table('attributes')->insert($arr);
-        return redirect('/admin/attribute')->with('success','Thêm thuộc tính thành công');
+        return redirect('/admin/attribute')->with('success','Successfully add new attribute');
     }
     //
     public function edit(Request $request, $attribute_id){
@@ -42,20 +43,20 @@ class AttributeController extends Controller
             "attribute_name" => ["required",Rule::unique('attributes')->ignore($attribute_id,'attribute_id')],
         ];
         $error_message = [
-            "required" => ":attribute không được để trống",
-            'unique' => ':attribute đã tồn tại'
+            "required" => ":attribute required",
+            'unique' => ':attribute already exist'
         ];
         $this->validate($request,$validate_att,$error_message);
 
         $arr['attribute_name'] = $request->attribute_name;
 
         DB::table("attributes")->where("attribute_id",$attribute_id)->update($arr);
-        return redirect('/admin/attribute')->with('success','Sửa thuộc tính thành công');
+        return redirect('/admin/attribute')->with('success','Successfully update attribute');
     }
     //
     public function delete($attribute_id){
         DB::table('attributes')->where('attribute_id',$attribute_id)->delete();
         DB::table('product_attributes')->where('attribute_id',$attribute_id)->delete();
-        return redirect('/admin/attribute')->with('success','Xóa thuộc tính thành công');
+        return redirect('/admin/attribute')->with('success','Successfully remove attribute');
     }
 }

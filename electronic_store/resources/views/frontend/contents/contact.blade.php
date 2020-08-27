@@ -32,7 +32,8 @@
                     <li>Free Phone :+1 078 4589 2456</li>
                     <li>Telephone :+1 078 4589 2456</li>
                     <li>Fax :+1 078 4589 2456</li>
-                    <li><a href="mailto:info@example.com">anhhoanteam@gmail.com</a></li>
+                    <li><a href="mailto:info@example.com">QuangAnh@gmail.com</a></li>
+                    <li><a href="mailto:info@example.com">HoanNguyen@gmail.com</a></li>
                 </ul>
             </div>
             <div class="col-md-7 contact-left">

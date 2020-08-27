@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/jquery.countdown.css" />
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/fasthover.css" />
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/main.css" /> <!-- custom css tại đây -->
-    <link rel="stylesheet" href="{{asset('/add-to-cart')}}/css/style.css">
 
     <script src="{{asset('/electronic_store')}}/js/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('/electronic_store')}}/js/bootstrap-3.1.1.min.js"></script>
@@ -44,7 +43,7 @@
 
 @include('frontend.partials.footer')
 
-@include('frontend.partials.minicart')
+{{--@include('frontend.partials.minicart')--}}
 
 <script src="{{asset('/electronic_store')}}/js/main-cart.js" type="text/javascript"></script>
 <script src="{{asset('/electronic_store')}}/js/util.js" type="text/javascript"></script>

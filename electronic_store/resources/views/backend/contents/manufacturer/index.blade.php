@@ -1,12 +1,12 @@
 @extends("backend.layouts.main")
-@section("title","Quản lý nhà sản xuất")
+@section("title","Brand management")
 @section("content")
     <div class="cf_del_fact">
-        <p>Nhà sản xuất này sẽ bị xóa khỏi hệ thống</p>
+        <p>This brand will be permanently removed from the whole system</p>
     </div>
     <div class="container-fluid">
         <div>
-            <a href="{{url("/admin/manufacturer/create")}}" class="btn btn-success">Thêm Nhà Sản Xuất</a>
+            <a href="{{url("/admin/manufacturer/create")}}" class="btn btn-success">Add New Brand</a>
         </div>
         @if(session('success'))
             <div class="alert alert-success">
@@ -22,8 +22,8 @@
         <table class="table">
             <thead class=" thead-dark">
             <tr>
-                <th>Nhà sản xuất</th>
-                <th>Giới thiệu</th>
+                <th>Brand</th>
+                <th style="width: 70%;">Information</th>
                 <th></th>
             </tr>
             </thead>

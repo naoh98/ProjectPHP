@@ -7,15 +7,6 @@
         $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
     });
 //
-    $('.menucat ul li').hover(function () {
-            // over
-            $(this).find('>ul').show();
-        }, function () {
-            // out
-            $(this).find('>ul').hide();
-        }
-    );
-//
     var auto;
     $('.hs-wrapper').hover(function () {
         var count=0;
@@ -33,8 +24,9 @@
     }, function () {
         clearInterval(auto);
     });
-    // ADD TO CART AJAX
 
+
+    // ADD TO CART AJAX
     function addToCart(event) {
          event.preventDefault();
          let urlCart = $(this).data('url');

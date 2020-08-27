@@ -8,6 +8,7 @@ use App\Models\OrderModel;
 use App\Models\ProductModel;
 use App\Traits\TotalOrder;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class CheckoutController extends Controller
 {
@@ -25,6 +26,23 @@ class CheckoutController extends Controller
     public function storeOrder(Request $request) {
 
         $order = new OrderModel();
+
+        $validate =[
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+            'phone_number' => 'required'
+
+        ];
+        $error_messages = [
+            'required' => ':attribute không được để trống',
+            'unique' => ':attribute đã tồn tại'
+        ];
+
+        $this->validate($request, $validate, $error_messages);
+
         $total_order = $this->getTotalOrder();
         $total_quantity = $this->getTotalQuantity();
 
@@ -49,9 +67,12 @@ class CheckoutController extends Controller
         if ( $order ){
             $items = session()->get('cart');
 
+
+
             foreach ($items as $item) {
                 $product = ProductModel::where('product_title', $item['name'])->first();
-
+                $product->product_quantity = $product->product_quantity - $item['quantity'];
+                $product->save();
                 $orderItem = new OrderItemModel();
                 $orderItem->order_id = $order->id;
                 $orderItem->product_id = $product->product_id;
@@ -59,6 +80,7 @@ class CheckoutController extends Controller
                 $orderItem->price = $item['quantity'] * $item['price'];
                 $orderItem->save();
             }
+
             // Destroy cart when checkout success
             $this->destroyCart($request);
 

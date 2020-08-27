@@ -724,7 +724,7 @@ li.w3pages .dropdown-menu > li > a:hover{
 	margin:2em 0 0;
 }
 .agile_ecommerce_tab_left h5 a {
-    font-size: 1.2em;
+    font-size: 0.93em;
     color: #ff5063;
     text-decoration: none;
     font-weight: 700;
@@ -737,7 +737,7 @@ li.w3pages .dropdown-menu > li > a:hover{
 	color:#3c43a4;
 }
 .simpleCart_shelfItem p{
-	font-size: 1.2em;
+	font-size: 0.95em;
     color: #212121;
     margin: 0.5em 0 1em;
     font-weight: 600;
@@ -961,14 +961,14 @@ li.w3pages .dropdown-menu > li > a:hover{
 }
 /*-- //banner-bottom --*/
 /*-- special-deals --*/
-.special-deals h2,.new-products h3,.top-brands h3,.w3l_related_products h3,.team h3,.mail h3,h3.agileits-title{
+.banner-bottom h2,.special-deals h2,.new-products h3,.top-brands h3,.w3l_related_products h3,.team h3,.mail h3,h3.agileits-title{
 	font-size:2em;
 	color:#212121;
 	position:relative;
 	padding-bottom:1em;
 	text-align:center;
 }
-.special-deals h2:before,.new-products h3:before,.top-brands h3:before,.w3l_related_products h3:before,.team h3:before,.mail h3:before,h3.agileits-title:before{
+.banner-bottom h2:before,.special-deals h2:before,.new-products h3:before,.top-brands h3:before,.w3l_related_products h3:before,.team h3:before,.mail h3:before,h3.agileits-title:before{
 	content: '';
     position: absolute;
     top: 27%;
@@ -977,7 +977,7 @@ li.w3pages .dropdown-menu > li > a:hover{
     height: 1px;
     width: 10%;
 }
-.special-deals h2:after,.new-products h3:after,.top-brands h3:after,.w3l_related_products h3:after,.team h3:after,.mail h3:after,h3.agileits-title:after{
+.banner-bottom h2:after,.special-deals h2:after,.new-products h3:after,.top-brands h3:after,.w3l_related_products h3:after,.team h3:after,.mail h3:after,h3.agileits-title:after{
 	content: '';
     position: absolute;
     bottom: 79%;
@@ -1015,14 +1015,13 @@ li.w3pages .dropdown-menu > li > a:hover{
 .w3agile_special_deals_grid_right_pos h5{
 	font-weight: 700;
     color: #ff5063;
-    padding-left: 5em;
+    padding-left: 1em;
     margin: .5em 0 0;
 }
 .w3agile_special_deals_grid_right_pos h5 span{
 	font-weight: 300;
     display: block;
     color:#ffffff;
-    padding-left: 2em;
     margin: .5em 0 0.2em;
 }
 .w3agile_special_deals_grid_left_grid_pos{
@@ -1065,17 +1064,27 @@ li.w3pages .dropdown-menu > li > a:hover{
 .w3agile_special_deals_grid_left_grid{
 	margin:0 0 2em;
 }
+.w3agile_special_deals_grid_right_grid{
+    margin:0 0 2em;
+}
+.w3agile_special_deals_grid_right_grid,
 .w3agile_special_deals_grid_left_grid{
     position: relative;
     overflow: hidden;
 }
+.w3agile_special_deals_grid_left_grid.fix-height img {
+    height: 318px;
+}
+.w3agile_special_deals_grid_right_grid img,
 .w3agile_special_deals_grid_left_grid img {
+
     -moz-transition: all 1s;
     -o-transition: all 1s;
     -webkit-transition: all 1s;
     transition: all 1s;
     width: 100%;
 }
+.w3agile_special_deals_grid_right_grid:hover img,
 .w3agile_special_deals_grid_left_grid:hover img {
     -moz-transform: scale3d(1.1, 1.1, 1);
     -o-transform: scale3d(1.1, 1.1, 1);
@@ -1353,7 +1362,6 @@ ul.wmuSliderPagination {
 .w3_footer_grid h3{
 	color: #212121;
     font-size: 1.5em;
-    margin-bottom: 2em;
     padding-bottom: .5em;
     position: relative;
     text-transform: uppercase;
@@ -1365,7 +1373,8 @@ ul.wmuSliderPagination {
 	height:2px;
 	position:absolute;
 	bottom:0;
-	left:0;
+	left:50%;
+    transform: translate(-50%,0);
 }
 .w3_footer_grid p{
 	color:#999;
@@ -1819,7 +1828,7 @@ ul.panel_bottom {
 }
 .w3ls_mobiles_grid_left_grid_sub {
     border: 1px solid #E1E1E1;
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding:2em 1.5em 1em;
 }
@@ -1921,6 +1930,7 @@ ul.panel_bottom {
 }
 .w3ls_mobiles_grid_right_grid2_right{
 	float:right;
+    margin-top: -5px;
 }
 .w3ls_mobiles_grid_right_grid2_left h3{
 	font-size:1.2em;
@@ -1933,7 +1943,7 @@ ul.panel_bottom {
 select.select_item {
     font-size: 14px;
     color: #212121;
-    padding: 10px;
+    padding: 10px 0px;
 	outline:none;
 	margin-right: 1em;
 }
@@ -2002,6 +2012,7 @@ select.select_item {
 .nbs-flexisel-inner {
 	overflow: hidden;
 	margin: 0px auto;
+    max-height: 600px;
 }
 .nbs-flexisel-item {
 	float: left;

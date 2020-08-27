@@ -1,12 +1,12 @@
 @extends("backend.layouts.main")
-@section("title","Quản lý Sản Phẩm")
+@section("title","Product management")
 @section("content")
     <div class="cf_del_pro">
-        <p>Sản phẩm này sẽ bị xóa khỏi hệ thống</p>
+        <p>This product will be permanently removed from the whole system</p>
     </div>
     <div class="container-fluid">
         <div>
-            <a href="{{url("/admin/product/create")}}" class="btn btn-success">Thêm Sản Phẩm</a>
+            <a href="{{url("/admin/product/create")}}" class="btn btn-success">Add New Product</a>
         </div>
         @if(session('success'))
             <div class="alert alert-success">
@@ -17,12 +17,12 @@
         <table class="table qlproduct">
             <thead class=" thead-dark">
             <tr>
-                <th>Sản Phẩm</th>
-                <th>Hãng Sản Xuất</th>
-                <th>Số Lượng</th>
-                <th>Danh Mục</th>
-                <th>Hình Ảnh</th>
-                <th>Giá Bán</th>
+                <th>Product</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                <th>Category</th>
+                <th>Main Image</th>
+                <th>Price Sell</th>
                 <th></th>
             </tr>
             </thead>
@@ -33,7 +33,7 @@
                        <td>
                            <ul>
                                <li>{{$products->product_title}}</li>
-                               <li>Đánh giá:
+                               <li>Review:
                                    <?php
                                    $point_avg = 0;
                                    if ($products->product_total_point && $products->product_total_post){
@@ -65,7 +65,7 @@
                            ?>
                        </td>
                        <?php $price= number_format($products->product_price_sell ,0,',','.'); ?>
-                       <td><?php echo $price?></td>
+                       <td><?php echo $price. ' $'?></td>
                        <td style="text-align: right;">
                            <a href="{{url("/admin/product/edit/$products->product_id")}}" class="btn btn-warning" style="width: 43px;">
                                <i class="fas fa-edit"></i>
