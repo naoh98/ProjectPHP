@@ -2,7 +2,7 @@
 @section('title','Product Category')
 @section('content')
 
-    <div class="banner banner1"
+    <div class="banner banner3"
             style="background: url('{{asset("/storage/files/".basename($this_cat->category_image))}}') no-repeat center;background-size: 100% 100%;">
     </div>
 

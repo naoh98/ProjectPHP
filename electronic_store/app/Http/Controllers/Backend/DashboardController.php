@@ -45,10 +45,10 @@ class DashboardController extends Controller
                 'password' => $password
             ]]);
 
-            return redirect('admin')->with('status', 'Đăng nhập thành công');
+            return redirect('admin')->with('status', 'Login Success');
         }
 
-        return redirect('admin/login')->with('status', 'Username hoặc mật khẩu không đúng, thử lại !');
+        return redirect('admin/login')->with('status', 'Your username or password does not match. Please try again !');
 
 
     }
@@ -62,7 +62,7 @@ class DashboardController extends Controller
         ];
 
         $customMessages = [
-            'required' => 'Trường :attribute không được để trống.',
+            'required' => 'Trường :attribute required.',
         ];
 
         $this->validate($request, $rules, $customMessages);
@@ -78,16 +78,15 @@ class DashboardController extends Controller
         $admin->password = $password;
         $admin->save();
 
-        return redirect('admin/login')->with('status', 'Tạo tài khoản thành công');
+        return redirect('admin/login')->with('status', 'Your account is ready.');
 
     }
 
     public function logout(Request $request) {
 
         $request->session()->forget('sblogin');
-        $request->session()->flush();
 
-        return redirect('admin/login')->with('status', 'Đăng xuất thành công');
+        return redirect('admin/login')->with('status', 'See you again.');
 
     }
 

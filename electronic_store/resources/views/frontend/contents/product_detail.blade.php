@@ -1,7 +1,7 @@
 @extends('frontend.layouts.main')
 @section('title',$product->product_title)
 @section('content')
-    <div class="banner banner1"
+    <div class="banner banner3"
          style="background: url('{{asset('/storage/files/'.basename($product->category_image))}}')no-repeat center;background-size: 100% 100%;">
     </div>
     <!-- //banner -->

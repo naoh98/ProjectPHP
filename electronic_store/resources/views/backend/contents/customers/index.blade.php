@@ -1,5 +1,5 @@
 @extends("backend.layouts.main")
-@section("title","Danh sách Đơn hàng")
+@section("title","Customer management")
 @section("content")
     <div class="d-sm-flex">
         <h1 class="h3 mb-0 text-gray-800 mb-3" style="text-align: center;width: 100%">Customer</h1>
