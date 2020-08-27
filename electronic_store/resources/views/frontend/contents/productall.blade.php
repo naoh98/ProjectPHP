@@ -2,7 +2,7 @@
 @section('title','Product Category')
 @section('content')
 
-    <div class="banner banner1">
+    <div class="banner banner3">
     </div>
 
 

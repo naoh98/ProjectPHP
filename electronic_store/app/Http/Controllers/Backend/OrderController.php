@@ -7,6 +7,8 @@ use App\Models\OrderItemModel;
 use App\Models\OrderModel;
 use App\Models\ProductModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
@@ -25,7 +27,6 @@ class OrderController extends Controller
             return $item->product_id;
         });
         $products = ProductModel::find($product_id);
-
 
         return view('backend.contents.orders.detail', ['order_items' => $order_items, 'products' => $products]);
 

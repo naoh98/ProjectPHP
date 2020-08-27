@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text" style="margin: 0px 0px 0px 10px;">Admin Control Center</div>
     </a>
 
     <!-- Divider -->
@@ -35,12 +35,12 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{url('/admin/customers')}}">Khách hàng</a>
-                <a class="collapse-item" href="{{url('/admin/orders')}}">Đơn hàng</a>
-                <a class="collapse-item" href="{{url('/admin/product_category')}}">Danh mục sản phẩm</a>
-                <a class="collapse-item" href="{{url('/admin/product')}}">Sản phẩm</a>
-                <a class="collapse-item" href="{{url('/admin/attribute')}}">Thuộc tính sản phẩm</a>
-                <a class="collapse-item" href="{{url('/admin/manufacturer')}}">Hãng sản xuất</a>
+                <a class="collapse-item" href="{{url('/admin/customers')}}">Customer Management</a>
+                <a class="collapse-item" href="{{url('/admin/orders')}}">Bill Management</a>
+                <a class="collapse-item" href="{{url('/admin/product_category')}}">Category Management</a>
+                <a class="collapse-item" href="{{url('/admin/product')}}">Product Management</a>
+                <a class="collapse-item" href="{{url('/admin/attribute')}}">Attribute Management</a>
+                <a class="collapse-item" href="{{url('/admin/manufacturer')}}">Brand Management</a>
             </div>
         </div>
     </li>
@@ -49,11 +49,11 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
-        <span>Quản trị nội dung</span>
+        <span>News Management</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('admin.new.index') }}">Danh sách bài viết</a>
+                <a class="collapse-item" href="{{ route('admin.new.index') }}">News List</a>
             </div>
         </div>
     </li>
@@ -70,14 +70,14 @@
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
-            <span>Danh sách admin</span></a>
+            <span>Admin List</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
-            <span>Cấu hình trang web</span></a>
+            <span>Web Config</span></a>
     </li>
 
     <!-- Divider -->

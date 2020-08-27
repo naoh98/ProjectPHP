@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- banner -->
-<div class="banner banner10">
+<div class="banner banner3">
     <div class="container">
         <h2>Contact Us</h2>
     </div>

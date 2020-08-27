@@ -1,7 +1,7 @@
 @extends('frontend.layouts.main')
 @section('title','About')
 @section('content')
-    <div class="banner banner10"
+    <div class="banner banner3"
          style="background: url({{asset('/electronic_store/images/b1.jpg')}}) no-repeat center;background-size: cover;">
     </div>
 

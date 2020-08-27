@@ -95,7 +95,7 @@
                                 if ($product->category_name){ ?>
                                 {{$product->category_name}}
                                 <?php   }else{ ?>
-                                <p style="color: red;"><?php echo 'Không xác định'; ?></p>
+                                <p style="color: red;"><?php echo 'Unknown'; ?></p>
                                 <?php   } ?>
                             </td>
                             <td>
@@ -106,7 +106,7 @@
                                 ?>
                             </td>
                             <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
-                            <td><?php echo $price?></td>
+                            <td><?php echo $price. ' $'?></td>
                         </tr>
                         @endforeach
                         </tbody>

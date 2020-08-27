@@ -107,7 +107,8 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'Backend\DashboardController@loginAdmin');
 
 
-
+    //route hiển thị danh sách admin
+    Route::get('/adminList', 'Backend\ProfileController@adminList');
     //route hiển thị category
     Route::get('/product_category', 'Backend\CategoryProductController@index');
     Route::get('/product_category/create', 'Backend\CategoryProductController@createpage');
