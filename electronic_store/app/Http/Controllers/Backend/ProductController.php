@@ -25,7 +25,7 @@ class ProductController extends Controller
     //code xóa
     public function delete($product_id){
         DB::table('product')->where('product_id',$product_id)->delete();
-        return redirect('/admin/product')->with('success', 'Xóa sản phẩm thành công');
+        return redirect('/admin/product')->with('success', 'Successfully remove product');
     }
 
     //lấy ra các danh mục con Cuối Cùng của danh mục cha
@@ -69,7 +69,6 @@ class ProductController extends Controller
 
     //code edit
     public function edit(Request $request,$product_id){
-
         $validate_pro =[
             'product_title' => ["required",Rule::unique('product')->ignore($product_id,'product_id')],
             'product_desc' => 'required',
@@ -133,7 +132,7 @@ class ProductController extends Controller
                 }
         }
 
-        return redirect('/admin/product')->with('success','Sửa sản phẩm thành công');
+        return redirect('/admin/product')->with('success','Successfully update product');
     }
 
     //hiển thị trang thêm thể loại
@@ -166,9 +165,9 @@ class ProductController extends Controller
             'product_tax' => 'required|numeric'
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống',
-            'numeric' => ':attribute phải là số',
-            'unique' => ':attribute đã tồn tại'
+            'required' => ':attribute required',
+            'numeric' => ':attribute must be a number',
+            'unique' => ':attribute already exist'
         ];
         $this->validate($request,$validate_pro,$error_messages);
         $arr=[];
@@ -195,7 +194,7 @@ class ProductController extends Controller
         $arr['product_type'] = $request->product_type;
         DB::table('product')->insert($arr);
 
-        return redirect('/admin/product')->with('success','Thêm sản phẩm thành công');
+        return redirect('/admin/product')->with('success','Successfully add new product');
     }
 
 }

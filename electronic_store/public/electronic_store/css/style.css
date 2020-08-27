@@ -724,7 +724,7 @@ li.w3pages .dropdown-menu > li > a:hover{
 	margin:2em 0 0;
 }
 .agile_ecommerce_tab_left h5 a {
-    font-size: 1.2em;
+    font-size: 0.93em;
     color: #ff5063;
     text-decoration: none;
     font-weight: 700;
@@ -737,7 +737,7 @@ li.w3pages .dropdown-menu > li > a:hover{
 	color:#3c43a4;
 }
 .simpleCart_shelfItem p{
-	font-size: 1.2em;
+	font-size: 0.95em;
     color: #212121;
     margin: 0.5em 0 1em;
     font-weight: 600;
@@ -1362,7 +1362,6 @@ ul.wmuSliderPagination {
 .w3_footer_grid h3{
 	color: #212121;
     font-size: 1.5em;
-    margin-bottom: 2em;
     padding-bottom: .5em;
     position: relative;
     text-transform: uppercase;
@@ -1374,7 +1373,8 @@ ul.wmuSliderPagination {
 	height:2px;
 	position:absolute;
 	bottom:0;
-	left:0;
+	left:50%;
+    transform: translate(-50%,0);
 }
 .w3_footer_grid p{
 	color:#999;
@@ -1828,7 +1828,7 @@ ul.panel_bottom {
 }
 .w3ls_mobiles_grid_left_grid_sub {
     border: 1px solid #E1E1E1;
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding:2em 1.5em 1em;
 }
@@ -1930,6 +1930,7 @@ ul.panel_bottom {
 }
 .w3ls_mobiles_grid_right_grid2_right{
 	float:right;
+    margin-top: -5px;
 }
 .w3ls_mobiles_grid_right_grid2_left h3{
 	font-size:1.2em;
@@ -1942,7 +1943,7 @@ ul.panel_bottom {
 select.select_item {
     font-size: 14px;
     color: #212121;
-    padding: 10px;
+    padding: 10px 0px;
 	outline:none;
 	margin-right: 1em;
 }
@@ -2011,6 +2012,7 @@ select.select_item {
 .nbs-flexisel-inner {
 	overflow: hidden;
 	margin: 0px auto;
+    max-height: 600px;
 }
 .nbs-flexisel-item {
 	float: left;

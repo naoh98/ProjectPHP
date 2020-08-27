@@ -32,8 +32,8 @@ class ManufacturerController extends Controller
             "manufacturer_image" => "required"
         ];
         $error_message = [
-            'required' => ':attribute không được để trống',
-            'unique' => ':attribute đã tồn tại'
+            'required' => ':attribute required',
+            'unique' => ':attribute already exist'
         ];
         $this->validate($request,$validate_fact,$error_message);
 
@@ -47,7 +47,7 @@ class ManufacturerController extends Controller
         $arr['manufacturer_desc'] = $request->manufacturer_desc;
 
         DB::table('manufacturer')->insert($arr);
-        return redirect('/admin/manufacturer')->with('success','Thêm hãng sản xuất thành công');
+        return redirect('/admin/manufacturer')->with('success','Successfully add new brand');
     }
     //
     public function edit(Request $request, $manufacturer_id){
@@ -56,8 +56,8 @@ class ManufacturerController extends Controller
             "manufacturer_desc" => "required"
         ];
         $error_message = [
-            "required" => ":attribute không được để trống",
-            'unique' => ':attribute đã tồn tại'
+            "required" => ":attribute required",
+            'unique' => ':attribute already exist'
         ];
         $this->validate($request,$validate_fact,$error_message);
 
@@ -70,16 +70,16 @@ class ManufacturerController extends Controller
             $arr['manufacturer_image'] = $path;
         }
         DB::table("manufacturer")->where("manufacturer_id",$manufacturer_id)->update($arr);
-        return redirect('/admin/manufacturer')->with('success','Sửa hãng sản xuất thành công');
+        return redirect('/admin/manufacturer')->with('success','Successfully update brand');
     }
     //
     public function delete($manufacturer_id){
         $fact = DB::table('product')->where('product_manufacturer',$manufacturer_id)->get();
         if ($fact->isNotEmpty()){
-            return redirect('/admin/manufacturer')->with('error','Vẫn còn sản phẩm thuộc hãng sản xuất này. Chưa thể xóa');
+            return redirect('/admin/manufacturer')->with('error','Can not remove this brand at the moment \'cause it still have some products');
         }else{
             DB::table('manufacturer')->where('manufacturer_id',$manufacturer_id)->delete();
-            return redirect('/admin/manufacturer')->with('success','Xóa hãng sản xuất thành công');
+            return redirect('/admin/manufacturer')->with('success','Successfully remove brand');
         }
     }
 }

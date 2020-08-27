@@ -1,35 +1,35 @@
 @extends("backend.layouts.main")
-@section("title","Thêm Danh Mục")
+@section("title","Add new category")
 @section("content")
     <div class="container-fluid">
         <div class="row">
-            <h1>Thêm Danh Mục</h1>
+            <h1>Add New Category</h1>
             <div class="col-md-12">
-                <a href="{{url('/admin/product_category')}}" class="btn btn-info">Quay về</a>
+                <a href="{{url('/admin/product_category')}}" class="btn btn-info">Back</a>
             </div>
             <br><br>
             <div class="col-md-12">
                 <form name="up_cat" action="{{url("/admin/product_category/create")}}"  method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label>Tên Thể Loại</label>
+                        <label>Category</label>
                         <input type="text" value="" name="category_name" class="form-control">
                     </div>
                     @error('category_name')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label style="display: block;">Ảnh Đại Diện</label>
+                        <label style="display: block;">Main Image</label>
                         <label class="custom_img">
                             <input type="file" value="" name="category_image">
-                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Choose A File</span>
                         </label>
                     </div>
                     @error('category_image')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Danh Mục Cha</label>
+                        <label>Parent Category</label>
                         <div>
                             <select name="parent_id">
                                 <option value="0">None</option>
@@ -42,7 +42,7 @@
                             {!! session('error') !!}
                         </div>
                     @endif
-                    <button type="submit" class="btn btn-danger">Thêm</button>
+                    <button type="submit" class="btn btn-danger">Add</button>
                 </form>
             </div>
         </div>

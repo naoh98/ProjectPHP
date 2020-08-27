@@ -34,8 +34,8 @@ class CategoryProductController extends Controller
             'category_image' => 'required'
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống',
-            'unique' => ':attribute đã tồn tại'
+            'required' => ':attribute required',
+            'unique' => ':attribute already exist'
         ];
         $this->validate($request,$validate_cat,$error_messages);
 
@@ -43,7 +43,7 @@ class CategoryProductController extends Controller
         $products = DB::table('product')->where('product_type',$request->parent_id)->get();
         if ($products->isNotEmpty()){
             return redirect('/admin/product_category/create')
-                ->with('error','Danh mục đã chọn vẫn còn sản phẩm.<br>Vui lòng xóa sản phẩm hoặc sửa lại danh mục của sản phẩm trong mục Sản Phẩm trước khi thêm danh mục.');
+                ->with('error','Your parent category selected still has some products.<br>Please remove those products or update their category to Unknown then try to add new category again.');
         }else{
             $cr_arr=[];
             if ($request->hasFile('category_image')) {
@@ -56,7 +56,7 @@ class CategoryProductController extends Controller
             DB::table('category')->insert($cr_arr);
         }
 
-        return redirect('/admin/product_category')->with('success','Thêm danh mục thành công');
+        return redirect('/admin/product_category')->with('success','Successfully add new category');
     }
 
 
@@ -93,8 +93,8 @@ class CategoryProductController extends Controller
             'category_name' => ["required",Rule::unique('category')->ignore($category_id,'category_id')]
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống',
-            'unique' => ':attribute đã tồn tại'
+            'required' => ':attribute required',
+            'unique' => ':attribute already exist'
         ];
         $this->validate($request,$validate_cat,$error_messages);
 
@@ -105,11 +105,11 @@ class CategoryProductController extends Controller
         //tạo biến lấy ra mảng các sản phẩm trong danh mục
         $products = DB::table('product')->where('product_type',$request->parent_id)->get();
         if (in_array($request->parent_id,$arr)){
-            return redirect('/admin/product_category/edit/'.$category_id)->with('error','Danh mục cha không thể làm con của danh mục con trong chính nó !');
+            return redirect('/admin/product_category/edit/'.$category_id)->with('error','A parent category can not be edited to a child category of its own children category !');
         }
         elseif ($products->isNotEmpty()){
             return redirect('/admin/product_category/edit/'.$category_id)
-                ->with('error','Danh mục đã chọn vẫn còn sản phẩm.<br>Vui lòng xóa sản phẩm hoặc sửa lại danh mục của sản phẩm trong mục Sản Phẩm trước khi sửa danh mục.');
+                ->with('error','Your parent category selected still has some products.<br>Please remove those products or update their category to Unknown then try to update category again.');
         }
         else{
             $ed_arr=[];
@@ -123,7 +123,7 @@ class CategoryProductController extends Controller
             DB::table('category')->where('category_id', $category_id)->update($ed_arr);
         }
 
-        return redirect('/admin/product_category')->with('success','Sửa danh mục thành công');
+        return redirect('/admin/product_category')->with('success','Successfully update category');
     }
 
     //code xóa
@@ -131,11 +131,11 @@ class CategoryProductController extends Controller
         $array = [];
         $this->cat($array,$category_id);
         if (!empty($array)){
-            return redirect('/admin/product_category')->with('error', 'Danh mục này hiện vẫn còn danh mục con. Chưa thể xóa');
+            return redirect('/admin/product_category')->with('error', 'Can not remove this category at the moment \'cause it still has some children category');
         }else{
             $products = DB::table('product')->where('product_type',$category_id)->get();
             if($products->isNotEmpty()){
-                return redirect('/admin/product_category')->with('error', 'Danh mục này hiện vẫn còn sản phẩm. Chưa thể xóa');
+                return redirect('/admin/product_category')->with('error', 'Can not remove this category at the moment \'cause it still has some products');
             }else{
                 DB::table('category')->where('category_id',$category_id)->delete();
             }
@@ -149,7 +149,7 @@ class CategoryProductController extends Controller
         //$this->delete($id);
         //}
 
-        return redirect('/admin/product_category')->with('success', 'Xóa danh mục thành công');
+        return redirect('/admin/product_category')->with('success', 'Successfully remove category');
 
         //Xóa phần tử cha thì phần tử con sẽ lên làm phần tử cha
         /*$data = DB::table('category')->where('category_id',$category_id)->first();

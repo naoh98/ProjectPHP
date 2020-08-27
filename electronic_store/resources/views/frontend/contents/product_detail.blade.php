@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <ul>
                 <li><a href="{{url('/')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
-                <li>Chi tiết sản phẩm<i>/</i></li><li>{{$product->product_title}}</li>
+                <li>Product Detail<i>/</i></li><li>{{$product->product_title}}</li>
             </ul>
         </div>
     </div>
@@ -38,7 +38,7 @@
                 <h3 style="text-align: center;">{{$product->product_title}}</h3>
                 <div class="description">
                     <div>
-                        <label>Danh mục: </label>
+                        <label>Category: </label>
                         <span><a href="{{route('cat.pro',['category_id'=>$product->category_id])}}">{{$product->category_name}}</a></span>
                     </div>
                     <div class="rating-avg">
@@ -52,7 +52,7 @@
                         <span class="fa fa-star"></span>
                     </div>
                     <div>
-                        <label>Hãng sản xuất: </label>
+                        <label>Brand: </label>
                         <span><a href="{{route('cat.pro.all',['manu'=>$product->manufacturer_id])}}">{{$product->manufacturer_name}}</a></span>
                     </div>
                 </div>
@@ -60,15 +60,15 @@
                     <div style="margin-bottom: 20px;">
                         <p>{{$product->product_desc}}</p>
                     </div>
-                    <h5>Thông số kỹ thuật</h5>
+                    <h5>Technical Specification</h5>
                     <?php
                         if (count($attributes)<=0){ ?>
                             <div>
-                                <p style="color: grey;">Hiện không có thông tin nào về sản phẩm này.</p>
+                                <p style="color: grey;">There is currently no information for this product yet.</p>
                             </div>
                  <?php  }else{
                     foreach ($attributes as $attribute){ ?>
-                    <div style="width: 50%; float: left;">
+                    <div style="width: 48%; float: left;margin-left: 5px;">
                         <label>{{$attribute->attribute_name}}:</label>
                         <span>{{$attribute->value}}</span>
                     </div>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="simpleCart_shelfItem" style="display: flex; justify-content: center;">
                     <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
-                    <p style="margin: 5px 20px 0px 0px;"><i class="item_price"><?php echo $price.' Đ'; ?></i></p>
+                    <p style="margin: 5px 20px 0px 0px;font-size: 18px;"><i class="item_price"><?php echo $price.' $'; ?></i></p>
                         <a href="#" data-url="{{ route('addToCart', ['id' => $product->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
 
                 </div>
@@ -93,8 +93,8 @@
             <div class="sap_tabs">
                 <div id="horizontalTab1" style="display: block; width: 100%; margin: 0px;">
                     <ul>
-                        <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Giới thiệu về hãng sản xuất</span></li>
-                        <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Đánh giá</span></li>
+                        <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>About Brand</span></li>
+                        <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Review</span></li>
                     </ul>
                     <div class="tab-1 resp-tab-content additional_info_grid" aria-labelledby="tab_item-0">
                             <h3>{{$product->manufacturer_name}}</h3>
@@ -107,7 +107,7 @@
                         <div class="clearfix"> </div>
                     </div>
                     <div class="tab-2 resp-tab-content additional_info_grid" aria-labelledby="tab_item-1">
-                        <h4>({{$product->product_total_post}}) Reviews</h4>
+                        <h4>({{$product->product_total_post ? $product->product_total_post:0}}) Reviews</h4>
                         <div class="post_content">
                             <?php
                             foreach ($rate_list as $post){ ?>
@@ -135,11 +135,11 @@
                             ?>
                         </div>
                         <div style="text-align: center;">
-                            <button class="btn btn-success loadmore_post">Xem thêm</button>
-                            <h5 class="alert_outofdata" style="display: none;"><i>Không còn bài đánh giá nào cho sản phẩm này</i></h5>
+                            <button class="btn btn-success loadmore_post" {{$product->product_total_post ? '':'disabled'}}>See more</button>
+                            <h5 class="alert_outofdata" style="display: none;"><i>No review left !</i></h5>
                         </div>
                         <div class="review_grids">
-                            <h5>Thêm nhận xét cho sản phẩm này</h5>
+                            <h5>Add a review for this product</h5>
                             <?php
                             if (!$rating){ ?>
                             <form class="product_rate_form">
@@ -160,7 +160,7 @@
                                 <input type="submit" class="submit_rate" value="Gửi" >
                             </form>
                      <?php  }else{ ?>
-                            <i style="color: grey;display: block;text-align: center;">Bạn đã đánh giá sản phẩm này. <a class="edit_review" href="#">Sửa</a></i>
+                            <i style="color: grey;display: block;text-align: center;">You have been reviewed this product. <a class="edit_review" href="#">Edit</a></i>
                             <form class="product_rate_form_edit" style="position: relative;padding: 15px;">
                                 <div class="rating1" style="font-size: 20px;">
                                     <span class="listRate_edit">
@@ -176,7 +176,7 @@
                                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
                                 <input type="hidden" name="rate_point" value="{{$rating->rate_point}}" class="point_rating">
                                 <input type="hidden" name="old_rate_point" value="{{$rating->rate_point}}">
-                                <input type="submit" class="submit_rate" value="Sửa">
+                                <input type="submit" class="submit_rate" value="Update">
                                 <div class="after_form"></div>
                             </form>
                      <?php  }
@@ -201,10 +201,10 @@
 
     <div class="user_only">
         <div class="user_login_req">
-            <p>Hãy đăng nhập để đánh giá sản phẩm này.</p>
+            <p>You can not leave review now. Please login first.</p>
             <div class="log_option_req">
-                <button class="btn btn-primary redirect_user_only">Đăng nhập ngay</button>
-                <button class="btn btn-primary close_user_only">Để lúc khác</button>
+                <button class="btn btn-primary redirect_user_only">Oh! Why not ?</button>
+                <button class="btn btn-primary close_user_only">Maybe later.</button>
             </div>
         </div>
     </div>
@@ -212,7 +212,7 @@
     <!-- Related Products -->
     <div class="w3l_related_products">
         <div class="container">
-            <h3>Sản phẩm tương tự</h3>
+            <h3>Related Products</h3>
             <ul id="flexiselDemo2">
                 <?php
                 foreach ($related_pros as $related_pro){ ?>
@@ -230,14 +230,14 @@
                                     ?>
                                     <div class="w3_hs_bottom">
                                         <div class="flex_ecommerce">
-                                            <a style="display: block; border-radius: 7px; width: 50%; margin: 0px auto;" href="{{url('/product/'.$related_pro->product_id)}}"><span>Chi tiết</span></a>
+                                            <a style="display: block; border-radius: 7px; width: 50%; margin: 0px auto;" href="{{url('/product/'.$related_pro->product_id)}}"><span>Detail</span></a>
                                         </div>
                                     </div>
                                 </div>
                                 <h5><a href="{{url('/product/'.$related_pro->product_id)}}">{{$related_pro->product_title}}</a></h5>
                                 <div class="simpleCart_shelfItem">
                                     <?php $price= number_format($related_pro->product_price_sell ,0,',','.'); ?>
-                                    <p class="flexisel_ecommerce_cart"><i class="item_price"><?php echo $price. ' Đ'; ?></i></p>
+                                    <p class="flexisel_ecommerce_cart"><i class="item_price"><?php echo $price. ' $'; ?></i></p>
                                         <a href="#" data-url="{{ route('addToCart', ['id' => $related_pro->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
 
                                 </div>
@@ -307,11 +307,11 @@
             var star = $('.listRate .fa');
             var star_edit = $('.listRate_edit .fa');
             var listRatingText = {
-                1 : 'Không thích',
-                2 : 'Bình thường',
-                3 : 'Tạm được',
-                4 : 'Rất tốt',
-                5 : 'Quá tuyệt vời'
+                1 : 'Bad',
+                2 : 'Acceptable',
+                3 : 'Quite Good',
+                4 : 'Great',
+                5 : 'Perfect'
             };
             star.on('click', function () {
                 var number = $(this).attr('data-key');
@@ -362,10 +362,10 @@
                 data.review= $('textarea[name="review"]').val();
                 if (data.user_id){
                     if (data.rate_point == '' || data.rate_point == null){
-                        $('.error_rate_point').html('Bạn chưa chọn số sao !');
+                        $('.error_rate_point').html('Don\'t you forget to give this product some stars ? !');
                         return false;
                     }else if (data.review == '' || data.review == null){
-                        $('.error_review').html('Bạn chưa nhập nội dung đánh giá !');
+                        $('.error_review').html('Please let us know your opinion about this product !');
                         return false;
                     }else{
                         $.ajax({
@@ -378,7 +378,7 @@
                             },
                             success: function(res){
                                 if (res.code == 200){
-                                    alert('Gửi đánh giá thành công');
+                                    alert('Successfully send review');
                                     location.reload();
                                 }
                             },
@@ -425,7 +425,7 @@
                 data.review= $('textarea[name="review"]').val();
                 data.old_rate_point= $('input[name="old_rate_point"]').val();
                 if (data.review == '' || data.review == null){
-                    $('.error_edit_review').html('Bạn chưa nhập nội dung đánh giá');
+                    $('.error_edit_review').html('Please let us know your opinion about this product !');
                     return false;
                 }else{
                     $.ajax({
@@ -438,7 +438,7 @@
                         },
                         success: function(res){
                             if (res.code == 200){
-                                alert('Gửi đánh giá thành công');
+                                alert('Successfully send review');
                                 location.reload();
                             }
                         },

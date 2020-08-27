@@ -2,50 +2,38 @@
 <div class="footer">
     <div class="container">
         <div class="w3_footer_grids">
-            <div class="col-md-3 w3_footer_grid">
-                <h3>Contact</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                <ul class="address">
-                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+            <div class="col-md-4 w3_footer_grid">
+                <h3 class="text-center">Information Contact</h3>
+                <ul class="footer_quick_contact">
+                    <li><p>96 Dinh Cong,Thanh Xuan, Ha Noi</p></li>
+                    <li><p>Free Phone :+1 078 4589 2456</p></li>
+                    <li>Email:
+                        <ul>
+                            <li>QuangAnh@gmail.com</li>
+                            <li>HoanNguyen@gmail.com</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
-            <div class="col-md-3 w3_footer_grid">
-                <h3>Information</h3>
-                <ul class="info">
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Contact Us</a></li>
-                    <li><a href="">Short Codes</a></li>
-                    <li><a href="">FAQ's</a></li>
-                    <li><a href="">Special Products</a></li>
+            <div class="col-md-4 w3_footer_grid">
+                <h3 class="text-center">Payment Method</h3>
+                <ul class="pmethod">
+                    <li><a href="#"><i class="fa fa-cc-visa" style="color: dodgerblue;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-credit-card" style="color: rebeccapurple;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cc-paypal" style="color: royalblue;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cc-jcb" style="color: green;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cc-mastercard" style="color: red;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-money" style="color: #9c996e;"></i></a></li>
                 </ul>
             </div>
-            <div class="col-md-3 w3_footer_grid">
-                <h3>Category</h3>
-                <ul class="info">
-                    <li><a href="">Mobiles</a></li>
-                    <li><a href="">Laptops</a></li>
-                    <li><a href="">Purifiers</a></li>
-                    <li><a href="">Wearables</a></li>
-                    <li><a href="">Kitchen</a></li>
+            <div class="col-md-4 w3_footer_grid">
+                <h3 class="text-center">Follow Us</h3>
+                <ul class="followus">
+                    <li><a href="#"><i class="fa fa-youtube" style="color: red;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-square" style="color: blue;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" style="color: salmon; margin-left: 20px;"></i></a></li>
+                    <li><a href="#"><i class="fa fa-steam" style="color: black;"></i></a></li>
                 </ul>
-            </div>
-            <div class="col-md-3 w3_footer_grid">
-                <h3>Profile</h3>
-                <ul class="info">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Today's Deals</a></li>
-                </ul>
-                <h4>Follow Us</h4>
-                <div class="agileits_social_button">
-                    <ul>
-                        <li><a href="#" class="facebook"> </a></li>
-                        <li><a href="#" class="twitter"> </a></li>
-                        <li><a href="#" class="google"> </a></li>
-                        <li><a href="#" class="pinterest"> </a></li>
-                    </ul>
-                </div>
             </div>
             <div class="clearfix"> </div>
         </div>

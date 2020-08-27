@@ -18,7 +18,7 @@ class CreateProductRatingTable extends Migration
             $table->integer('product_id');
             $table->integer('user_id');
             $table->integer('rate_point');
-            $table->string('post');
+            $table->text('post');
             $table->timestamps();
         });
     }

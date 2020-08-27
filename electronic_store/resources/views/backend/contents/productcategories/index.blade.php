@@ -1,12 +1,12 @@
 @extends("backend.layouts.main")
-@section("title","Quản lý danh mục")
+@section("title","Category management")
 @section("content")
     <div class="cf_del_cat">
-        <p>Danh mục này sẽ bị xóa khỏi hệ thống</p>
+        <p>This category will be permanently removed from the whole system</p>
     </div>
     <div class="container-fluid">
         <div>
-            <a href="{{url("/admin/product_category/create")}}" class="btn btn-success">Thêm Danh Mục</a>
+            <a href="{{url("/admin/product_category/create")}}" class="btn btn-success">Add New Category</a>
         </div>
         @if(session('success'))
             <div class="alert alert-success">
@@ -22,7 +22,7 @@
         <table class="table">
             <thead class=" thead-dark">
             <tr>
-                <th>Thể Loại</th>
+                <th>Category</th>
                 <th>Category ID</th>
                 <th>Parent ID</th>
                 <th>Level</th>

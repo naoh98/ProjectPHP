@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/jquery.countdown.css" />
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/fasthover.css" />
     <link rel="stylesheet" href="{{asset('/electronic_store')}}/css/main.css" /> <!-- custom css tại đây -->
-    <link rel="stylesheet" href="{{asset('/add-to-cart')}}/css/style.css">
 
     <script src="{{asset('/electronic_store')}}/js/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset('/electronic_store')}}/js/bootstrap-3.1.1.min.js"></script>
@@ -28,6 +27,7 @@
     <script type="text/javascript" src="{{asset('/electronic_store')}}/js/jquery.flexisel.js"></script>
     <script src="{{asset('/electronic_store')}}/js/easyResponsiveTabs.js" type="text/javascript"></script>
 
+    <link rel="icon" href="{{ URL::asset('/favicon.ico') }}" type="image/x-icon"/>
 </head>
 <body>
 

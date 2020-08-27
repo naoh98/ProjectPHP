@@ -95,7 +95,7 @@
                                     <h5><a href="{{url('/product/'.$item->product_id)}}">{{$item->product_title}}</a></h5>
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($item->product_price_sell ,0,',','.'); ?>
-                                        <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
+                                        <p><i class="item_price"><?php echo $price.' $'; ?></i></p>
                                             <a href="#" data-url="{{ route('addToCart', ['id' => $item->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                                     <h5><a href="{{url('/product/'.$item->product_id)}}">{{$item->product_title}}</a></h5>
                                     <div class="simpleCart_shelfItem">
                                         <?php $price= number_format($item->product_price_sell ,0,',','.'); ?>
-                                        <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
+                                        <p><i class="item_price"><?php echo $price.' $'; ?></i></p>
                                             <a href="#" data-url="{{ route('addToCart', ['id' => $item->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
                                     </div>
                                 </div>
@@ -279,7 +279,7 @@
                         <h5><a href="{{url('/product/'.$product->product_id)}}">{{$product->product_title}}</a></h5>
                         <div class="simpleCart_shelfItem">
                             <?php $price= number_format($product->product_price_sell ,0,',','.'); ?>
-                            <p><i class="item_price"><?php echo $price.' VNĐ'; ?></i></p>
+                            <p><i class="item_price"><?php echo $price.' $'; ?></i></p>
                             <a href="#" data-url="{{ route('addToCart', ['id' => $product->product_id]) }}" class="btn btn-primary add_to_cart">Add to cart</a>
                         </div>
                     </div>

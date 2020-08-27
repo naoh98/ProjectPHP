@@ -17,7 +17,7 @@ class CreateProductAttributesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('attribute_id');
             $table->integer('product_id');
-            $table->string('value');
+            $table->text('value');
             $table->timestamps();
         });
     }

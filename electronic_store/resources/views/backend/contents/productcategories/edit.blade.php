@@ -1,11 +1,11 @@
 @extends("backend.layouts.main")
-@section("title","Sửa thể loại")
+@section("title","Update category")
 @section("content")
     <div class="container-fluid">
         <div class="row">
-            <h1>Sửa Danh Mục</h1>
+            <h1>Update Category</h1>
             <div class="col-md-12">
-                <a href="{{url('/admin/product_category')}}" class="btn btn-info">Quay về</a>
+                <a href="{{url('/admin/product_category')}}" class="btn btn-info">Back</a>
             </div>
             <br><br>
             <div class="col-md-12">
@@ -16,7 +16,7 @@
                         <span>{{$category_1->category_id}}</span>
                     </div>
                     <div class="form-group">
-                        <label>Tên Danh Mục</label>
+                        <label>Category</label>
                         <input type="text" value="{{$category_1->category_name}}" name="category_name" class="form-control">
                     </div>
                     @error('category_name')
@@ -24,15 +24,15 @@
                     @enderror
 
                     <div class="form-group">
-                        <label style="display: block;">Ảnh Đại Diện</label>
+                        <label style="display: block;">Main Image</label>
                         <label class="custom_img">
                             <input type="file" value="{{$category_1->category_image}}" name="category_image">
-                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Choose A File</span>
                         </label>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center" style="margin-bottom: 15px;">
                         <?php if($category_1->category_image){ ?>
-                        <img src="{{asset('storage/files/' .basename($category_1->category_image))}}" alt="" width="500px" height="350px">
+                        <img src="{{asset('storage/files/' .basename($category_1->category_image))}}" alt="" style="width: 100%; height: 500px;" >
                         <?php } ?>
                     </div>
                     @error('category_image')
@@ -40,7 +40,7 @@
                     @enderror
 
                     <div class="form-group">
-                        <label>Danh Mục Cha</label>
+                        <label>Parent Category</label>
                         <div>
                             <select name="parent_id">
                                 <option value="0">None</option>
@@ -53,7 +53,7 @@
                             {!! session('error') !!}
                         </div>
                     @endif
-                    <button type="submit" class="btn btn-danger">Sửa</button>
+                    <button type="submit" class="btn btn-danger">Update</button>
                 </form>
             </div>
         </div>

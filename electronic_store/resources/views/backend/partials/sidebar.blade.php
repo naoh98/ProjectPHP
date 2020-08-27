@@ -40,7 +40,7 @@
                 <a class="collapse-item" href="{{url('/admin/product_category')}}">Danh mục sản phẩm</a>
                 <a class="collapse-item" href="{{url('/admin/product')}}">Sản phẩm</a>
                 <a class="collapse-item" href="{{url('/admin/attribute')}}">Thuộc tính sản phẩm</a>
-                <a class="collapse-item" href="{{url('/admin/manufacturer')}}">Nhà sản xuất</a>
+                <a class="collapse-item" href="{{url('/admin/manufacturer')}}">Hãng sản xuất</a>
             </div>
         </div>
     </li>

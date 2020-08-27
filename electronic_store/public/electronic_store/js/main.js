@@ -7,15 +7,6 @@
         $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
     });
 //
-    $('.menucat ul li').hover(function () {
-            // over
-            $(this).find('>ul').show();
-        }, function () {
-            // out
-            $(this).find('>ul').hide();
-        }
-    );
-//
     var auto;
     $('.hs-wrapper').hover(function () {
         var count=0;
