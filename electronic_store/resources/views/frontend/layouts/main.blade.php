@@ -27,6 +27,7 @@
     <script type="text/javascript" src="{{asset('/electronic_store')}}/js/jquery.flexisel.js"></script>
     <script src="{{asset('/electronic_store')}}/js/easyResponsiveTabs.js" type="text/javascript"></script>
 
+    <link rel="icon" href="{{ URL::asset('/favicon.ico') }}" type="image/x-icon"/>
 </head>
 <body>
 
