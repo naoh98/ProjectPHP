@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="383d1377-65ba-4133-85f0-b9071dc7e66b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/app/Models/ProductModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Models/ProductModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/public/sbadmin2/css/sb-admin-2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/public/sbadmin2/css/sb-admin-2.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/subviews/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/subviews/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/subviews/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/subviews/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/electronic_store/node_modules/" />
     <ignored path="$PROJECT_DIR$/electronic_store/vendor/asm89/stack-cors/" />
@@ -131,6 +128,9 @@
     <findStrings>
       <find>.bg-gradient-primary</find>
       <find>bg-login-image</find>
+      <find>box_1</find>
+      <find>w3l_logo</find>
+      <find>@media</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,6 +163,8 @@
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/OrderController.php" />
         <option value="$PROJECT_DIR$/electronic_store/app/Models/ProductModel.php" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css" />
       </list>
     </option>
   </component>
@@ -320,59 +322,6 @@
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Traits" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -380,14 +329,14 @@
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -396,76 +345,29 @@
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="sb-admin-2.css" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="contents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="contents" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="contents" type="462c0819:PsiDirectoryNode" />
-              <item name="productcategories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="sb-admin-2.js" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
@@ -473,9 +375,6 @@
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
@@ -483,15 +382,16 @@
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
-              <item name="subviews" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="contents" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -536,16 +436,18 @@
       <workItem from="1598524920419" duration="6707000" />
       <workItem from="1598532694751" duration="12498000" />
       <workItem from="1598546691701" duration="7357000" />
+      <workItem from="1598581416589" duration="14000" />
+      <workItem from="1598587617007" duration="3292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19855000" />
+    <option name="totallyTimeSpent" value="23161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -610,9 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/product.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -841,9 +740,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/public/sbadmin2/js/sb-admin-2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-786">
           <folding>
-            <element signature="e#48#84#0#PHP" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="2514" column="5" selection-start-line="2514" selection-start-column="5" selection-end-line="2514" selection-end-column="5" />
         </state>
       </provider>
     </entry>
