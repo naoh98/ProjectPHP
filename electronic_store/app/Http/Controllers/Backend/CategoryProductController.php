@@ -10,7 +10,7 @@ use Illuminate\Validation\Rule;
 
 class CategoryProductController extends Controller
 {
-    //hiển thị trang quản lý thể loại
+    //hiển thị trang quản lý danh mục
     public function index() {
         $category = DB::table('category')->get();
         /*echo "<pre>";
@@ -19,7 +19,7 @@ class CategoryProductController extends Controller
         return view('backend.contents.productcategories.index',['category'=>$category]);
     }
 
-    //hiển thị trang thêm thể loại
+    //hiển thị trang thêm danh mục
     public function createpage(){
         $category = CategoryProductModel::all();
         $data = [];
@@ -27,7 +27,7 @@ class CategoryProductController extends Controller
         return view("backend.contents.productcategories.create",$data);
     }
 
-    //code thêm thể loại
+    //code thêm danh mục
     public function create(Request $request){
         $validate_cat =[
             'category_name' => 'required|unique:category,category_name',

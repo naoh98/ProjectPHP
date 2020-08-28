@@ -54,7 +54,11 @@ class IndexController extends Controller
         $a=[];
         foreach ($arr as $parent){
             $this->cat($arr2,$parent);
-            $top_pro=DB::table('product')->whereIn('product_type',$arr2)->get();
+            $top_pro=DB::table('product')
+                ->whereIn('product_type',$arr2)
+                ->join('category','product.product_type','category.category_id')
+                ->select('product.*')
+                ->get();
             $a[$parent]=$top_pro;
             unset($arr2);
         }
