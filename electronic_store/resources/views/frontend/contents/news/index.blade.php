@@ -24,7 +24,9 @@
                 @foreach( $posts as $post)
                     <div class="col-md-4">
                         <div class="post-grid__block">
-                            <img class=" post-grid__image" src="{{asset('storage/files/'.basename($post->image)) }}" alt="Card image cap">
+                            <div class="post-wrap__image">
+                                <img class=" post-grid__image" src="{{asset('storage/files/'.basename($post->image)) }}" alt="Card image cap">
+                            </div>
                             <div class="post-grid__body">
                                 <h3 class="post-grid__title"><a href="{{ url("/news/$post->id") }}">{{ $post->title }}</a></h3>
                                 <p class="post-grid__text">{{ $post->excerpt }}</p>

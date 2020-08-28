@@ -1,12 +1,12 @@
 @extends("backend.layouts.main")
-@section("title","Quản lý bài viết")
+@section("title","All post")
 @section("content")
     <div class="cf_del_pro">
         <p>Bài viết này sẽ bị xóa khỏi hệ thống</p>
     </div>
     <div class="container-fluid">
         <div>
-            <a href="{{ route('admin.new.create') }}" class="btn btn-success">Thêm Bài viết</a>
+            <a href="{{ route('admin.new.create') }}" class="btn btn-success">Add post</a>
         </div>
         @if(session('success'))
             <div class="alert alert-success">
@@ -17,11 +17,11 @@
         <table class="table qlproduct">
             <thead class=" thead-dark">
             <tr>
-                <th>Tiêu đề</th>
-                <th>Ảnh</th>
-                <th>Tóm Tắt</th>
-                <th>Nội dung</th>
-                <th>Hành động</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Excerpt</th>
+                <th>Content</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>

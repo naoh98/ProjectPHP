@@ -68,16 +68,16 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{ route('admin.list') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Admin List</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{ route('settings.index') }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Web Config</span></a>
+            <span>Settings</span></a>
     </li>
 
     <!-- Divider -->

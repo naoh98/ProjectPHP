@@ -107,8 +107,12 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'Backend\DashboardController@loginAdmin');
 
 
-    //route hiển thị danh sách admin
-    Route::get('/adminList', 'Backend\ProfileController@adminList');
+    //route hiển thị danh sách adminNs
+    Route::get('/adminList', 'Backend\ProfileController@adminList')->name('admin.list');
+    Route::get('/adminList/profile', 'Backend\ProfileController@index')->name('admin.profile.index');
+    Route::post('/adminList/profile', 'Backend\ProfileController@update')->name('admin.profile.update');
+
+
     //route hiển thị category
     Route::get('/product_category', 'Backend\CategoryProductController@index');
     Route::get('/product_category/create', 'Backend\CategoryProductController@createpage');
@@ -148,6 +152,19 @@ Route::prefix('admin')->group(function() {
         return view('backend.contents.customers.index', compact('customers'));
 
     })->name('customer.index');
+
+    // Route hiển thị view setting
+    Route::get('/settings', 'Backend\SettingController@index')->name('settings.index');
+    Route::get('/settings/create', 'Backend\SettingController@create')->name('settings.create');
+    Route::get('/settings/edit/{id}', 'Backend\SettingController@edit')->name('settings.edit');
+
+    // Route chức năng setting
+    Route::post('/settings/create', 'Backend\SettingController@store')->name('settings.store');
+    Route::post('/settings/update/{id}', 'Backend\SettingController@update')->name('settings.update');
+    Route::delete('/settings/delete/{id}', 'Backend\SettingController@delete')->name('settings.delete');
+
+
+
 
 
 

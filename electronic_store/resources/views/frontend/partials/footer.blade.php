@@ -5,12 +5,12 @@
             <div class="col-md-4 w3_footer_grid">
                 <h3 class="text-center">Information Contact</h3>
                 <ul class="footer_quick_contact">
-                    <li><p>96 Dinh Cong,Thanh Xuan, Ha Noi</p></li>
-                    <li><p>Free Phone :+1 078 4589 2456</p></li>
+                    <li><p>{{ getConfigValue('address') }}</p></li>
+                    <li><p>{{ getConfigValue('phone_contact') }}</p></li>
                     <li>Email:
                         <ul>
-                            <li>QuangAnh@gmail.com</li>
-                            <li>HoanNguyen@gmail.com</li>
+                            <li>{{ getConfigValue('email1') }}</li>
+                            <li>{{ getConfigValue('email2') }}</li>
                         </ul>
                     </li>
                 </ul>

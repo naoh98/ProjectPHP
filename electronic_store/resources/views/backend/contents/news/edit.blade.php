@@ -1,29 +1,29 @@
 
 @extends("backend.layouts.main")
-@section("title","Sửa bài viết")
+@section("title","Edit post")
 @section("content")
     <div class="container-fluid">
         <div class="row">
-            <h1>Sửa bài viết</h1>
+            <h1>Edit post</h1>
             <div class="col-md-12">
-                <a href="{{ route('admin.new.index') }}" class="btn btn-info">Quay về</a>
+                <a href="{{ route('admin.new.index') }}" class="btn btn-info">Back</a>
             </div>
             <br><br>
             <div class="col-md-12">
                 <form name="up_pro" action="{{ route('admin.new.update', ['new_id' => $post->id]) }}"  method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group">
-                        <label>Tiêu đề</label>
+                        <label>Title</label>
                         <input type="text" value="{{ $post->title }}" name="title" class="form-control">
                     </div>
                     @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label style="display: block;">Ảnh đại diện </label>
+                        <label style="display: block;">Image</label>
                         <label class="custom_img">
                             <input type="file" value="{{ $post->image }}" name="image">
-                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Chọn file</span>
+                            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Choose file</span>
                         </label>
                     </div>
                     <div class="text-center">
@@ -37,7 +37,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Tóm tắt</label>
+                        <label>Excerpt</label>
                         <textarea name="excerpt" cols="40" rows="20" class="form-control">
                             {{ $post->excerpt }}
                         </textarea>
@@ -46,7 +46,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group">
-                        <label>Nội dung</label>
+                        <label>Content</label>
                         <textarea name="content_post" cols="40" rows="20" class="form-control">
                             {{ $post->content_post }}
                         </textarea>
@@ -56,7 +56,7 @@
                     @enderror
 
 
-                    <button type="submit" class="btn btn-danger">Sửa</button>
+                    <button type="submit" class="btn btn-danger">Edit</button>
                 </form>
             </div>
         </div>

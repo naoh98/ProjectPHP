@@ -22,7 +22,7 @@ class Sblogin
             return $next($request);
         }
 
-        return redirect('admin/login')->with('status', 'Vui lòng đăng nhập để tiếp tục');
+        return redirect('admin/login')->with('status', 'Please login to continue !');
 
     }
 }

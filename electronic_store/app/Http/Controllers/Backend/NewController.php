@@ -39,8 +39,8 @@ class NewController extends Controller
 
         ];
         $error_messages = [
-            'required' => ':attribute không được để trống',
-            'unique' => ':attribute đã tồn tại'
+            'required' => ':attribute is required',
+            'unique' => ':attribute existed !'
         ];
         $this->validate($request, $validate, $error_messages);
 
@@ -56,7 +56,7 @@ class NewController extends Controller
         $post->content_post = $request->content_post;
         $post->save();
 
-        return redirect('/admin/news')->with('success', 'Thêm bài viết thành công');
+        return redirect('/admin/news')->with('success', 'Add post successfully !');
     }
 
     public function update(Request $request, $new_id) {
@@ -86,11 +86,11 @@ class NewController extends Controller
         $post->content_post = $request->content_post;
         $post->save();
 
-        return redirect('/admin/news')->with('success', 'Sửa bài viết thành công');
+        return redirect('/admin/news')->with('success', 'Updated post successfully');
     }
 
     public function delete($new_id) {
         NewModel::find($new_id)->delete();
-        return redirect('/admin/news')->with('success', 'Xóa bài viết thành công');
+        return redirect('/admin/news')->with('success', 'Delete post successfully');
     }
 }

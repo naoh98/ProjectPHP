@@ -271,10 +271,14 @@ li[role='presentation']{
 .post-grid__block:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+.post-wrap__image {
+    
+}
 .post-grid__image {
     display: block;
     max-width: 100%;
-    height: 200px;
+    height: 350px;
+    object-fit: cover;
     margin-bottom: 20px;
 }
 .post-grid__body {
