@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="383d1377-65ba-4133-85f0-b9071dc7e66b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/admin/adminList.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/DashboardController.php" afterDir="false" />
 <<<<<<< HEAD
 =======
@@ -23,6 +23,10 @@
       <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/productall.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/productall.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electronic_store/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/routes/web.php" afterDir="false" />
 >>>>>>> c4debc6f0549404a88d45487b0c06ddc823cbf82
+=======
+      <change beforePath="$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" afterDir="false" />
+>>>>>>> a1271d47724cf675b16c7ed3fce40f0d59d987ec
     </list>
     <ignored path="$PROJECT_DIR$/electronic_store/node_modules/" />
     <ignored path="$PROJECT_DIR$/electronic_store/vendor/asm89/stack-cors/" />
@@ -142,6 +146,15 @@
   <component name="FileEditorManager">
     <leaf />
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>.bg-gradient-primary</find>
+      <find>bg-login-image</find>
+      <find>box_1</find>
+      <find>w3l_logo</find>
+      <find>@media</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -159,15 +172,21 @@
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/customers/index.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/orders/index.blade.php" />
-        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/orders/detail.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CategoryController.php" />
         <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/DashboardController.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/adminProfile.blade.php" />
-        <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/OrderController.php" />
         <option value="$PROJECT_DIR$/electronic_store/routes/web.php" />
         <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/ProfileController.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/contents/admin/adminList.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/public/sbadmin2/css/sb-admin-2.min.css" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/subviews/register.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/subviews/login.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/OrderController.php" />
+        <option value="$PROJECT_DIR$/electronic_store/app/Models/ProductModel.php" />
+        <option value="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php" />
+        <option value="$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css" />
       </list>
     </option>
   </component>
@@ -308,6 +327,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -324,54 +344,46 @@
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Traits" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="sbadmin2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="sb-admin-2.js" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
@@ -385,43 +397,6 @@
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="contents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="contents" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="contents" type="462c0819:PsiDirectoryNode" />
-              <item name="productcategories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
@@ -439,28 +414,11 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="contents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="contents" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -470,7 +428,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PHP1909e" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -502,24 +460,25 @@
 =======
       <workItem from="1598524920419" duration="6707000" />
       <workItem from="1598532694751" duration="12498000" />
+<<<<<<< HEAD
 >>>>>>> c4debc6f0549404a88d45487b0c06ddc823cbf82
+=======
+      <workItem from="1598546691701" duration="7357000" />
+      <workItem from="1598581416589" duration="14000" />
+      <workItem from="1598587617007" duration="3292000" />
+>>>>>>> a1271d47724cf675b16c7ed3fce40f0d59d987ec
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12498000" />
+    <option name="totallyTimeSpent" value="23161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32885906" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -527,10 +486,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,16 +546,10 @@
         <state relative-caret-position="-136" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/product.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,20 +619,7 @@
     <entry file="file://$PROJECT_DIR$/electronic_store/app/Traits/TotalOrder.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#a#0;n#ul#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/OrderItemModel.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/OrderModel.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CategoryController.php">
@@ -688,9 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="93" column="37" lean-forward="true" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
-          <folding>
-            <element signature="e#4696#4715#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,9 +650,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/adminProfile.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/adminProfile.blade.php" />
     <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -718,24 +658,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/productcategories/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="33" column="20" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/admin/adminList.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -764,16 +690,112 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="40" column="74" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="86" />
-          <folding>
-            <element signature="n#li#0;n#ul#0;n#nav#0;n#!!top" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/layouts/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-412" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/public/sbadmin2/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="57" selection-start-line="57" selection-end-line="63" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/public/sbadmin2/css/sb-admin-2.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="9" column="158844" selection-start-line="9" selection-start-column="158844" selection-end-line="9" selection-end-column="158844" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/public/sbadmin2/css/sb-admin-2.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/subviews/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/contents/admin/adminList.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/sbadmin2/subviews/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/backend/partials/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="70" column="57" selection-start-line="70" selection-start-column="57" selection-end-line="70" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/CategoryProductModel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/NewModel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/ManufacturerModel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/OrderModel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Models/ProductModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="102" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+        <state relative-caret-position="238">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/homepage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/public/sbadmin2/js/sb-admin-2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-786">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/public/electronic_store/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="2514" column="5" selection-start-line="2514" selection-start-column="5" selection-end-line="2514" selection-end-column="5" />
         </state>
       </provider>
     </entry>

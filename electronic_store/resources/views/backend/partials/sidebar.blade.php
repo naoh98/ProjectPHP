@@ -68,7 +68,11 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
+<<<<<<< HEAD
         <a class="nav-link" href="{{ route('admin.list') }}">
+=======
+        <a class="nav-link" href="{{url('/admin/adminList')}}">
+>>>>>>> a1271d47724cf675b16c7ed3fce40f0d59d987ec
             <i class="fas fa-fw fa-table"></i>
             <span>Admin List</span></a>
     </li>

@@ -7,8 +7,7 @@ use App\Models\OrderItemModel;
 use App\Models\OrderModel;
 use App\Models\ProductModel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
+use App\Models\CategoryProductModel;
 
 class OrderController extends Controller
 {
@@ -27,6 +26,13 @@ class OrderController extends Controller
             return $item->product_id;
         });
         $products = ProductModel::find($product_id);
+
+        foreach ($products as $product){
+            $pros = ProductModel::find($product->product_id)->owncat;
+            $pros2 = ProductModel::find($product->product_id)->ownmanu;
+            $product->category_name = $pros->category_name;
+            $product->manufacturer_name = $pros2->manufacturer_name;
+        }
 
         return view('backend.contents.orders.detail', ['order_items' => $order_items, 'products' => $products]);
 

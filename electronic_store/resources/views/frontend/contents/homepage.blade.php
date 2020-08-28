@@ -44,7 +44,7 @@
 <!-- Sale section-->
 
 <!-- Top Products -->
-<div class="banner-bottom" style="background: #f3f3f3;">
+<div class="special-deals" style="background: #f3f3f3;">
     <div class="container">
         <h2>Top Products</h2>
         <div class="row">
