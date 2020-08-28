@@ -3,9 +3,10 @@
 @section('content')
 
 <!-- banner -->
-<div class="banner banner3">
-    <div class="container">
-        <h2>Contact Us</h2>
+<div class="banner banner3"
+            style="background: url({{asset('/electronic_store/images/mb-mockup.jpg')}}) no-repeat center;background-size: cover;">
+    <div class="decorated_img decorated_img1">
+        <span>Write us something !</span>
     </div>
 </div>
 <!-- //banner -->

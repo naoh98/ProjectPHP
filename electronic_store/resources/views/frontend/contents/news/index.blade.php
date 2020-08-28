@@ -3,6 +3,9 @@
 @section('content')
     <div class="banner banner3"
          style="background: url({{asset('/electronic_store/images/coffeeflatlay.jpg')}}) no-repeat center;background-size: cover;">
+        <div class="decorated_img decorated_img1">
+            <span>Lastest news</span>
+        </div>
     </div>
 
     <div class="breadcrumb_dress">

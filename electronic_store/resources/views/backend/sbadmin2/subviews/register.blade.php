@@ -52,12 +52,9 @@
                     </form>
                     <hr>
                     <div class="text-center">
-<<<<<<< HEAD
                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                     </div>
                     <div class="text-center">
-=======
->>>>>>> a1271d47724cf675b16c7ed3fce40f0d59d987ec
                         <a class="small" href="{{url('/admin/login')}}">Already have an account? Login!</a>
                     </div>
                 </div>

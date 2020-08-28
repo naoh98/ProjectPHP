@@ -602,3 +602,23 @@ li[role='presentation']{
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
+.banner{
+    position: relative;
+}
+.decorated_img{
+    font-size: 2em;
+    color: #fff;
+    width: 30%;
+    padding: 1em .5em;
+    background: rgba(33, 33, 33, 0.85);
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.decorated_img1{
+    right: 0;
+}
+.decorated_img2{
+    left: 0;
+    text-align: right;
+}

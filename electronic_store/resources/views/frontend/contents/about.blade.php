@@ -2,7 +2,10 @@
 @section('title','About')
 @section('content')
     <div class="banner banner3"
-         style="background: url({{asset('/electronic_store/images/b1.jpg')}}) no-repeat center;background-size: cover;">
+         style="background: url({{asset('/electronic_store/images/feature_laptop-home.jpg')}}) no-repeat center;background-size: cover;">
+        <div class="decorated_img decorated_img2">
+            <span>Who are we ?</span>
+        </div>
     </div>
 
     <div class="breadcrumb_dress">

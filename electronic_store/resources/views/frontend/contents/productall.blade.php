@@ -2,7 +2,8 @@
 @section('title','Product Category')
 @section('content')
 
-    <div class="banner banner3">
+    <div class="banner banner3"
+        style="background: url({{asset('/electronic_store/images/allproduct.jpg')}}) no-repeat center;background-size: cover;">
     </div>
 
 

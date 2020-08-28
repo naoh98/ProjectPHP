@@ -15,13 +15,8 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-<<<<<<< HEAD
-                    <div class="col-lg-6 d-lg-block " style="background: url({{ asset('/sbadmin2/img/login-admin.png') }}) no-repeat center;background-size: cover"></div>
-                    <div class="col-lg-6">
-=======
                     <div class="col-lg-5 d-none d-lg-block bg-login-image"></div>
                     <div class="col-lg-7">
->>>>>>> a1271d47724cf675b16c7ed3fce40f0d59d987ec
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
