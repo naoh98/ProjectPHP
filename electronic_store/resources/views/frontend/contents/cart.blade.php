@@ -107,7 +107,7 @@
                    {{--card_number.text({{coun}})--}}
                     $('body').html(data.cart_view);
                    alert('Update cart success !');
-
+                    return;
 
                }
 

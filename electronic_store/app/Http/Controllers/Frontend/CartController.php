@@ -39,7 +39,7 @@ class CartController extends Controller
     public function showCart() {
 
         $carts = session()->get('cart');
-        return view('frontend.contents.cart', compact('carts'));
+        return view('frontend.contents.cart', ["carts"=>$carts]);
     }
 
     public function updateCart(Request $request) {
@@ -49,7 +49,7 @@ class CartController extends Controller
             $carts[$request->id]['quantity'] = $request->quantity;
             session()->put('cart', $carts);
             $carts = session()->get('cart');
-            $cart_view = view('frontend.contents.cart', compact('carts'))->render();
+            $cart_view = view('frontend.contents.cart', ["carts"=>$carts])->render();
             return response()->json([
                 'cart_view' => $cart_view,
                 'code' => 200

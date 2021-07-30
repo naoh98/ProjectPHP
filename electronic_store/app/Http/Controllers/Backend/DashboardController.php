@@ -44,7 +44,6 @@ class DashboardController extends Controller
                 'username' => $username,
                 'password' => $password
             ]]);
-
             return redirect('admin')->with('status', 'Login Success');
         }
 
