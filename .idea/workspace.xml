@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb153790-72f5-4c58-8ce9-7eea2ecab630" name="Default Changelist" comment="" />
+    <list default="true" id="eb153790-72f5-4c58-8ce9-7eea2ecab630" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ProjectPHP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProjectPHP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/electronic_store/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/electronic_store/vendor/brick/math/" />
     <ignored path="$PROJECT_DIR$/electronic_store/vendor/composer/" />
@@ -118,20 +122,9 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/electronic_store/app/Providers/AppServiceProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/electronic_store/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-816" />
-          </provider>
+        <entry file="file://$PROJECT_DIR$/electronic_store/index.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -162,6 +155,7 @@
         <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CartController.php" />
         <option value="$PROJECT_DIR$/electronic_store/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/electronic_store/Procfile" />
+        <option value="$PROJECT_DIR$/electronic_store/composer.json" />
       </list>
     </option>
   </component>
@@ -254,14 +248,12 @@
       <path value="$PROJECT_DIR$/electronic_store/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/electronic_store/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/fruitcake/laravel-cors" />
-      <path value="$PROJECT_DIR$/electronic_store/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/phpoption/phpoption" />
@@ -285,9 +277,9 @@
       <path value="$PROJECT_DIR$/electronic_store/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/electronic_store/vendor/symfony/polyfill-php70" />
-      <path value="$PROJECT_DIR$/electronic_store/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/electronic_store/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/electronic_store/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/electronic_store/vendor/symfony/http-client-contracts" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -321,6 +313,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Blog" />
   </component>
@@ -376,18 +369,17 @@
       <workItem from="1627535027776" duration="8134000" />
       <workItem from="1627668158482" duration="1726000" />
       <workItem from="1627719338735" duration="577000" />
-      <workItem from="1627727613225" duration="2467000" />
+      <workItem from="1627727613225" duration="3473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71560000" />
+    <option name="totallyTimeSpent" value="72566000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18120806" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18120806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -400,7 +392,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29395974" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29395974" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -415,18 +407,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_08_16_165727_create_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Backend/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/product.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1972">
@@ -681,8 +661,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816" />
+        <state relative-caret-position="162">
+          <caret line="58" column="64" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="64" />
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/index">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
