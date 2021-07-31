@@ -121,6 +121,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/electronic_store/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="11" selection-start-line="13" selection-end-line="13" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electronic_store/composer.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-775" />
@@ -291,7 +300,7 @@
       <path value="$PROJECT_DIR$/electronic_store/vendor/league/mime-type-detection" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="75" />
     <option name="y" value="20" />
     <option name="width" value="1380" />
@@ -413,12 +422,12 @@
       <workItem from="1627535027776" duration="8134000" />
       <workItem from="1627668158482" duration="1726000" />
       <workItem from="1627719338735" duration="577000" />
-      <workItem from="1627727613225" duration="1260000" />
+      <workItem from="1627727613225" duration="1557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70353000" />
+    <option name="totallyTimeSpent" value="70650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -681,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="11" selection-start-line="13" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/public/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -718,6 +720,13 @@
     <entry file="file://$PROJECT_DIR$/electronic_store/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-775" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="11" selection-start-line="13" selection-end-line="13" selection-end-column="11" />
+        </state>
       </provider>
     </entry>
   </component>
