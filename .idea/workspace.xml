@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb153790-72f5-4c58-8ce9-7eea2ecab630" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="eb153790-72f5-4c58-8ce9-7eea2ecab630" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/electronic_store/vendor/asm89/stack-cors/" />
     <ignored path="$PROJECT_DIR$/electronic_store/vendor/brick/math/" />
     <ignored path="$PROJECT_DIR$/electronic_store/vendor/composer/" />
@@ -120,28 +118,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/electronic_store/.env">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/electronic_store/app/Providers/AppServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="11" selection-start-line="13" selection-end-line="13" selection-end-column="11" />
+            <state relative-caret-position="257">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/electronic_store/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-775" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-            </state>
+            <state relative-caret-position="-816" />
           </provider>
         </entry>
       </file>
@@ -171,6 +160,7 @@
         <option value="$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/resources/views/frontend/contents/cart.blade.php" />
         <option value="$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CartController.php" />
+        <option value="$PROJECT_DIR$/electronic_store/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/electronic_store/Procfile" />
       </list>
     </option>
@@ -323,42 +313,6 @@
               <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
               <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjectPHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjectPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="electronic_store" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -422,15 +376,16 @@
       <workItem from="1627535027776" duration="8134000" />
       <workItem from="1627668158482" duration="1726000" />
       <workItem from="1627719338735" duration="577000" />
-      <workItem from="1627727613225" duration="1557000" />
+      <workItem from="1627727613225" duration="2467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70650000" />
+    <option name="totallyTimeSpent" value="71560000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18120806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -445,7 +400,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22818792" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29395974" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -460,11 +415,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/CheckoutController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/database/migrations/2020_08_16_165727_create_orders_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -554,11 +504,6 @@
         <state relative-caret-position="170">
           <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/app/Http/Controllers/Frontend/NewController.php">
@@ -700,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42" lean-forward="true" selection-start-column="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/resources/views/frontend/layouts/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -714,19 +652,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/.gitignore">
+    <entry file="file://$PROJECT_DIR$/electronic_store/caidat.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/electronic_store/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775" />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/electronic_store/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/electronic_store/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="11" selection-start-line="13" selection-end-line="13" selection-end-column="11" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="42" lean-forward="true" selection-start-column="42" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electronic_store/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816" />
       </provider>
     </entry>
   </component>
