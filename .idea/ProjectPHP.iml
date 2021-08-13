@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/electronic_store/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/electronic_store/tests" isTestSource="true" packagePrefix="Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/aws/aws-sdk-php" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/doctrine/cache" />
@@ -32,9 +33,12 @@
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/laravel/ui" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/league/flysystem-aws-s3-v3" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/league/flysystem-cached-adapter" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/mtdowling/jmespath.php" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/nikic/php-parser" />
@@ -53,6 +57,7 @@
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/electronic_store/vendor/psr/http-message" />

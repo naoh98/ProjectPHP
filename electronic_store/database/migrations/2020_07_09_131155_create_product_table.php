@@ -19,9 +19,9 @@ class CreateProductTable extends Migration
             $table->longText('product_desc');
             $table->text('product_main_image');
             $table->longText('product_images');
-            $table->string('product_manufacturer');
+            $table->integer('product_manufacturer');
             $table->integer('product_quantity');
-            $table->string('product_type');
+            $table->integer('product_type');
             $table->double('product_price_core');
             $table->integer('product_tax');
             $table->double('product_price_sell');

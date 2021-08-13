@@ -25,8 +25,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
- /*       view()->composer('frontend.partials.nav', function ($view){
+        $this->app['request']->server->set('HTTPS','on');
+        //
+        view()->composer('frontend.partials.nav', function ($view){
            $view->with('menu', DB::table('category')->get());
-        });*/
+        });
     }
 }
